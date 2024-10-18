@@ -2,22 +2,18 @@ import Button from "../components/Button";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
-  const navItems = ["Product", "Resources", "About us"];
   return (
     <>
-      <HeroSection navItems={navItems} />
-      <Section2 />
+      <HeroSection />
+      <LandingSection2 />
     </>
   );
 }
 
-interface HeroSectionProps {
-  navItems: String[];
-}
-
-function HeroSection({ navItems }: HeroSectionProps) {
+function HeroSection() {
+  const navItems = ["Product", "Resources", "About us"];
   return (
-    <section className="bg-radial-blue max-h-fit min-h-dvh w-full pt-16 text-white">
+    <section className="bg-radial-blue max-h-fit min-h-dvh w-full min-w-[1280px] pt-16 text-white">
       <Navbar navItems={navItems} type="dark" />
       <div className="flex justify-center pb-48">
         <div className="mt-32 flex gap-[103px]">
@@ -49,7 +45,7 @@ function HeroSection({ navItems }: HeroSectionProps) {
   );
 }
 
-function Section2() {
+function LandingSection2() {
   return (
     <section className="h-[939px] bg-white">
       <div className="bg-grid h-[70%] pt-32">

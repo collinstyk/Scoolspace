@@ -4,7 +4,7 @@ import Footer from "./Footer";
 function AppLayout() {
   return (
     <>
-      <main className="font-circular-std">
+      <main className="font-circular-std min-w-[1280px]">
         <Outlet />
       </main>
       <Footer />

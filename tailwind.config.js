@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         "radial-blue": "radial-gradient(circle, #000c3c, #00091f);",
         "dark-radial-blue": "radial-gradient(circle, #000B3B, #00091A)",
+        "light-linear-blue": "linear-gradient(#29A5DC26, #FFFFFF26)",
+        "light-linear-blue-grid":
+          "linear-gradient(#29A5DC26, #FFFFFF26), url('src/assets/images/background-grid.svg')",
         grid: 'url("src/assets/images/background-grid.svg")',
       },
       backgroundColor: {
@@ -23,6 +26,7 @@ export default {
         "purple-one": "#9747FF",
         "dark-blue": "#00223A",
         "pitch-black": "#00111C",
+        "black-one": "#1E1E1E",
       },
       fontFamily: {
         "circular-std": ["Circular std", "sans-serif"],
