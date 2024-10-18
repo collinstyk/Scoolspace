@@ -26,6 +26,7 @@ export default {
       },
       fontFamily: {
         "circular-std": ["Circular std", "sans-serif"],
+        montserat: ["Montserrat", "sans-serif"],
       },
     },
   },

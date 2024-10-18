@@ -6,6 +6,7 @@ export default function Landing() {
   return (
     <>
       <HeroSection navItems={navItems} />
+      <Section2 />
     </>
   );
 }
@@ -16,7 +17,7 @@ interface HeroSectionProps {
 
 function HeroSection({ navItems }: HeroSectionProps) {
   return (
-    <div className="bg-radial-blue max-h-fit min-h-dvh w-full pt-16 text-white">
+    <section className="bg-radial-blue max-h-fit min-h-dvh w-full pt-16 text-white">
       <Navbar navItems={navItems} type="dark" />
       <div className="flex justify-center pb-48">
         <div className="mt-32 flex gap-[103px]">
@@ -35,16 +36,80 @@ function HeroSection({ navItems }: HeroSectionProps) {
               </Button>
             </div>
           </div>
-          <div className="h-full">
+          <div>
             <img
-              src="src/assets/images/Hero-image.png"
+              src="src/assets/images/Hero image.svg"
               alt="hero-image"
-              className="h-full"
+              className="h-full w-full"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  );
+}
+
+function Section2() {
+  return (
+    <section className="h-[939px] bg-white">
+      <div className="bg-grid h-[70%] pt-32">
+        <div className="mx-auto mb-32 flex w-[960px] items-center justify-between">
+          <h3 className="text-pitch-black w-[400px] text-5xl font-bold">
+            Big text for short section{" "}
+            <span className="text-blue-one">header</span>.
+          </h3>
+          <p className="text-pitch-black w-[400px] text-[22px] font-normal">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum
+          </p>
+        </div>
+        <div className="bg-blue-one relative mx-auto h-[584px] max-w-[1088px] overflow-hidden rounded-2xl pt-10 text-white">
+          <div className="mx-auto mb-6 flex w-[896px] justify-between">
+            <div className="w-[200px]">
+              <div className="flex items-center gap-4">
+                <img src="src/assets/images/icon-book.svg" alt="" />
+                <h5 className="text-lg font-medium">Schools</h5>
+              </div>
+              <p className="font-montserat text-sm font-medium">
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo velit, sed quia non
+              </p>
+            </div>
+            <div className="w-[200px]">
+              <div className="flex items-center gap-4">
+                <img src="src/assets/images/icon-heart.svg" alt="" />
+                <h5 className="text-lg font-medium">Parents</h5>
+              </div>
+              <p className="font-montserat text-sm font-medium">
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo velit, sed quia non
+              </p>
+            </div>
+            <div className="w-[200px]">
+              <div className="flex items-center gap-4">
+                <img src="src/assets/images/icon-chalkboard.svg" alt="" />
+                <h5 className="text-lg font-medium">Teachers</h5>
+              </div>
+              <p className="font-montserat text-sm font-medium">
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo velit, sed quia non
+              </p>
+            </div>
+            <div className="w-[200px]">
+              <div className="flex items-center gap-4">
+                <img src="src/assets/images/icon-person.svg" alt="" />
+                <h5 className="text-lg font-medium">Students</h5>
+              </div>
+              <p className="font-montserat text-sm font-medium">
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo velit, sed quia non
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto h-[420px] w-[896px] rounded-t-2xl bg-white"></div>
+        </div>
+      </div>
+    </section>
   );
 }
 
