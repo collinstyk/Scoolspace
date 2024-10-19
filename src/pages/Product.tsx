@@ -67,6 +67,18 @@ function FeaturesSection() {
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
+        {
+          id: 1,
+          head: "Realtime Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 2,
+          head: "Realtime Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
       ],
     },
     {
@@ -78,6 +90,18 @@ function FeaturesSection() {
       accordionData: [
         {
           id: 0,
+          head: "School Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 1,
+          head: "School Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 2,
           head: "School Feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
@@ -97,6 +121,18 @@ function FeaturesSection() {
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
+        {
+          id: 1,
+          head: "Teacher Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 2,
+          head: "Teacher Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
       ],
     },
     {
@@ -112,6 +148,18 @@ function FeaturesSection() {
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
+        {
+          id: 1,
+          head: "Parent Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 2,
+          head: "Parent Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
       ],
     },
     {
@@ -123,6 +171,18 @@ function FeaturesSection() {
       accordionData: [
         {
           id: 0,
+          head: "Student Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 1,
+          head: "Student Feature",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 2,
           head: "Student Feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
