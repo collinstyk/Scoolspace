@@ -24,6 +24,7 @@ export default {
         "blue-one": "#00ADE6",
         "passion-red": "#FF3333",
         "purple-one": "#9747FF",
+        "elegant-purple": "#662D91",
         "dark-blue": "#00223A",
         "pitch-black": "#00111C",
         "black-one": "#1E1E1E",
