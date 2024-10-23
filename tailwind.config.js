@@ -4,13 +4,16 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "radial-blue": "radial-gradient(circle, #000c3c, #00091f);",
+        "radial-blue": "radial-gradient(circle, #000E47, #00091F)",
+        "radial-blue-grid":
+          "url('src/assets/images/background-grid.svg'), radial-gradient(circle, #000c3c, #00091f)",
         "dark-radial-blue": "radial-gradient(circle, #000B3B, #00091A)",
         "light-linear-blue": "linear-gradient(#29A5DC26, #FFFFFF26)",
         "light-linear-blue-grid":
           "linear-gradient(#29A5DC26, #FFFFFF26), url('src/assets/images/background-grid.svg')",
         "linear-blur-gradient":
           "linear-gradient(90deg, #ffffff1a, 80%, transparent)",
+        platforms: "url('src/assets/images/platforms.png')",
         grid: 'url("src/assets/images/background-grid.svg")',
       },
       backgroundColor: {
@@ -31,6 +34,12 @@ export default {
         "dark-blue": "#00223A",
         "pitch-black": "#00111C",
         "black-one": "#1E1E1E",
+      },
+      boxShadow: {
+        "sm-light-blue": "0 5px 10px 0 #02ADE626",
+        "sm-dark-blue": "0 5px 10px 0 #00223A1A",
+        "md-light-blue": "0 18px 18px 0 #02ADE626",
+        "md-dark-blue": "0 19px 19px 0 #00223A1A",
       },
       fontFamily: {
         "circular-std": ["Circular std", "sans-serif"],

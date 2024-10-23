@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Footer from "../ui/Footer";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
@@ -7,6 +8,9 @@ export default function Landing() {
       <HeroSection />
       <LandingSection2 />
       <Features />
+      <Section3 />
+      <FinalCTA />
+      <Footer />
     </>
   );
 }
@@ -14,40 +18,42 @@ export default function Landing() {
 function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <section className="max-h-fit min-h-dvh w-full min-w-[1280px] bg-radial-blue pt-16 text-white">
-      <Navbar navItems={navItems} type="dark" />
-      <div className="flex justify-center pb-48">
-        <div className="mt-32 flex items-center gap-[103px]">
-          <div className="w-[460px]">
-            <h1 className="text-[64px] font-bold leading-tight">
-              Lorem ipsum dolor sit amet consectetur
-            </h1>
-            <p className="text-base font-medium">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem.
-            </p>
-            <div className="mt-6 flex gap-4">
-              <Button to="">Join our waitlist</Button>
-              <Button variant="outlined-light" to="">
-                Contact us
-              </Button>
+    <div className="bg-radial-blue">
+      <section className="max-h-fit min-h-dvh w-full min-w-[1280px] bg-grid pt-16 text-white">
+        <Navbar navItems={navItems} type="dark" />
+        <div className="flex justify-center pb-48">
+          <div className="mt-32 flex items-center gap-[103px]">
+            <div className="w-[460px]">
+              <h1 className="text-[64px] font-bold leading-tight">
+                Lorem ipsum dolor sit amet consectetur
+              </h1>
+              <p className="text-base font-medium">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem.
+              </p>
+              <div className="mt-6 flex gap-4">
+                <Button to="">Join our waitlist</Button>
+                <Button variant="outlined-light" to="">
+                  Contact us
+                </Button>
+              </div>
+            </div>
+            <div className="relative h-[400px] w-[400px]">
+              <img
+                src="src/assets/images/bg-hero-1.png"
+                alt=""
+                className="h-full w-full"
+              />
+              <img
+                src="src/assets/images/Hero-image.png"
+                alt="hero-image"
+                className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+              />
             </div>
           </div>
-          <div className="relative h-[400px] w-[400px]">
-            <img
-              src="src/assets/images/bg-hero-1.png"
-              alt=""
-              className="h-full w-full"
-            />
-            <img
-              src="src/assets/images/Hero-image.png"
-              alt="hero-image"
-              className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-            />
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
@@ -137,7 +143,7 @@ function Features() {
     },
   ];
   return (
-    <div className="mx-auto flex w-[962px] flex-col gap-8">
+    <div className="mx-auto mb-[200px] mt-8 flex w-[962px] flex-col gap-8">
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
@@ -218,25 +224,106 @@ function Feature({
           size="normal"
           className={`${variant === "fill" ? "mt-[132px]" : "mt-8"}`}
         >
-          {btnText || "Learn more"}
+          {btnText}
         </Button>
       </div>
     </div>
   );
 }
 
-/*
-{
-bgColor:,
-subHeading: 'Feature for Sub-heading',
-heading: 'Some big text for feature header.',
-body: 'At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.',
-  variant: '',
-  btnVariant: '',
-  flow: '',
-  contrast: '',
-  btnText: 'Join our waitlist',
-  userTypeImg: null,
-  featureName: 'management',
+function Section3() {
+  return (
+    <div className="min-h-dvh w-full bg-pitch-black bg-grid pb-[200px] pt-[102px]">
+      <div className="mx-auto flex w-[992px] justify-between">
+        <h1 className="text-[40px] font-bold leading-[50.4px] text-white">
+          Anyway, we’re just getting started
+        </h1>
+        <section className="flex h-[120px] flex-col gap-8">
+          <p className="text-lg font-medium leading-[22.68px] text-white">
+            At vero eos et accusamus et iusto tui odio na se tu latino
+            praesentium voluptatum.
+          </p>
+          <Button variant="outlined-light" size="normal" className="w-fit">
+            Contact us
+          </Button>
+        </section>
+      </div>
+
+      <div className="mx-auto mt-[104px] grid h-[656px] w-[992px] grid-cols-3 grid-rows-2 gap-4">
+        <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+          <div>
+            <div className="mb-[10px] h-[208px]">
+              <img src="src/assets/images/managed-access.png" alt="" />
+            </div>
+            <div className="relative flex">
+              <p className="text-lg font-bold leading-[22.68px] text-white">
+                Properly managed access control
+              </p>
+              <span className="absolute bottom-0 right-0">01</span>
+            </div>
+          </div>
+        </div>
+        <div className="col-start-2 col-end-3 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+          <div>
+            <div className="mb-[10px] h-[208px]">
+              <img src="src/assets/images/functionality-access.png" alt="" />
+            </div>
+            <div className="relative flex">
+              <p className="text-lg font-bold leading-[22.68px] text-white">
+                Seamless functionality access
+              </p>
+              <span className="absolute bottom-0 right-0">01</span>
+            </div>
+          </div>
+        </div>
+        <div className="col-start-3 col-end-4 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+          <div>
+            <div className="mb-[10px] h-[208px]">
+              <img src="src/assets/images/realtime-update.png" alt="" />
+            </div>
+            <div className="relative flex">
+              <p className="text-lg font-bold leading-[22.68px] text-white">
+                Realtime updates via notifications
+              </p>
+              <span className="absolute bottom-0 right-0">01</span>
+            </div>
+          </div>
+        </div>
+        <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+          <div>
+            <div className="mb-[10px] h-[208px]">
+              <img src="src/assets/images/analytics.png" alt="" />
+            </div>
+            <div className="relative flex">
+              <p className="text-lg font-bold leading-[22.68px] text-white">
+                Realtime dashboard analytics
+              </p>
+              <span className="absolute bottom-0 right-0">01</span>
+            </div>
+          </div>
+        </div>
+        <div className="bg-platforms col-start-2 col-end-4 rounded-2xl bg-cover bg-[0%_13%]"></div>
+      </div>
+    </div>
+  );
 }
-*/
+
+function FinalCTA() {
+  return (
+    <div className="bg-gradient-to-br from-[#9DE7FF] to-[#D9D9D9]/0 px-[144px] py-[100px]">
+      <section className="flex justify-between">
+        <h1 className="text-5xl font-semibold text-pitch-black">
+          Ready to transform your school?
+        </h1>
+        <div className="flex gap-4">
+          <Button variant="secondary" className="shadow-md-dark-blue">
+            Join our waitlist
+          </Button>
+          <Button variant="primary" className="shadow-md-light-blue">
+            Contact us
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+}

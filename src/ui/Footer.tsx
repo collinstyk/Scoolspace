@@ -1,6 +1,8 @@
+import React from "react";
+
 function Footer() {
   return (
-    <footer className="bg-dark-radial-blue font-circular-std h-[304px] w-full min-w-[1280px] py-12 text-white">
+    <footer className="h-[304px] w-full min-w-[1280px] bg-dark-radial-blue py-12 font-circular-std text-white">
       <div className="mx-auto flex w-[1088px] justify-between">
         <div className="flex w-[282px] flex-col items-start gap-4">
           <img
