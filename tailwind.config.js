@@ -9,6 +9,8 @@ export default {
         "light-linear-blue": "linear-gradient(#29A5DC26, #FFFFFF26)",
         "light-linear-blue-grid":
           "linear-gradient(#29A5DC26, #FFFFFF26), url('src/assets/images/background-grid.svg')",
+        "linear-blur-gradient":
+          "linear-gradient(90deg, #ffffff1a, 80%, transparent)",
         grid: 'url("src/assets/images/background-grid.svg")',
       },
       backgroundColor: {
@@ -16,6 +18,7 @@ export default {
         "blue-one-hover": "#008bb8",
         "dark-blue": "#00223A",
         "dark-blue-hover": "#001829",
+        "elegant-purple": "#662D91",
       },
       colors: {
         "pitch-black": "#00111C",
@@ -31,7 +34,7 @@ export default {
       },
       fontFamily: {
         "circular-std": ["Circular std", "sans-serif"],
-        montserat: ["Montserrat", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },
