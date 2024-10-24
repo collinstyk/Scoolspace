@@ -1,9 +1,7 @@
-import React from "react";
-
 function Footer() {
   return (
-    <footer className="h-[304px] w-full min-w-[1280px] bg-dark-radial-blue py-12 font-circular-std text-white">
-      <div className="mx-auto flex w-[1088px] justify-between">
+    <footer className="h-[304px] w-full min-w-[1280px] bg-dark-radial-blue px-40 py-[44px] font-circular-std text-white">
+      <div className="mx-auto flex w-full justify-between">
         <div className="flex flex-col gap-6">
           <div className="flex w-[282px] flex-col items-start gap-2">
             <img

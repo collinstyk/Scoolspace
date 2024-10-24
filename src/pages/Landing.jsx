@@ -18,41 +18,48 @@ export default function Landing() {
 function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <div className="bg-radial-blue">
-      <section className="max-h-fit min-h-dvh w-full min-w-[1280px] bg-grid pt-16 text-white">
-        <Navbar navItems={navItems} type="dark" />
-        <div className="flex justify-center pb-48">
-          <div className="mt-32 flex items-center gap-[103px]">
-            <div className="w-[460px]">
-              <h1 className="text-[64px] font-bold leading-tight">
-                Lorem ipsum dolor sit amet consectetur
-              </h1>
-              <p className="text-base font-medium">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem.
-              </p>
-              <div className="mt-6 flex gap-4">
-                <Button to="">Join our waitlist</Button>
-                <Button variant="outlined-light" to="">
-                  Contact us
-                </Button>
+    <div className="relative w-full bg-radial-blue">
+      {/* <img
+        src="images/background-grid-design.png"
+        alt=""
+        className="absolute w-full"
+      /> */}
+      <div className="bg-grid1">
+        <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
+          <Navbar navItems={navItems} type="dark" />
+          <div className="flex w-full justify-center pb-48">
+            <div className="mt-32 flex w-full items-center justify-between">
+              <div className="w-[460px]">
+                <h1 className="text-[64px] font-bold leading-tight">
+                  Lorem ipsum dolor sit amet consectetur
+                </h1>
+                <p className="text-base font-medium">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem.
+                </p>
+                <div className="mt-6 flex gap-4">
+                  <Button to="">Join our waitlist</Button>
+                  <Button variant="outlined-light" to="">
+                    Contact us
+                  </Button>
+                </div>
+              </div>
+              <div className="relative h-[400px] w-[400px]">
+                <img
+                  src="images/bg-hero-1.png"
+                  alt=""
+                  className="h-full w-full"
+                />
+                <img
+                  src="images/Hero-image.png"
+                  alt="hero-image"
+                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+                />
               </div>
             </div>
-            <div className="relative h-[400px] w-[400px]">
-              <img
-                src="images/bg-hero-1.png"
-                alt=""
-                className="h-full w-full"
-              />
-              <img
-                src="images/Hero-image.png"
-                alt="hero-image"
-                className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-              />
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
@@ -77,7 +84,7 @@ function LandingSection2() {
 function Features() {
   const featuresInput = [
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -90,7 +97,7 @@ function Features() {
       featureName: null,
     },
     {
-      bgColor: "bg-gradient-to-r from-[#662D91] to-[#662D91]/30",
+      bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -103,7 +110,7 @@ function Features() {
       featureName: "management",
     },
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -116,7 +123,7 @@ function Features() {
       featureName: "teacher",
     },
     {
-      bgColor: "bg-gradient-to-r from-[#F55967] to-[#F55967]/70",
+      bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -129,7 +136,7 @@ function Features() {
       featureName: null,
     },
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -233,7 +240,7 @@ function Feature({
 
 function Section3() {
   return (
-    <div className="min-h-dvh w-full bg-pitch-black bg-grid pb-[200px] pt-[102px]">
+    <div className="bg-grid2 min-h-dvh w-full bg-pitch-black pb-[200px] pt-[102px]">
       <div className="mx-auto flex w-[992px] justify-between">
         <h1 className="text-[40px] font-bold leading-[50.4px] text-white">
           Anyway, we’re just getting started
@@ -302,7 +309,7 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-platforms bg-cover bg-[0%_13%] px-6 py-[31px]">
+        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-cover bg-[0%_13%] px-6 py-[31px]">
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
             <span className="absolute right-0 top-0 text-xs font-semibold">

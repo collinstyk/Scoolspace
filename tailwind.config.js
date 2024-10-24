@@ -13,8 +13,9 @@ export default {
           "linear-gradient(#29A5DC26, #FFFFFF26), url('images/background-grid.svg')",
         "linear-blur-gradient":
           "linear-gradient(90deg, #ffffff1a, 80%, transparent)",
-        platforms: "url('images/platforms.png')",
-        grid: 'url("images/background-grid.svg")',
+        platforms: "url('public/images/platforms.png')",
+        grid1: 'url("images/background-grid-design.png")',
+        grid2: 'url("images/background-grid-design2.png")',
       },
       backgroundColor: {
         "blue-one": "#00ADE6",
