@@ -6,7 +6,7 @@ function Footer() {
       <div className="mx-auto flex w-[1088px] justify-between">
         <div className="flex w-[282px] flex-col items-start gap-4">
           <img
-            src="src/assets/images/Scoolspace-logo.svg"
+            src="images/Scoolspace-logo.svg"
             alt="Scoolspace logo"
             className="h-12"
           />
@@ -17,16 +17,16 @@ function Footer() {
           </p>
           <div className="align-center flex gap-8 pt-4">
             <a href="">
-              <img src="src/assets/images/icon-twitter.svg" alt="" />
+              <img src="images/icon-twitter.svg" alt="" />
             </a>
             <a href="">
-              <img src="src/assets/images/icon-instagram.svg" alt="" />
+              <img src="images/icon-instagram.svg" alt="" />
             </a>
             <a href="">
-              <img src="src/assets/images/icon-linkedIn.svg" alt="" />
+              <img src="images/icon-linkedIn.svg" alt="" />
             </a>
             <a href="">
-              <img src="src/assets/images/icon-facebook.svg" alt="" />
+              <img src="images/icon-facebook.svg" alt="" />
             </a>
           </div>
         </div>

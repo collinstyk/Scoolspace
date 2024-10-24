@@ -5,7 +5,7 @@ function Navbar({ navItems, type }) {
     <nav className="mx-auto flex h-[42px] w-[68rem] items-center justify-between">
       <div className="flex h-[40px] items-center gap-x-2.5">
         <img
-          src="src/assets/images/icon-logomark.svg"
+          src="images/icon-logomark.svg"
           alt="Scoolspace logo"
           className="h-10 w-10"
         />
