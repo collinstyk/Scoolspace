@@ -302,7 +302,18 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-4 rounded-2xl bg-platforms bg-cover bg-[0%_13%]"></div>
+        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-platforms bg-cover bg-[0%_13%] px-6 py-[31px]">
+          <div className="relative w-full text-white">
+            <h5 className="text-lg font-bold">Available on every platform</h5>
+            <span className="absolute right-0 top-0 text-xs font-semibold">
+              05
+            </span>
+          </div>
+          <div className="flex gap-4">
+            <img src="images/Google-white.svg" alt="" className="h-6 w-6" />
+            <img src="images/AppleFilled.svg" alt="" className="h-6 w-6" />
+          </div>
+        </div>
       </div>
     </div>
   );
