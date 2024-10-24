@@ -6,15 +6,15 @@ export default {
       backgroundImage: {
         "radial-blue": "radial-gradient(circle, #000E47, #00091F)",
         "radial-blue-grid":
-          "url('src/assets/images/background-grid.svg'), radial-gradient(circle, #000c3c, #00091f)",
+          "url('images/background-grid.svg'), radial-gradient(circle, #000c3c, #00091f)",
         "dark-radial-blue": "radial-gradient(circle, #000B3B, #00091A)",
         "light-linear-blue": "linear-gradient(#29A5DC26, #FFFFFF26)",
         "light-linear-blue-grid":
-          "linear-gradient(#29A5DC26, #FFFFFF26), url('src/assets/images/background-grid.svg')",
+          "linear-gradient(#29A5DC26, #FFFFFF26), url('images/background-grid.svg')",
         "linear-blur-gradient":
           "linear-gradient(90deg, #ffffff1a, 80%, transparent)",
-        platforms: "url('src/assets/images/platforms.png')",
-        grid: 'url("src/assets/images/background-grid.svg")',
+        platforms: "url('images/platforms.png')",
+        grid: 'url("images/background-grid.svg")',
       },
       backgroundColor: {
         "blue-one": "#00ADE6",

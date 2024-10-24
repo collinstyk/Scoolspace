@@ -3,19 +3,13 @@ import Button from "../components/Button";
 function Navbar({ navItems, type }) {
   return (
     <nav className="mx-auto flex h-[42px] w-[68rem] items-center justify-between">
-      <div className="flex h-[40px] items-center gap-x-2.5">
+      <div className="h-[40px] items-center">
         <img
-          src="src/assets/images/icon-logomark.svg"
+          src="images/Scoolspace-logo.svg"
           alt="Scoolspace logo"
-          className="h-10 w-10"
+          className="h-full w-full"
         />
-        <h1
-          className={`text-[22px] font-medium ${type === "dark" ? "text-white" : "text-[#00223A]"}`}
-        >
-          Scoolspace
-        </h1>
       </div>
-
       <div className="flex items-center gap-x-6 text-base font-normal">
         <div className="w-fit rounded-xl bg-gradient-to-r from-transparent to-white/20 p-[1px]">
           <ul className="flex list-none gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-white/20 to-blue-950 text-white">

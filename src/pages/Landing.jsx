@@ -40,12 +40,12 @@ function HeroSection() {
             </div>
             <div className="relative h-[400px] w-[400px]">
               <img
-                src="src/assets/images/bg-hero-1.png"
+                src="images/bg-hero-1.png"
                 alt=""
                 className="h-full w-full"
               />
               <img
-                src="src/assets/images/Hero-image.png"
+                src="images/Hero-image.png"
                 alt="hero-image"
                 className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
               />
@@ -194,7 +194,7 @@ function Feature({
     >
       {variant === "dual" && (
         <div>
-          <img src={`src/assets/images/${featureName}-1.png`} alt="" />
+          <img src={`images/${featureName}-1.png`} alt="" />
         </div>
       )}
       <div
@@ -212,7 +212,7 @@ function Feature({
           </div>
           {userTypeImg && (
             <img
-              src={`src/assets/images/${userTypeImg}.png`}
+              src={`images/${userTypeImg}.png`}
               alt=""
               className="w-[87px]"
             />
@@ -253,7 +253,7 @@ function Section3() {
         <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="src/assets/images/managed-access.png" alt="" />
+              <img src="images/managed-access.png" alt="" />
             </div>
             <div className="relative flex">
               <p className="text-lg font-bold leading-[22.68px] text-white">
@@ -266,7 +266,7 @@ function Section3() {
         <div className="col-start-2 col-end-3 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="src/assets/images/functionality-access.png" alt="" />
+              <img src="images/functionality-access.png" alt="" />
             </div>
             <div className="relative flex">
               <p className="text-lg font-bold leading-[22.68px] text-white">
@@ -279,7 +279,7 @@ function Section3() {
         <div className="col-start-3 col-end-4 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="src/assets/images/realtime-update.png" alt="" />
+              <img src="images/realtime-update.png" alt="" />
             </div>
             <div className="relative flex">
               <p className="text-lg font-bold leading-[22.68px] text-white">
@@ -292,7 +292,7 @@ function Section3() {
         <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="src/assets/images/analytics.png" alt="" />
+              <img src="images/analytics.png" alt="" />
             </div>
             <div className="relative flex">
               <p className="text-lg font-bold leading-[22.68px] text-white">
@@ -302,7 +302,18 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="bg-platforms col-start-2 col-end-4 rounded-2xl bg-cover bg-[0%_13%]"></div>
+        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-platforms bg-cover bg-[0%_13%] px-6 py-[31px]">
+          <div className="relative w-full text-white">
+            <h5 className="text-lg font-bold">Available on every platform</h5>
+            <span className="absolute right-0 top-0 text-xs font-semibold">
+              05
+            </span>
+          </div>
+          <div className="flex gap-4">
+            <img src="images/Google-white.svg" alt="" className="h-6 w-6" />
+            <img src="images/AppleFilled.svg" alt="" className="h-6 w-6" />
+          </div>
+        </div>
       </div>
     </div>
   );
