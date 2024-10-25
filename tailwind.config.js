@@ -24,6 +24,9 @@ export default {
         "dark-blue-hover": "#001829",
         "elegant-purple": "#662D91",
       },
+      backgroundSize: {
+        50: "120% 160%",
+      },
       colors: {
         "pitch-black": "#00111C",
       },
@@ -43,8 +46,7 @@ export default {
         "md-dark-blue": "0 19px 19px 0 #00223A1A",
       },
       fontFamily: {
-        "circular-std": ["Circular std", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        "plus-jakarta-sans": "Plus Jakarta Sans",
       },
     },
   },
