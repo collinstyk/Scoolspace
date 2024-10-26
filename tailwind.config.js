@@ -16,6 +16,7 @@ export default {
         platforms: "url('public/images/platforms.png')",
         grid1: 'url("images/background-grid-design.png")',
         grid2: 'url("images/background-grid-design2.png")',
+        grid3: 'url("images/background-grid-design3.png")',
       },
       backgroundColor: {
         "blue-one": "#00ADE6",
@@ -44,6 +45,9 @@ export default {
         "sm-dark-blue": "0 5px 10px 0 #00223A1A",
         "md-light-blue": "0 18px 18px 0 #02ADE626",
         "md-dark-blue": "0 19px 19px 0 #00223A1A",
+      },
+      borderColor: {
+        "dark-blue": "#00223A",
       },
       fontFamily: {
         "plus-jakarta-sans": "Plus Jakarta Sans",

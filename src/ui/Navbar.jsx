@@ -1,18 +1,26 @@
 import Button from "../components/Button";
 
-function Navbar({ navItems, type }) {
+function Navbar({ navItems, btnText, type, btnSize }) {
   return (
     <nav className="mx-auto flex h-[42px] w-full items-center justify-between">
       <div className="h-[40px] items-center">
         <img
-          src="images/Scoolspace-logo.svg"
+          src={`${type === "light" ? "images/Scoolspace-logo-dark.svg" : "images/Scoolspace-logo.svg"}`}
           alt="Scoolspace logo"
           className="h-full w-full"
         />
       </div>
       <div className="flex items-center gap-x-6 text-base font-normal">
-        <div className="w-fit rounded-xl bg-gradient-to-r from-transparent to-white/20 p-[1px]">
-          <ul className="flex list-none gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-white/20 to-blue-950 text-white">
+        <div
+          className={
+            type === "dark"
+              ? "w-fit rounded-xl bg-gradient-to-r from-transparent to-white/20 p-[1px]"
+              : ""
+          }
+        >
+          <ul
+            className={`flex list-none gap-2 overflow-hidden rounded-xl ${type === "dark" ? "bg-gradient-to-r from-white/20 to-blue-950 text-white" : "bg-gradient-to-br from-[#D0edf8] to-[#b8e6f6] text-[#1E1E1E]"}`}
+          >
             {navItems.map((el, index) => (
               <li
                 key={`${index}`}
@@ -20,7 +28,7 @@ function Navbar({ navItems, type }) {
               >
                 <a
                   href="#"
-                  className="inline-block px-4 py-2 transition hover:text-opacity-80"
+                  className="inline-block px-4 py-2 text-lg transition hover:text-opacity-80"
                 >
                   {el}
                 </a>
@@ -30,11 +38,11 @@ function Navbar({ navItems, type }) {
         </div>
 
         <Button
-          variant={`${type === "dark" ? "primary" : "secondary"}`} // | outlined-light | outlined-dark
-          size="medium"
+          variant={`${type === "dark" ? "primary" : "secondary"}`}
+          size={btnSize}
           to="#"
         >
-          Join our waitlist
+          {btnText}
         </Button>
       </div>
     </nav>

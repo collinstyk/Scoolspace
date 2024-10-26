@@ -1,5 +1,4 @@
-import { cva, VariantProps } from "class-variance-authority";
-import React from "react";
+import { cva } from "class-variance-authority";
 
 function Button({ className, children, variant, size, to }) {
   return (
@@ -21,6 +20,8 @@ const buttonStyles = cva(
         "outlined-light": "border-[1px] text-white border-white",
       },
       size: {
+        full: "w-full py-5",
+        large: "px-8 py-3",
         medium: "px-8 py-[9px]",
         normal: "px-6 py-[10px] text-[14px] font-semibold",
         spread: "px-8 py-[14px]",

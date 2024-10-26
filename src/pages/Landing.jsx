@@ -26,7 +26,12 @@ function HeroSection() {
       /> */}
       <div className="bg-grid1">
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
-          <Navbar navItems={navItems} type="dark" />
+          <Navbar
+            navItems={navItems}
+            btnText="Join our waitlist"
+            type="dark"
+            btnSize="medium"
+          />
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="w-[460px]">
@@ -84,6 +89,7 @@ function LandingSection2() {
 function Features() {
   const featuresInput = [
     {
+      id: 1,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -98,6 +104,7 @@ function Features() {
       iconSrc: null,
     },
     {
+      id: 2,
       bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -113,6 +120,7 @@ function Features() {
       iconSrc: "images/icon-schools.png",
     },
     {
+      id: 3,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -128,6 +136,7 @@ function Features() {
       iconSrc: "images/icon-teachers.png",
     },
     {
+      id: 4,
       bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -142,6 +151,7 @@ function Features() {
       iconSrc: null,
     },
     {
+      id: 5,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -162,6 +172,7 @@ function Features() {
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
+            key={input.id}
             bgColor={input.bgColor}
             subHeading={input.subHeading}
             heading={input.heading}
@@ -282,10 +293,12 @@ function Section3() {
               <img src="images/managed-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Properly managed access control
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -295,10 +308,12 @@ function Section3() {
               <img src="images/functionality-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Seamless functionality access
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -308,10 +323,12 @@ function Section3() {
               <img src="images/realtime-update.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime updates via notifications
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -321,17 +338,19 @@ function Section3() {
               <img src="images/analytics.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime dashboard analytics
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
         <div className="bg-50 col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-[18%_7%] px-6 py-[31px]">
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
-            <span className="absolute right-0 top-0 text-xs font-semibold">
+            <span className="absolute right-0 top-0 text-xs font-semibold text-white">
               05
             </span>
           </div>

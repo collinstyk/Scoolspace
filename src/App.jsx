@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Landing from "./pages/Landing";
+import JoinTheWaitlist from "./pages/JoinTheWaitlist";
 import AppLayout from "./ui/AppLayout";
 
 const router = createBrowserRouter([
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
         path: "/",
       },
     ],
+  },
+  {
+    element: <JoinTheWaitlist />,
+    path: "/waitlist",
   },
 ]);
 
