@@ -118,14 +118,14 @@
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 800;
   font-style: italic;
