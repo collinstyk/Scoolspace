@@ -4,62 +4,69 @@ import Navbar from "../ui/Navbar";
 
 export default function Landing() {
   return (
-    <>
+    <div className="font-plus-jakarta-sans w-full">
       <HeroSection />
       <LandingSection2 />
       <Features />
       <Section3 />
       <FinalCTA />
       <Footer />
-    </>
+    </div>
   );
 }
 
 function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <div className="bg-radial-blue">
-      <section className="max-h-fit min-h-dvh w-full min-w-[1280px] bg-grid pt-16 text-white">
-        <Navbar navItems={navItems} type="dark" />
-        <div className="flex justify-center pb-48">
-          <div className="mt-32 flex items-center gap-[103px]">
-            <div className="w-[460px]">
-              <h1 className="text-[64px] font-bold leading-tight">
-                Lorem ipsum dolor sit amet consectetur
-              </h1>
-              <p className="text-base font-medium">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem.
-              </p>
-              <div className="mt-6 flex gap-4">
-                <Button to="">Join our waitlist</Button>
-                <Button variant="outlined-light" to="">
-                  Contact us
-                </Button>
+    <div className="relative w-full bg-radial-blue">
+      {/* <img
+        src="images/background-grid-design.png"
+        alt=""
+        className="absolute w-full"
+      /> */}
+      <div className="bg-grid1">
+        <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
+          <Navbar navItems={navItems} type="dark" />
+          <div className="flex w-full justify-center pb-48">
+            <div className="mt-32 flex w-full items-center justify-between">
+              <div className="w-[460px]">
+                <h1 className="text-[64px] font-bold leading-tight">
+                  Lorem ipsum dolor sit amet consectetur
+                </h1>
+                <p className="text-base font-medium">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem.
+                </p>
+                <div className="mt-6 flex gap-4">
+                  <Button to="">Join our waitlist</Button>
+                  <Button variant="outlined-light" to="">
+                    Contact us
+                  </Button>
+                </div>
+              </div>
+              <div className="relative h-[400px] w-[400px]">
+                <img
+                  src="images/bg-hero-1.png"
+                  alt=""
+                  className="h-full w-full"
+                />
+                <img
+                  src="images/Hero-image.png"
+                  alt="hero-image"
+                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+                />
               </div>
             </div>
-            <div className="relative h-[400px] w-[400px]">
-              <img
-                src="images/bg-hero-1.png"
-                alt=""
-                className="h-full w-full"
-              />
-              <img
-                src="images/Hero-image.png"
-                alt="hero-image"
-                className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-              />
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
 
 function LandingSection2() {
   return (
-    <section className="h-fit bg-white bg-grid py-[170px]">
+    <section className="bg-grid h-fit bg-white py-[170px]">
       <div className="mx-auto flex w-[960px] items-center justify-between">
         <h3 className="w-[400px] text-5xl font-bold text-pitch-black">
           Big text for short section{" "}
@@ -77,7 +84,7 @@ function LandingSection2() {
 function Features() {
   const featuresInput = [
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -87,10 +94,11 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       userTypeImg: null,
-      featureName: null,
+      bgImage: null,
+      iconSrc: null,
     },
     {
-      bgColor: "bg-gradient-to-r from-[#662D91] to-[#662D91]/30",
+      bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -100,10 +108,12 @@ function Features() {
       contrast: "light",
       btnText: "Join our waitlist",
       userTypeImg: null,
+      bgImage: "bg-[url('images/management-1.png')]",
       featureName: "management",
+      iconSrc: "images/icon-schools.png",
     },
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -113,10 +123,12 @@ function Features() {
       contrast: "dark",
       btnText: "Join our waitlist",
       userTypeImg: null,
-      featureName: "teacher",
+      bgImage: "bg-[url('images/teacher-1.png')]",
+      featureName: "Teaching",
+      iconSrc: "images/icon-teachers.png",
     },
     {
-      bgColor: "bg-gradient-to-r from-[#F55967] to-[#F55967]/70",
+      bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -127,9 +139,10 @@ function Features() {
       btnText: "Learn more",
       userTypeImg: null,
       featureName: null,
+      iconSrc: null,
     },
     {
-      bgColor: "bg-gradient-to-r from-[#00ade6] to-[#00ade6]/30",
+      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
       body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
@@ -139,7 +152,9 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       userTypeImg: null,
-      featureName: "student",
+      bgImage: "bg-[url('images/student-1.png')]",
+      featureName: "Learning",
+      iconSrc: "images/icon-students.png",
     },
   ];
   return (
@@ -157,7 +172,9 @@ function Features() {
             contrast={input.contrast}
             btnText={input.btnText}
             userTypeImg={input.userTypeImg}
+            bgImage={input.bgImage}
             featureName={input.featureName}
+            iconSrc={input.iconSrc}
           />
         ))}
       </div>
@@ -186,19 +203,28 @@ function Feature({
   contrast,
   btnText,
   userTypeImg,
+  bgImage,
   featureName,
+  iconSrc,
 }) {
   return (
     <div
       className={`w-full gap-4 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
     >
       {variant === "dual" && (
-        <div>
-          <img src={`images/${featureName}-1.png`} alt="" />
+        <div
+          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl p-8 ${bgImage} bg-cover bg-[82%]`}
+        >
+          <div className="z-10 flex w-full flex-col gap-2">
+            <h3 className="text-2xl font-semibold text-white">
+              Designed for {featureName}
+            </h3>
+            <img src={iconSrc} alt="" className="h-[20px] w-[100px]" />
+          </div>
         </div>
       )}
       <div
-        className={`w-auto rounded-lg px-12 ${variant === "fill" ? "py-8" : "min-w-[581px] py-12"} ${bgColor}`}
+        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "min-w-[581px] py-12"} ${bgColor}`}
       >
         <section className="flex w-[400px] flex-col gap-6">
           <h6 className="text-white">{subHeading}</h6>
@@ -233,7 +259,7 @@ function Feature({
 
 function Section3() {
   return (
-    <div className="min-h-dvh w-full bg-pitch-black bg-grid pb-[200px] pt-[102px]">
+    <div className="min-h-dvh w-full bg-pitch-black bg-grid2 pb-[200px] pt-[102px]">
       <div className="mx-auto flex w-[992px] justify-between">
         <h1 className="text-[40px] font-bold leading-[50.4px] text-white">
           Anyway, we’re just getting started
@@ -302,7 +328,7 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-platforms bg-cover bg-[0%_13%] px-6 py-[31px]">
+        <div className="bg-50 col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-[18%_7%] px-6 py-[31px]">
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
             <span className="absolute right-0 top-0 text-xs font-semibold">
@@ -321,7 +347,7 @@ function Section3() {
 
 function FinalCTA() {
   return (
-    <div className="bg-gradient-to-br from-[#9DE7FF] to-[#D9D9D9]/0 px-[144px] py-[100px]">
+    <div className="bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[144px] py-[100px]">
       <section className="flex justify-between">
         <h1 className="text-5xl font-semibold text-pitch-black">
           Ready to transform your school?

@@ -13,8 +13,9 @@ export default {
           "linear-gradient(#29A5DC26, #FFFFFF26), url('images/background-grid.svg')",
         "linear-blur-gradient":
           "linear-gradient(90deg, #ffffff1a, 80%, transparent)",
-        platforms: "url('images/platforms.png')",
-        grid: 'url("images/background-grid.svg")',
+        platforms: "url('public/images/platforms.png')",
+        grid1: 'url("images/background-grid-design.png")',
+        grid2: 'url("images/background-grid-design2.png")',
       },
       backgroundColor: {
         "blue-one": "#00ADE6",
@@ -22,6 +23,9 @@ export default {
         "dark-blue": "#00223A",
         "dark-blue-hover": "#001829",
         "elegant-purple": "#662D91",
+      },
+      backgroundSize: {
+        50: "120% 160%",
       },
       colors: {
         "pitch-black": "#00111C",
@@ -42,8 +46,7 @@ export default {
         "md-dark-blue": "0 19px 19px 0 #00223A1A",
       },
       fontFamily: {
-        "circular-std": ["Circular std", "sans-serif"],
-        montserrat: ["Montserrat", "sans-serif"],
+        "plus-jakarta-sans": "Plus Jakarta Sans",
       },
     },
   },

@@ -2,7 +2,7 @@ import Button from "../components/Button";
 
 function Navbar({ navItems, type }) {
   return (
-    <nav className="mx-auto flex h-[42px] w-[68rem] items-center justify-between">
+    <nav className="mx-auto flex h-[42px] w-full items-center justify-between">
       <div className="h-[40px] items-center">
         <img
           src="images/Scoolspace-logo.svg"

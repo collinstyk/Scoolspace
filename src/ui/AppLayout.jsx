@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
 
 function AppLayout() {
   return (
     <>
-      <main className="font-circular-std bg-blue-white min-w-[1280px]">
+      <main className="bg-blue-white w-[1440px] font-circular-std">
         <Outlet />
       </main>
-      <Footer />
     </>
   );
 }
