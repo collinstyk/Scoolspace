@@ -12,6 +12,10 @@ export default defineConfig({
           src: "src/images",
           dest: "",
         },
+        {
+          src: "src/fonts",
+          dest: "",
+        },
       ],
     }),
   ],
