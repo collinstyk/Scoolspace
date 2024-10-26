@@ -4,7 +4,7 @@ import Navbar from "../ui/Navbar";
 
 export default function Landing() {
   return (
-    <div className="font-plus-jakarta-sans w-full">
+    <div className="w-full font-plus-jakarta-sans">
       <HeroSection />
       <LandingSection2 />
       <Features />
@@ -35,7 +35,7 @@ function HeroSection() {
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="w-[460px]">
-                <h1 className="text-[64px] font-bold leading-tight">
+                <h1 className="text-[48px] font-bold leading-tight">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
                 <p className="text-base font-medium">
@@ -347,7 +347,7 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="bg-50 col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-[18%_7%] px-6 py-[31px]">
+        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-50 bg-[18%_7%] px-6 py-[31px]">
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
             <span className="absolute right-0 top-0 text-xs font-semibold text-white">
