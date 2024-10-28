@@ -4,6 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        "hero-pattern1":
+          "radial-gradient(circle, #000E474D, #00091F4D), url('images/landing-hero-bg-image-1.png')",
         "radial-blue": "radial-gradient(circle, #000E47, #00091F)",
         "radial-blue-grid":
           "url('images/background-grid.svg'), radial-gradient(circle, #000c3c, #00091f)",
@@ -17,6 +19,14 @@ export default {
         grid1: 'url("images/background-grid-design.png")',
         grid2: 'url("images/background-grid-design2.png")',
         grid3: 'url("images/background-grid-design3.png")',
+        management1:
+          " linear-gradient(#662D914D, #D9D9D900), url('images/management-1.png')",
+        teacher1:
+          "radial-gradient(circle, #D9D9D900, #662D914D), url('images/teacher-1.png')",
+        student1:
+          "radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')",
+        student1:
+          "radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-2.png')",
       },
       backgroundColor: {
         "blue-one": "#00ADE6",

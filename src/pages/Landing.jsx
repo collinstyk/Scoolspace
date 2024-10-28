@@ -19,17 +19,12 @@ function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="relative w-full bg-radial-blue">
-      {/* <img
-        src="images/background-grid-design.png"
-        alt=""
-        className="absolute w-full"
-      /> */}
-      <div className="bg-grid1">
+      <div className="bg-hero-pattern1 bg-[length:100%_108%] bg-no-repeat bg-blend-multiply">
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
           <Navbar
             navItems={navItems}
             btnText="Join our waitlist"
-            type="dark"
+            type="foggy"
             btnSize="medium"
           />
           <div className="flex w-full justify-center pb-48">
@@ -48,18 +43,6 @@ function HeroSection() {
                     Contact us
                   </Button>
                 </div>
-              </div>
-              <div className="relative h-[400px] w-[400px]">
-                <img
-                  src="images/bg-hero-1.png"
-                  alt=""
-                  className="h-full w-full"
-                />
-                <img
-                  src="images/Hero-image.png"
-                  alt="hero-image"
-                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-                />
               </div>
             </div>
           </div>
@@ -162,7 +145,7 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       userTypeImg: null,
-      bgImage: "bg-[url('images/student-1.png')]",
+      bgImage: "bg-[url('images/student-2.png')]",
       featureName: "Learning",
       iconSrc: "images/icon-students.png",
     },
@@ -367,15 +350,23 @@ function Section3() {
 function FinalCTA() {
   return (
     <div className="bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[144px] py-[100px]">
-      <section className="flex justify-between">
+      <section className="flex items-center justify-between">
         <h1 className="text-5xl font-semibold text-pitch-black">
           Ready to transform your school?
         </h1>
         <div className="flex gap-4">
-          <Button variant="secondary" className="shadow-md-dark-blue">
+          <Button
+            variant="secondary"
+            size="normal"
+            className="h-fit text-nowrap text-base shadow-md-dark-blue"
+          >
             Join our waitlist
           </Button>
-          <Button variant="primary" className="shadow-md-light-blue">
+          <Button
+            variant="primary"
+            size="normal"
+            className="h-fit text-nowrap text-base shadow-md-light-blue"
+          >
             Contact us
           </Button>
         </div>
@@ -383,3 +374,43 @@ function FinalCTA() {
     </div>
   );
 }
+
+/*<section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
+          <Navbar
+            navItems={navItems}
+            btnText="Join our waitlist"
+            type="oceanic"
+            btnSize="medium"
+          />
+          <div className="flex w-full justify-center pb-48">
+            <div className="mt-32 flex w-full items-center justify-between">
+              <div className="w-[460px]">
+                <h1 className="text-[48px] font-bold leading-tight">
+                  Lorem ipsum dolor sit amet consectetur
+                </h1>
+                <p className="text-base font-medium">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem.
+                </p>
+                <div className="mt-6 flex gap-4">
+                  <Button to="">Join our waitlist</Button>
+                  <Button variant="outlined-light" to="">
+                    Contact us
+                  </Button>
+                </div>
+              </div>
+              <div className="relative h-[400px] w-[400px]">
+                <img
+                  src="images/bg-hero-1.png"
+                  alt=""
+                  className="h-full w-full"
+                />
+                <img
+                  src="images/Hero-image.png"
+                  alt="hero-image"
+                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+                />
+              </div>
+            </div>
+          </div>
+        </section> */

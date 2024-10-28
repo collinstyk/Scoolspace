@@ -40,77 +40,77 @@
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-LightItalic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-LightItalic.ttf")
     format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Italic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Italic.ttf")
     format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-MediumItalic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-MediumItalic.ttf")
     format("truetype");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf")
     format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
     format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-BoldItalic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-BoldItalic.ttf")
     format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf")
     format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
+  src: url("src/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
     format("truetype");
   font-weight: 800;
   font-style: italic;
@@ -133,14 +133,14 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+  src: url("src/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf")
+  src: url("src/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 800;
   font-style: italic;
@@ -148,16 +148,21 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("fonts/Satoshi/Fonts/TTF/Satoshi-Variable.ttf") format("truetype");
+  src: url("src/fonts/Satoshi/Fonts/TTF/Satoshi-Variable.ttf")
+    format("truetype");
   font-weight: 100 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("fonts/Satoshi/Fonts/TTF/Satoshi-VariableItalic.ttf")
+  src: url("src/fonts/Satoshi/Fonts/TTF/Satoshi-VariableItalic.ttf")
     format("truetype");
   font-weight: 100 800;
   font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: light) {

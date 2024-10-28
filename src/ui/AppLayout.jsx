@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 function AppLayout() {
   return (
     <>
-      <main className="bg-blue-white w-[1440px] font-circular-std">
+      <main className="w-screen bg-white">
         <Outlet />
       </main>
     </>

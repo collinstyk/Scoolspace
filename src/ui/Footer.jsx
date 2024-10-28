@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="w-full min-w-[1280px] bg-dark-radial-blue px-40 py-[44px] font-circular-std text-white">
+    <footer className="font-circular-std w-full min-w-[992px] bg-dark-radial-blue px-40 py-[44px] text-white">
       <div className="mx-auto flex w-full justify-between">
         <div className="flex flex-col gap-6">
           <div className="flex w-[282px] flex-col items-start gap-2">
@@ -76,7 +76,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <p className="mx-auto mt-12 w-[1088px] text-center text-xs font-normal tracking-widest">
+      <p className="mx-auto mt-12 w-full text-center text-xs font-normal tracking-widest">
         Copyright © 2024 Xikolo LLC. All rights reserved
       </p>
     </footer>
