@@ -4,7 +4,7 @@ import Navbar from "../ui/Navbar";
 
 export default function Landing() {
   return (
-    <div className="font-plus-jakarta-sans w-full">
+    <div className="w-full font-plus-jakarta-sans">
       <HeroSection />
       <LandingSection2 />
       <Features />
@@ -19,18 +19,18 @@ function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="relative w-full bg-radial-blue">
-      {/* <img
-        src="images/background-grid-design.png"
-        alt=""
-        className="absolute w-full"
-      /> */}
-      <div className="bg-grid1">
+      <div className="bg-hero-pattern1 bg-[length:100%_108%] bg-no-repeat bg-blend-multiply">
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
-          <Navbar navItems={navItems} type="dark" />
+          <Navbar
+            navItems={navItems}
+            btnText="Join our waitlist"
+            type="foggy"
+            btnSize="medium"
+          />
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="w-[460px]">
-                <h1 className="text-[64px] font-bold leading-tight">
+                <h1 className="text-[48px] font-bold leading-tight">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
                 <p className="text-base font-medium">
@@ -43,18 +43,6 @@ function HeroSection() {
                     Contact us
                   </Button>
                 </div>
-              </div>
-              <div className="relative h-[400px] w-[400px]">
-                <img
-                  src="images/bg-hero-1.png"
-                  alt=""
-                  className="h-full w-full"
-                />
-                <img
-                  src="images/Hero-image.png"
-                  alt="hero-image"
-                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-                />
               </div>
             </div>
           </div>
@@ -84,6 +72,7 @@ function LandingSection2() {
 function Features() {
   const featuresInput = [
     {
+      id: 1,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -98,6 +87,7 @@ function Features() {
       iconSrc: null,
     },
     {
+      id: 2,
       bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -108,11 +98,13 @@ function Features() {
       contrast: "light",
       btnText: "Join our waitlist",
       userTypeImg: null,
-      bgImage: "bg-[url('images/management-1.png')]",
+      bgImage:
+        "url('images/management-1.png'), linear-gradient(#662D914D, #D9D9D900)",
       featureName: "management",
       iconSrc: "images/icon-schools.png",
     },
     {
+      id: 3,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -123,11 +115,13 @@ function Features() {
       contrast: "dark",
       btnText: "Join our waitlist",
       userTypeImg: null,
-      bgImage: "bg-[url('images/teacher-1.png')]",
+      bgImage:
+        "url('images/teacher-1.png'), radial-gradient(circle, #D9D9D900, #662D914D)",
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
     },
     {
+      id: 4,
       bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -142,6 +136,7 @@ function Features() {
       iconSrc: null,
     },
     {
+      id: 5,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "Feature for Sub-heading",
       heading: "Some big text for feature header.",
@@ -152,7 +147,9 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       userTypeImg: null,
-      bgImage: "bg-[url('images/student-1.png')]",
+      bgImage:
+        "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
+      //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
       featureName: "Learning",
       iconSrc: "images/icon-students.png",
     },
@@ -162,6 +159,7 @@ function Features() {
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
+            key={input.id}
             bgColor={input.bgColor}
             subHeading={input.subHeading}
             heading={input.heading}
@@ -213,7 +211,10 @@ function Feature({
     >
       {variant === "dual" && (
         <div
-          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl p-8 ${bgImage} bg-cover bg-[82%]`}
+          style={{
+            backgroundImage: bgImage,
+          }}
+          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl bg-cover bg-[82%] p-8 bg-blend-multiply`}
         >
           <div className="z-10 flex w-full flex-col gap-2">
             <h3 className="text-2xl font-semibold text-white">
@@ -282,10 +283,12 @@ function Section3() {
               <img src="images/managed-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Properly managed access control
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -295,10 +298,12 @@ function Section3() {
               <img src="images/functionality-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Seamless functionality access
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -308,10 +313,12 @@ function Section3() {
               <img src="images/realtime-update.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime updates via notifications
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
@@ -321,17 +328,19 @@ function Section3() {
               <img src="images/analytics.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="text-lg font-bold leading-[22.68px] text-white">
+              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime dashboard analytics
               </p>
-              <span className="absolute bottom-0 right-0">01</span>
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+                01
+              </span>
             </div>
           </div>
         </div>
-        <div className="bg-50 col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-[18%_7%] px-6 py-[31px]">
+        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-50 bg-[18%_7%] px-6 py-[31px]">
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
-            <span className="absolute right-0 top-0 text-xs font-semibold">
+            <span className="absolute right-0 top-0 text-xs font-semibold text-white">
               05
             </span>
           </div>
@@ -348,15 +357,23 @@ function Section3() {
 function FinalCTA() {
   return (
     <div className="bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[144px] py-[100px]">
-      <section className="flex justify-between">
+      <section className="flex items-center justify-between">
         <h1 className="text-5xl font-semibold text-pitch-black">
           Ready to transform your school?
         </h1>
         <div className="flex gap-4">
-          <Button variant="secondary" className="shadow-md-dark-blue">
+          <Button
+            variant="secondary"
+            size="normal"
+            className="h-fit text-nowrap text-base shadow-md-dark-blue"
+          >
             Join our waitlist
           </Button>
-          <Button variant="primary" className="shadow-md-light-blue">
+          <Button
+            variant="primary"
+            size="normal"
+            className="h-fit text-nowrap text-base shadow-md-light-blue"
+          >
             Contact us
           </Button>
         </div>
@@ -364,3 +381,43 @@ function FinalCTA() {
     </div>
   );
 }
+
+/*<section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
+          <Navbar
+            navItems={navItems}
+            btnText="Join our waitlist"
+            type="oceanic"
+            btnSize="medium"
+          />
+          <div className="flex w-full justify-center pb-48">
+            <div className="mt-32 flex w-full items-center justify-between">
+              <div className="w-[460px]">
+                <h1 className="text-[48px] font-bold leading-tight">
+                  Lorem ipsum dolor sit amet consectetur
+                </h1>
+                <p className="text-base font-medium">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem.
+                </p>
+                <div className="mt-6 flex gap-4">
+                  <Button to="">Join our waitlist</Button>
+                  <Button variant="outlined-light" to="">
+                    Contact us
+                  </Button>
+                </div>
+              </div>
+              <div className="relative h-[400px] w-[400px]">
+                <img
+                  src="images/bg-hero-1.png"
+                  alt=""
+                  className="h-full w-full"
+                />
+                <img
+                  src="images/Hero-image.png"
+                  alt="hero-image"
+                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+                />
+              </div>
+            </div>
+          </div>
+        </section> */
