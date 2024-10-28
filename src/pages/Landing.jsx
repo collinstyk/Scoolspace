@@ -98,7 +98,8 @@ function Features() {
       contrast: "light",
       btnText: "Join our waitlist",
       userTypeImg: null,
-      bgImage: "bg-[url('images/management-1.png')]",
+      bgImage:
+        "url('images/management-1.png'), linear-gradient(#662D914D, #D9D9D900)",
       featureName: "management",
       iconSrc: "images/icon-schools.png",
     },
@@ -114,7 +115,8 @@ function Features() {
       contrast: "dark",
       btnText: "Join our waitlist",
       userTypeImg: null,
-      bgImage: "bg-[url('images/teacher-1.png')]",
+      bgImage:
+        "url('images/teacher-1.png'), radial-gradient(circle, #D9D9D900, #662D914D)",
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
     },
@@ -145,7 +147,9 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       userTypeImg: null,
-      bgImage: "bg-[url('images/student-2.png')]",
+      bgImage:
+        "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
+      //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
       featureName: "Learning",
       iconSrc: "images/icon-students.png",
     },
@@ -207,7 +211,10 @@ function Feature({
     >
       {variant === "dual" && (
         <div
-          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl p-8 ${bgImage} bg-cover bg-[82%]`}
+          style={{
+            backgroundImage: bgImage,
+          }}
+          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl bg-cover bg-[82%] p-8 bg-blend-multiply`}
         >
           <div className="z-10 flex w-full flex-col gap-2">
             <h3 className="text-2xl font-semibold text-white">

@@ -20,7 +20,7 @@ export default {
         grid2: 'url("images/background-grid-design2.png")',
         grid3: 'url("images/background-grid-design3.png")',
         management1:
-          " linear-gradient(#662D914D, #D9D9D900), url('images/management-1.png')",
+          "linear-gradient(#662D914D, #D9D9D900), url('images/management-1.png')",
         teacher1:
           "radial-gradient(circle, #D9D9D900, #662D914D), url('images/teacher-1.png')",
         student1:
