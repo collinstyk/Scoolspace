@@ -62,6 +62,11 @@ export default {
       fontFamily: {
         "plus-jakarta-sans": "Plus Jakarta Sans",
       },
+      screens: {
+        desktop: "1440px",
+        laptop: "1040px",
+        tablet: "768px",
+      },
     },
   },
   plugins: [],

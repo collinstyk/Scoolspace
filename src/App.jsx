@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Landing from "./pages/Landing";
 import JoinTheWaitlist from "./pages/JoinTheWaitlist";
 import AppLayout from "./ui/AppLayout";
+import ContactUs from "./pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     element: <JoinTheWaitlist />,
     path: "/waitlist",
+  },
+  {
+    element: <ContactUs />,
+    path: "/contact-us",
   },
 ]);
 

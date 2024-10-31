@@ -18,9 +18,9 @@ export default function Landing() {
 function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <div className="relative w-full bg-radial-blue">
-      <div className="bg-hero-pattern1 bg-[length:100%_108%] bg-no-repeat bg-blend-multiply">
-        <section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
+    <div className="relative w-full">
+      <div className="tablet:bg-[length:1040px_100%] laptop:bg-[length:100%_100%] bg-hero-pattern1 bg-center bg-no-repeat bg-blend-multiply">
+        <section className="desktop:w-[1200px] laptop:w-[960px] z-10 mx-auto max-h-fit min-h-dvh pt-8 text-white">
           <Navbar
             navItems={navItems}
             btnText="Join our waitlist"
@@ -54,13 +54,13 @@ function HeroSection() {
 
 function LandingSection2() {
   return (
-    <section className="bg-grid h-fit bg-white py-[170px]">
-      <div className="mx-auto flex w-[960px] items-center justify-between">
-        <h3 className="w-[400px] text-5xl font-bold text-pitch-black">
+    <section className="h-fit bg-white bg-grid1 py-[170px]">
+      <div className="desktop:w-[1200px] laptop:w-[960px] mx-auto flex items-center justify-between">
+        <h3 className="w-[400px] text-[40px] font-bold text-pitch-black">
           Big text for short section{" "}
           <span className="text-blue-one">header</span>.
         </h3>
-        <p className="w-[400px] text-[22px] font-normal text-pitch-black">
+        <p className="w-[400px] text-[18px] font-normal text-pitch-black">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium voluptatum
         </p>

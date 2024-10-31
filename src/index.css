@@ -160,6 +160,12 @@
   font-style: italic;
 }
 
+input {
+  outline: 2px solid transparent;
+  padding: 1rem;
+  outline-offset: 2px;
+}
+
 * {
   box-sizing: border-box;
 }
