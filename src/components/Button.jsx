@@ -24,7 +24,7 @@ const buttonStyles = cva(
         large: "px-8 py-3",
         medium: "px-8 py-[9px]",
         normal: "px-6 py-[10px] text-[14px] font-semibold",
-        spread: "px-8 py-[10px]",
+        spread: "px-8 py-[10px] text-base",
       },
     },
     defaultVariants: {

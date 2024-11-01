@@ -35,9 +35,7 @@ export default {
         "dark-blue-hover": "#001829",
         "elegant-purple": "#662D91",
       },
-      backgroundSize: {
-        50: "120% 160%",
-      },
+
       colors: {
         "pitch-black": "#00111C",
       },
@@ -65,6 +63,7 @@ export default {
       screens: {
         desktop: "1440px",
         laptop: "1040px",
+        landscape: "1024px",
         tablet: "768px",
       },
     },

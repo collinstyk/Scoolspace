@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer className="font-circular-std w-full min-w-[992px] bg-dark-radial-blue px-40 py-[44px] text-white">
-      <div className="mx-auto flex w-full justify-between">
+    <footer className="font-circular-std w-full min-w-[962px] bg-dark-radial-blue px-[120px] py-[44px] text-white">
+      <div className="desktop:min-w-[1200px] laptop:min-w-[800px] mx-auto flex w-full min-w-[962px] justify-between">
         <div className="flex flex-col gap-6">
           <div className="flex w-[282px] flex-col items-start gap-2">
             <img

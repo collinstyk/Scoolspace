@@ -8,7 +8,7 @@ export default function Landing() {
       <HeroSection />
       <LandingSection2 />
       <Features />
-      <Section3 />
+      <LandingSection3 />
       <FinalCTA />
       <Footer />
     </div>
@@ -19,8 +19,8 @@ function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="relative w-full">
-      <div className="tablet:bg-[length:1040px_100%] laptop:bg-[length:100%_100%] bg-hero-pattern1 bg-center bg-no-repeat bg-blend-multiply">
-        <section className="desktop:w-[1200px] laptop:w-[960px] z-10 mx-auto max-h-fit min-h-dvh pt-8 text-white">
+      <div className="tablet:bg-[length:120%_120%] laptop:bg-[length:100%_110%] bg-hero-pattern1 bg-[100%_5%] bg-no-repeat bg-blend-multiply">
+        <section className="desktop:w-[1200px] laptop:w-[960px] w-962px z-10 mx-auto max-h-fit min-h-dvh pt-8 text-white">
           <Navbar
             navItems={navItems}
             btnText="Join our waitlist"
@@ -30,16 +30,18 @@ function HeroSection() {
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="w-[460px]">
-                <h1 className="text-[48px] font-bold leading-tight">
+                <h1 className="desktop:text-[48px] laptop:text-[48px] tablet:text-[40px] font-bold leading-tight">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
-                <p className="text-base font-medium">
+                <p className="desktop:text-base laptop:text-base tablet:text-sm font-medium">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem.
                 </p>
                 <div className="mt-6 flex gap-4">
-                  <Button to="">Join our waitlist</Button>
-                  <Button variant="outlined-light" to="">
+                  <Button className="text-sm" to="">
+                    Join our waitlist
+                  </Button>
+                  <Button className="text-sm" variant="outlined-light" to="">
                     Contact us
                   </Button>
                 </div>
@@ -55,12 +57,12 @@ function HeroSection() {
 function LandingSection2() {
   return (
     <section className="h-fit bg-white bg-grid1 py-[170px]">
-      <div className="desktop:w-[1200px] laptop:w-[960px] mx-auto flex items-center justify-between">
-        <h3 className="w-[400px] text-[40px] font-bold text-pitch-black">
+      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[640px] mx-auto flex items-center justify-between">
+        <h3 className="tablet:text-[32px] desktop:text-[40px] laptop:text-[40px] w-[400px] font-bold text-pitch-black">
           Big text for short section{" "}
           <span className="text-blue-one">header</span>.
         </h3>
-        <p className="w-[400px] text-[18px] font-normal text-pitch-black">
+        <p className="tablet:text-sm desktop:text-lg laptop:text-lg w-[400px] font-normal text-pitch-black">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium voluptatum
         </p>
@@ -155,7 +157,7 @@ function Features() {
     },
   ];
   return (
-    <div className="mx-auto mb-[200px] mt-8 flex w-[962px] flex-col gap-8">
+    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:min-w-[864px] mx-auto mb-[200px] mt-8 flex flex-col gap-8">
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
@@ -178,7 +180,7 @@ function Features() {
       </div>
 
       <div className="flex justify-between font-medium">
-        <h3 className="text-[32px]">
+        <h3 className="desktop:text-[32px] laptop:text-[30px]">
           Something for everyone with{" "}
           <span className="text-blue-one">Scoolspace</span>
         </h3>
@@ -207,17 +209,17 @@ function Feature({
 }) {
   return (
     <div
-      className={`w-full gap-4 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
+      className={`w-full justify-between rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
     >
       {variant === "dual" && (
         <div
           style={{
             backgroundImage: bgImage,
           }}
-          className={`relative flex h-[560px] w-[395px] items-end rounded-2xl bg-cover bg-[82%] p-8 bg-blend-multiply`}
+          className={`desktop:w-[481px] laptop:w-[391px] tablet:w-[307px] relative flex h-[560px] items-end rounded-2xl bg-cover bg-[82%] p-8 bg-blend-multiply`}
         >
           <div className="z-10 flex w-full flex-col gap-2">
-            <h3 className="text-2xl font-semibold text-white">
+            <h3 className="desktop:text-2xl laptop:text-[22px] tablet:text-base font-semibold text-white">
               Designed for {featureName}
             </h3>
             <img src={iconSrc} alt="" className="h-[20px] w-[100px]" />
@@ -225,17 +227,19 @@ function Feature({
         </div>
       )}
       <div
-        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "min-w-[581px] py-12"} ${bgColor}`}
+        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "desktop:min-w-[687px] laptop:min-w-[553px] tablet:min-w-[541px] py-12"} ${bgColor}`}
       >
         <section className="flex w-[400px] flex-col gap-6">
-          <h6 className="text-white">{subHeading}</h6>
+          <h6 className="desktop:text-sm text-xs text-white">{subHeading}</h6>
           <div
             className={`${contrast === "dark" ? "text-pitch-black" : "text-white"}`}
           >
-            <h2 className="text-[40px] font-bold leading-[50.4px]">
+            <h2 className="desktop:text-[40px] laptop:text-[32px] tablet:text-2xl font-bold leading-[50.4px]">
               {heading}
             </h2>
-            <p className="text-base font-medium">{body}</p>
+            <p className="desktop:text-base laptop:text-sm tablet:text-xs font-medium">
+              {body}
+            </p>
           </div>
           {userTypeImg && (
             <img
@@ -249,7 +253,7 @@ function Feature({
         <Button
           variant={btnVariant}
           size="normal"
-          className={`${variant === "fill" ? "mt-[132px]" : "mt-8"}`}
+          className={`laptop:text-sm tablet:text-xs ${variant === "fill" ? "mt-[132px]" : "mt-8"}`}
         >
           {btnText}
         </Button>
@@ -258,15 +262,15 @@ function Feature({
   );
 }
 
-function Section3() {
+function LandingSection3() {
   return (
-    <div className="min-h-dvh w-full bg-pitch-black bg-grid2 pb-[200px] pt-[102px]">
-      <div className="mx-auto flex w-[992px] justify-between">
-        <h1 className="text-[40px] font-bold leading-[50.4px] text-white">
+    <div className="desktop:pb-[242px] laptop:pb-[120px] min-h-dvh w-full bg-pitch-black bg-grid2 pt-[120px]">
+      <div className="desktop:w-[1200px] laptop:w-[960px] mx-auto flex justify-between">
+        <h1 className="desktop:text-[40px] laptop:text-[32px] tablet:text-[32px] w-[368px] font-bold leading-[50.4px] text-white">
           Anyway, we’re just getting started
         </h1>
-        <section className="flex h-[120px] flex-col gap-8">
-          <p className="text-lg font-medium leading-[22.68px] text-white">
+        <section className="flex h-[120px] w-[400px] flex-col gap-8">
+          <p className="desktop:text-lg laptop:text-base font-medium leading-[22.68px] text-white">
             At vero eos et accusamus et iusto tui odio na se tu latino
             praesentium voluptatum.
           </p>
@@ -276,7 +280,7 @@ function Section3() {
         </section>
       </div>
 
-      <div className="mx-auto mt-[104px] grid h-[656px] w-[992px] grid-cols-3 grid-rows-2 gap-4">
+      <div className="desktop:w-[1200px] laptop:w-[960px] desktop:h-[790px] laptop:h-[633px] laptop:grid-cols-3 tablet:grid-cols-2 laptop:grid-rows-2 tablet:grid-rows-3 laptop:gap-4 tablet:gap-6 mx-auto mt-[104px] grid h-[656px] w-[992px]">
         <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
@@ -307,7 +311,7 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-3 col-end-4 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="laptop:col-start-3 tablet:col-start-1 tablet:col-end-2 laptop:col-end-4 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/realtime-update.png" alt="" />
@@ -322,7 +326,7 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="laptop:col-start-1 laptop:col-end-2 tablet:col-start-2 tablet:col-end-3 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/analytics.png" alt="" />
@@ -337,7 +341,13 @@ function Section3() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-4 flex flex-col justify-between rounded-2xl bg-[url('images/platforms.png')] bg-50 bg-[18%_7%] px-6 py-[31px]">
+        <div
+          style={{
+            backgroundImage:
+              "url('images/platforms2.png'), linear-gradient(#00223A00, 80%,#00223A)",
+          }}
+          className="laptop:col-start-2 tablet:col-start-1 col-span-2 flex flex-col justify-between rounded-2xl bg-[length:100%_125%] bg-[100%_55%] px-6 py-[31px] bg-blend-multiply"
+        >
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
             <span className="absolute right-0 top-0 text-xs font-semibold text-white">
@@ -345,6 +355,7 @@ function Section3() {
             </span>
           </div>
           <div className="flex gap-4">
+            <img src="images/Windows-white.svg" alt="" className="h-6 w-6" />
             <img src="images/Google-white.svg" alt="" className="h-6 w-6" />
             <img src="images/AppleFilled.svg" alt="" className="h-6 w-6" />
           </div>
@@ -356,9 +367,9 @@ function Section3() {
 
 function FinalCTA() {
   return (
-    <div className="bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[144px] py-[100px]">
+    <div className="desktop:px-[120px] laptop:px-[40px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[120px] py-[100px]">
       <section className="flex items-center justify-between">
-        <h1 className="text-5xl font-semibold text-pitch-black">
+        <h1 className="desktop:text-5xl laptop:text-[40px] w-[451px] text-[32px] font-semibold text-pitch-black">
           Ready to transform your school?
         </h1>
         <div className="flex gap-4">
