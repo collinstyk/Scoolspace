@@ -1,23 +1,104 @@
 import { cva } from "class-variance-authority";
 import Button from "../components/Button";
+import { useState } from "react";
 
 function Navbar({ navItems, btnText, type, btnSize }) {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const toogleMobileNav = () => {
+    setShowMobileNav((value) => !value);
+  };
   return (
     <nav className="desktop:w-[1200px] laptop:w-[960px] custom:w-[800px] tablet:w-[704px] sticky top-6 z-10 mx-auto -mt-[42px] flex h-[42px] w-[91%] items-center justify-between">
-      <div className="h-[40px] items-center">
-        <img
-          src={`${type === "light" ? "images/Scoolspace-logo-dark.svg" : "images/Scoolspace-logo.svg"}`}
-          alt="Scoolspace logo"
-          className="h-full w-full"
-        />
-      </div>
+      {!showMobileNav && (
+        <div className="h-[40px] items-center">
+          <img
+            src={`${type === "light" ? "images/Scoolspace-logo-dark.svg" : "images/Scoolspace-logo.svg"}`}
+            alt="Scoolspace logo"
+            className="h-full w-full"
+          />
+        </div>
+      )}
 
-      <div className="custom:hidden h-[40px] w-[40px] cursor-pointer">
-        <img
-          src="images/icon-harmburger.svg"
-          alt="hamburger icon"
-          className="h-full w-full"
-        />
+      {!showMobileNav && (
+        <div
+          className="custom:hidden h-[40px] w-[40px] cursor-pointer"
+          onClick={toogleMobileNav}
+        >
+          <img
+            src="images/icon-harmburger.svg"
+            alt="hamburger icon"
+            className="h-full w-full"
+          />
+        </div>
+      )}
+
+      {/* {showMobileNav && (
+        <div className="fixed h-dvh w-dvw bg-white px-8 pb-8 pt-6 text-pitch-black">
+          <div className="flex w-full justify-between">
+            <div>
+              <img src="images/Scoolspace-logo-dark.svg" alt="" />
+            </div>
+            <div>
+              <img src="images/icon-close.svg" alt="close icon" />
+            </div>
+          </div>
+          <ul className="flex flex-col">
+            <li>
+              <a href="" className="h-full w-full">
+                Product
+              </a>
+            </li>
+            <li>
+              <a href="" className="h-full w-full">
+                Resources
+              </a>
+            </li>
+            <li>
+              <a href="" className="h-full w-full">
+                About us
+              </a>
+            </li>
+          </ul>
+        </div>
+      )} */}
+
+      {/* Mobile Navigation */}
+      <div
+        className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-transform duration-300 ${
+          showMobileNav ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div>
+          {/* Close Icon */}
+          <div className="flex justify-between">
+            <div>
+              <img src="images/Scoolspace-logo-dark.svg" alt="Logo" />
+            </div>
+            <div className="cursor-pointer" onClick={toogleMobileNav}>
+              <img src="images/icon-close.svg" alt="close icon" />
+            </div>
+          </div>
+
+          {/* Mobile Navigation Items */}
+          <ul className="mt-16 flex flex-col space-y-8 px-12">
+            {navItems.map((el, index) => (
+              <li key={index}>
+                <a href="#" className="block text-lg font-semibold">
+                  {el}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          <Button variant="primary" size="full-medium">
+            Join our waitlist
+          </Button>
+          <Button variant="secondary" size="full-medium">
+            Contact us
+          </Button>
+        </div>
       </div>
 
       <div className="custom:flex hidden items-center gap-x-6 text-base font-normal">

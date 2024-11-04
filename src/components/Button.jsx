@@ -9,7 +9,7 @@ function Button({ className, children, variant, size, to }) {
 }
 
 const buttonStyles = cva(
-  "rounded-xl", // no base class
+  "rounded-lg", // no base class
   {
     variants: {
       variant: {
@@ -20,7 +20,8 @@ const buttonStyles = cva(
         "outlined-light": "border-[1px] text-white border-white",
       },
       size: {
-        full: "w-full py-5",
+        "full-big": "w-full py-5",
+        "full-medium": "w-full py-[10px]",
         normal: "px-6 py-3 font-semibold",
       },
     },
