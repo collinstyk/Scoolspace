@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 function Navbar({ navItems, btnText, type, btnSize }) {
   return (
-    <nav className="mx-auto flex h-[42px] w-full items-center justify-between">
+    <nav className="desktop:w-[1200px] laptop:w-[960px] custom:w-[800px] tablet:w-[704px] sticky top-6 z-10 mx-auto -mt-[42px] flex h-[42px] w-[91%] items-center justify-between">
       <div className="h-[40px] items-center">
         <img
           src={`${type === "light" ? "images/Scoolspace-logo-dark.svg" : "images/Scoolspace-logo.svg"}`}
@@ -11,7 +11,16 @@ function Navbar({ navItems, btnText, type, btnSize }) {
           className="h-full w-full"
         />
       </div>
-      <div className="flex items-center gap-x-6 text-base font-normal">
+
+      <div className="custom:hidden h-[40px] w-[40px] cursor-pointer">
+        <img
+          src="images/icon-harmburger.svg"
+          alt="hamburger icon"
+          className="h-full w-full"
+        />
+      </div>
+
+      <div className="custom:flex hidden items-center gap-x-6 text-base font-normal">
         <div
           className={
             type === "oceanic"

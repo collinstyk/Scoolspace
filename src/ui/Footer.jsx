@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="font-circular-std flex w-full flex-col items-center bg-dark-radial-blue py-[44px] text-white">
-      <div className="desktop:min-w-[1200px] laptop:min-w-[800px] tablet:w-[656px] tablet:flex-row tablet:gap-0 flex w-[90%] flex-col justify-between gap-12">
+      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[656px] tablet:flex-row tablet:gap-0 flex w-[90%] flex-col justify-between gap-12">
         <div className="tablet:flex-col flex items-start gap-6">
           <div className="flex w-[282px] flex-col items-start gap-2">
             <img

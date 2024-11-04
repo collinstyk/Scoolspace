@@ -65,7 +65,7 @@ export default {
       screens: {
         desktop: "1440px",
         laptop: "1040px",
-        landscape: "1024px",
+        custom: "990px",
         tablet: "768px",
       },
     },

@@ -3,8 +3,15 @@ import Footer from "../ui/Footer";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
+  const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="w-full font-plus-jakarta-sans">
+      <Navbar
+        navItems={navItems}
+        btnText="Join our waitlist"
+        type="foggy"
+        btnSize="normal"
+      />
       <HeroSection />
       <LandingSection2 />
       <Features />
@@ -16,17 +23,10 @@ export default function Landing() {
 }
 
 function HeroSection() {
-  const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="relative w-full">
-      <div className="bg-hero-pattern1 bg-cover bg-[50%] bg-no-repeat bg-blend-multiply">
-        <section className="desktop:w-[1200px] laptop:w-[960px] w-962px z-10 mx-auto max-h-fit min-h-dvh pt-8 text-white">
-          <Navbar
-            navItems={navItems}
-            btnText="Join our waitlist"
-            type="foggy"
-            btnSize="normal"
-          />
+      <div className="bg-hero-pattern1 bg-cover bg-[50%_0%] bg-no-repeat bg-blend-multiply">
+        <section className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] z-10 mx-auto max-h-fit min-h-dvh w-[91%] pt-8 text-white">
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="flex w-[460px] flex-col gap-4">
@@ -164,7 +164,7 @@ function Features() {
     },
   ];
   return (
-    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] mx-auto mb-[200px] mt-8 flex flex-col gap-8">
+    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] mx-auto mb-[200px] mt-8 flex w-[91%] flex-col gap-8">
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
@@ -186,13 +186,13 @@ function Features() {
         ))}
       </div>
 
-      <div className="flex justify-between font-medium">
-        <h3 className="desktop:text-[32px] laptop:text-[30px] tablet:text-2xl">
+      <div className="flex items-center justify-between font-medium">
+        <h3 className="desktop:text-[32px] laptop:text-[30px] text-lg">
           Something for everyone with{" "}
           <span className="text-blue-one">Scoolspace</span>
         </h3>
         <Button
-          className="laptop:px-6 desktop:px-8 laptop:text-base px-4 py-[10px] text-xs"
+          className="laptop:px-6 desktop:px-8 laptop:text-base h-fit text-nowrap px-4 py-[10px] text-xs"
           variant="secondary"
         >
           Explore all features
@@ -219,14 +219,14 @@ function Feature({
 }) {
   return (
     <div
-      className={`w-full justify-between rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
+      className={`w-full justify-between gap-4 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
     >
       {variant === "dual" && (
         <div
           style={{
             backgroundImage: bgImage,
           }}
-          className={`desktop:w-[481px] laptop:w-[391px] tablet:w-[270px] relative flex h-[560px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply`}
+          className={`desktop:w-[481px] laptop:w-[391px] tablet:w-[270px] tablet:flex relative hidden h-[560px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply`}
         >
           <div className="z-10 flex w-full flex-col gap-2">
             <h3 className="desktop:text-2xl laptop:text-[22px] tablet:text-base font-semibold text-white">
@@ -237,17 +237,17 @@ function Feature({
         </div>
       )}
       <div
-        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "desktop:w-[687px] laptop:w-[553px] tablet:w-[418px] py-12"} ${bgColor}`}
+        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "desktop:w-[687px] laptop:w-[553px] desktop:h-[600px] laptop:h-[560px] h-[504px] w-full py-12"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="desktop:text-sm text-xs text-white">{subHeading}</h6>
           <div
             className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"}`}
           >
-            <h2 className="desktop:text-[40px] laptop:text-[32px] tablet:text-2xl font-bold leading-[50.4px]">
+            <h2 className="desktop:text-[40px] laptop:text-[32px] text-2xl font-bold leading-[50.4px]">
               {heading}
             </h2>
-            <p className="desktop:text-base laptop:text-sm tablet:text-xs font-medium">
+            <p className="desktop:text-base laptop:text-sm tablet:text-xs text-sm font-medium">
               {body}
             </p>
           </div>
@@ -262,7 +262,7 @@ function Feature({
 
         <Button
           variant={btnVariant}
-          className={`laptop:text-sm tablet:text-xs shadow-custom-shadow desktop:px-6 px-4 py-[10px] font-semibold ${variant === "fill" ? "mt-[223px]" : "mt-8"}`}
+          className={`laptop:text-sm shadow-custom-shadow desktop:px-6 px-4 py-[10px] text-xs font-semibold ${variant === "fill" ? "mt-[223px]" : "mt-8"}`}
         >
           {btnText}
         </Button>
@@ -273,7 +273,7 @@ function Feature({
 
 function LandingSection3() {
   return (
-    <div className="desktop:pb-[242px] laptop:py-[120px] tablet:py-20 min-h-dvh w-full bg-pitch-black bg-grid2 px-6 py-[72px]">
+    <div className="desktop:pb-[242px] laptop:py-[120px] tablet:py-20 tablet:px-6 min-h-dvh w-full bg-pitch-black bg-grid2 py-[72px]">
       <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row mx-auto flex w-[91%] flex-col justify-between gap-6">
         <h1 className="desktop:text-[40px] laptop:text-[32px] tablet:text-[32px] laptop:font-bold w-[368px] text-[22px] font-semibold text-white">
           Anyway, we’re just getting started
@@ -293,7 +293,7 @@ function LandingSection3() {
       </div>
 
       <div className="desktop:w-[1200px] laptop:w-[960px] desktop:h-[790px] laptop:h-[633px] laptop:grid-cols-3 tablet:grid-cols-2 laptop:grid-rows-2 tablet:grid-rows-3 tablet:gap-4 laptop:gap-[21px] desktop:gap-[30px] tablet:h-[1064px] tablet:w-[704px] tablet:mt-[96px] laptop:mt-[142px] desktop:mt-[128px] mx-auto mt-[72px] grid h-[1928px] w-[91%] grid-cols-1 grid-rows-5 flex-col justify-between gap-8">
-        <div className="tablet:col-start-1 tablet:col-end-2 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="tablet:col-start-1 tablet:col-end-2 bg-dark col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/managed-access.png" alt="" />
@@ -309,7 +309,7 @@ function LandingSection3() {
           </div>
         </div>
 
-        <div className="tablet:col-start-2 tablet:col-end-3 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="tablet:col-start-2 tablet:col-end-3 col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/functionality-access.png" alt="" />
@@ -319,13 +319,13 @@ function LandingSection3() {
                 Seamless functionality access
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
-                01
+                02
               </span>
             </div>
           </div>
         </div>
 
-        <div className="laptop:col-start-3 tablet:col-start-1 tablet:col-end-2 laptop:col-end-4 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="laptop:col-start-3 tablet:col-start-1 tablet:col-end-2 laptop:col-end-4 col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/realtime-update.png" alt="" />
@@ -335,13 +335,13 @@ function LandingSection3() {
                 Realtime updates via notifications
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
-                01
+                03
               </span>
             </div>
           </div>
         </div>
 
-        <div className="laptop:col-start-1 laptop:col-end-2 tablet:col-start-2 tablet:col-end-3 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+        <div className="laptop:col-start-1 laptop:col-end-2 tablet:col-start-2 tablet:col-end-3 col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/analytics.png" alt="" />
@@ -351,7 +351,7 @@ function LandingSection3() {
                 Realtime dashboard analytics
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
-                01
+                04
               </span>
             </div>
           </div>
