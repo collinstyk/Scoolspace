@@ -19,29 +19,36 @@ function HeroSection() {
   const navItems = ["Product", "Resources", "About us"];
   return (
     <div className="relative w-full">
-      <div className="tablet:bg-[length:120%_120%] laptop:bg-[length:100%_110%] bg-hero-pattern1 bg-[100%_5%] bg-no-repeat bg-blend-multiply">
+      <div className="bg-hero-pattern1 bg-cover bg-[50%] bg-no-repeat bg-blend-multiply">
         <section className="desktop:w-[1200px] laptop:w-[960px] w-962px z-10 mx-auto max-h-fit min-h-dvh pt-8 text-white">
           <Navbar
             navItems={navItems}
             btnText="Join our waitlist"
             type="foggy"
-            btnSize="medium"
+            btnSize="normal"
           />
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
-              <div className="w-[460px]">
-                <h1 className="desktop:text-[48px] laptop:text-[48px] tablet:text-[40px] font-bold leading-tight">
+              <div className="flex w-[460px] flex-col gap-4">
+                <h1 className="desktop:text-[48px] laptop:text-[48px] tablet:text-[40px] text-[32px] font-bold leading-tight">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
-                <p className="desktop:text-base laptop:text-base tablet:text-sm font-medium">
+                <p className="desktop:text-base laptop:text-base tablet:text-sm text-base font-medium">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem.
                 </p>
                 <div className="mt-6 flex gap-4">
-                  <Button className="text-sm" to="">
+                  <Button
+                    className="tablet:px-6 laptop:px-8 tablet:text-sm laptop:text-base px-4 py-[10px] text-xs font-semibold"
+                    to=""
+                  >
                     Join our waitlist
                   </Button>
-                  <Button className="text-sm" variant="outlined-light" to="">
+                  <Button
+                    className="tablet:px-6 laptop:px-8 tablet:text-sm laptop:text-base px-4 py-[10px] text-xs font-semibold"
+                    variant="outlined-light"
+                    to=""
+                  >
                     Contact us
                   </Button>
                 </div>
@@ -56,13 +63,13 @@ function HeroSection() {
 
 function LandingSection2() {
   return (
-    <section className="h-fit bg-white bg-grid1 py-[170px]">
-      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[640px] mx-auto flex items-center justify-between">
-        <h3 className="tablet:text-[32px] desktop:text-[40px] laptop:text-[40px] w-[400px] font-bold text-pitch-black">
+    <section className="tablet:py-[177px] h-fit bg-white bg-grid1 py-[84px]">
+      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[640px] tablet:flex-row tablet:gap-0 tablet:items-center mx-auto flex w-[91%] flex-col items-start justify-between gap-2">
+        <h3 className="tablet:text-[32px] desktop:text-[40px] laptop:text-[40px] tablet:w-[400px] w-[264px] text-2xl font-bold text-pitch-black">
           Big text for short section{" "}
           <span className="text-blue-one">header</span>.
         </h3>
-        <p className="tablet:text-sm desktop:text-lg laptop:text-lg w-[400px] font-normal text-pitch-black">
+        <p className="laptop:text-lg w-[400px] text-sm font-normal text-pitch-black">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium voluptatum
         </p>
@@ -157,7 +164,7 @@ function Features() {
     },
   ];
   return (
-    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:min-w-[864px] mx-auto mb-[200px] mt-8 flex flex-col gap-8">
+    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] mx-auto mb-[200px] mt-8 flex flex-col gap-8">
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
@@ -180,11 +187,14 @@ function Features() {
       </div>
 
       <div className="flex justify-between font-medium">
-        <h3 className="desktop:text-[32px] laptop:text-[30px]">
+        <h3 className="desktop:text-[32px] laptop:text-[30px] tablet:text-2xl">
           Something for everyone with{" "}
           <span className="text-blue-one">Scoolspace</span>
         </h3>
-        <Button size="spread" variant="secondary">
+        <Button
+          className="laptop:px-6 desktop:px-8 laptop:text-base px-4 py-[10px] text-xs"
+          variant="secondary"
+        >
           Explore all features
         </Button>
       </div>
@@ -216,7 +226,7 @@ function Feature({
           style={{
             backgroundImage: bgImage,
           }}
-          className={`desktop:w-[481px] laptop:w-[391px] tablet:w-[307px] relative flex h-[560px] items-end rounded-2xl bg-cover bg-[82%] p-8 bg-blend-multiply`}
+          className={`desktop:w-[481px] laptop:w-[391px] tablet:w-[270px] relative flex h-[560px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply`}
         >
           <div className="z-10 flex w-full flex-col gap-2">
             <h3 className="desktop:text-2xl laptop:text-[22px] tablet:text-base font-semibold text-white">
@@ -227,12 +237,12 @@ function Feature({
         </div>
       )}
       <div
-        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "desktop:min-w-[687px] laptop:min-w-[553px] tablet:min-w-[541px] py-12"} ${bgColor}`}
+        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "desktop:w-[687px] laptop:w-[553px] tablet:w-[418px] py-12"} ${bgColor}`}
       >
-        <section className="flex w-[400px] flex-col gap-6">
+        <section className="flex flex-col gap-6">
           <h6 className="desktop:text-sm text-xs text-white">{subHeading}</h6>
           <div
-            className={`${contrast === "dark" ? "text-pitch-black" : "text-white"}`}
+            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"}`}
           >
             <h2 className="desktop:text-[40px] laptop:text-[32px] tablet:text-2xl font-bold leading-[50.4px]">
               {heading}
@@ -252,8 +262,7 @@ function Feature({
 
         <Button
           variant={btnVariant}
-          size="normal"
-          className={`laptop:text-sm tablet:text-xs ${variant === "fill" ? "mt-[132px]" : "mt-8"}`}
+          className={`laptop:text-sm tablet:text-xs shadow-custom-shadow desktop:px-6 px-4 py-[10px] font-semibold ${variant === "fill" ? "mt-[223px]" : "mt-8"}`}
         >
           {btnText}
         </Button>
@@ -264,30 +273,33 @@ function Feature({
 
 function LandingSection3() {
   return (
-    <div className="desktop:pb-[242px] laptop:pb-[120px] min-h-dvh w-full bg-pitch-black bg-grid2 pt-[120px]">
-      <div className="desktop:w-[1200px] laptop:w-[960px] mx-auto flex justify-between">
-        <h1 className="desktop:text-[40px] laptop:text-[32px] tablet:text-[32px] w-[368px] font-bold leading-[50.4px] text-white">
+    <div className="desktop:pb-[242px] laptop:py-[120px] tablet:py-20 min-h-dvh w-full bg-pitch-black bg-grid2 px-6 py-[72px]">
+      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row mx-auto flex w-[91%] flex-col justify-between gap-6">
+        <h1 className="desktop:text-[40px] laptop:text-[32px] tablet:text-[32px] laptop:font-bold w-[368px] text-[22px] font-semibold text-white">
           Anyway, we’re just getting started
         </h1>
-        <section className="flex h-[120px] w-[400px] flex-col gap-8">
-          <p className="desktop:text-lg laptop:text-base font-medium leading-[22.68px] text-white">
+        <section className="tablet:gap-[18px] laptop:gap-[22px] desktop:gap-8 flex h-[120px] w-[400px] flex-col gap-4">
+          <p className="desktop:text-lg laptop:text-base text-sm font-medium leading-[22.68px] text-white">
             At vero eos et accusamus et iusto tui odio na se tu latino
             praesentium voluptatum.
           </p>
-          <Button variant="outlined-light" size="normal" className="w-fit">
+          <Button
+            variant="outlined-light"
+            className="laptop:text-sm laptop:px-6 w-fit px-4 py-[10px] text-xs"
+          >
             Contact us
           </Button>
         </section>
       </div>
 
-      <div className="desktop:w-[1200px] laptop:w-[960px] desktop:h-[790px] laptop:h-[633px] laptop:grid-cols-3 tablet:grid-cols-2 laptop:grid-rows-2 tablet:grid-rows-3 laptop:gap-4 tablet:gap-6 mx-auto mt-[104px] grid h-[656px] w-[992px]">
-        <div className="col-start-1 col-end-2 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+      <div className="desktop:w-[1200px] laptop:w-[960px] desktop:h-[790px] laptop:h-[633px] laptop:grid-cols-3 tablet:grid-cols-2 laptop:grid-rows-2 tablet:grid-rows-3 tablet:gap-4 laptop:gap-[21px] desktop:gap-[30px] tablet:h-[1064px] tablet:w-[704px] tablet:mt-[96px] laptop:mt-[142px] desktop:mt-[128px] mx-auto mt-[72px] grid h-[1928px] w-[91%] grid-cols-1 grid-rows-5 flex-col justify-between gap-8">
+        <div className="tablet:col-start-1 tablet:col-end-2 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/managed-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
+              <p className="desktop:text-[22px] w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Properly managed access control
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
@@ -296,13 +308,14 @@ function LandingSection3() {
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-3 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+
+        <div className="tablet:col-start-2 tablet:col-end-3 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/functionality-access.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
+              <p className="desktop:text-[22px] w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Seamless functionality access
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
@@ -311,13 +324,14 @@ function LandingSection3() {
             </div>
           </div>
         </div>
-        <div className="laptop:col-start-3 tablet:col-start-1 tablet:col-end-2 laptop:col-end-4 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+
+        <div className="laptop:col-start-3 tablet:col-start-1 tablet:col-end-2 laptop:col-end-4 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/realtime-update.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
+              <p className="desktop:text-[22px] w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime updates via notifications
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
@@ -326,13 +340,14 @@ function LandingSection3() {
             </div>
           </div>
         </div>
-        <div className="laptop:col-start-1 laptop:col-end-2 tablet:col-start-2 tablet:col-end-3 rounded-2xl bg-dark-blue px-6 pt-[31px]">
+
+        <div className="laptop:col-start-1 laptop:col-end-2 tablet:col-start-2 tablet:col-end-3 col-span-1 rounded-2xl bg-dark-blue px-6 pt-[31px]">
           <div>
             <div className="mb-[10px] h-[208px]">
               <img src="images/analytics.png" alt="" />
             </div>
             <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white">
+              <p className="desktop:text-[22px] w-[90%] text-lg font-bold leading-[22.68px] text-white">
                 Realtime dashboard analytics
               </p>
               <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
@@ -341,12 +356,13 @@ function LandingSection3() {
             </div>
           </div>
         </div>
+
         <div
           style={{
             backgroundImage:
-              "url('images/platforms2.png'), linear-gradient(#00223A00, 80%,#00223A)",
+              "url('images/platforms2.png'), linear-gradient(#00223A00, 70%,#00223A)",
           }}
-          className="laptop:col-start-2 tablet:col-start-1 col-span-2 flex flex-col justify-between rounded-2xl bg-[length:100%_125%] bg-[100%_55%] px-6 py-[31px] bg-blend-multiply"
+          className="laptop:col-start-2 tablet:col-start-1 tablet:col-span-2 tablet:bg-[length:100%_125%] tablet:bg-[100%_55%] col-span-1 flex flex-col justify-between rounded-2xl bg-cover bg-[50%] px-6 py-[31px] bg-blend-multiply"
         >
           <div className="relative w-full text-white">
             <h5 className="text-lg font-bold">Available on every platform</h5>
@@ -367,23 +383,21 @@ function LandingSection3() {
 
 function FinalCTA() {
   return (
-    <div className="desktop:px-[120px] laptop:px-[40px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-[120px] py-[100px]">
-      <section className="flex items-center justify-between">
-        <h1 className="desktop:text-5xl laptop:text-[40px] w-[451px] text-[32px] font-semibold text-pitch-black">
+    <div className="desktop:py-[100px] laptop:py-[110px] tablet:py-[98px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-12 py-8">
+      <section className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 mx-auto flex flex-col items-start justify-between gap-6">
+        <h1 className="desktop:text-[48px] laptop:text-[40px] tablet:text-2xl laptop:w-[451px] tablet:w-[408px] text-[22px] font-semibold text-pitch-black">
           Ready to transform your school?
         </h1>
         <div className="flex gap-4">
           <Button
             variant="secondary"
-            size="normal"
-            className="h-fit text-nowrap text-base shadow-md-dark-blue"
+            className="desktop:text-base laptop:text-sm desktop:px-6 h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-dark-blue"
           >
             Join our waitlist
           </Button>
           <Button
             variant="primary"
-            size="normal"
-            className="h-fit text-nowrap text-base shadow-md-light-blue"
+            className="desktop:text-base laptop:text-sm desktop:px-6 h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-light-blue"
           >
             Contact us
           </Button>
@@ -432,3 +446,5 @@ function FinalCTA() {
             </div>
           </div>
         </section> */
+
+/*desktop:px-[120px] laptop:px-[40px] px-[120px]*/

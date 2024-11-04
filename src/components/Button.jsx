@@ -21,10 +21,7 @@ const buttonStyles = cva(
       },
       size: {
         full: "w-full py-5",
-        large: "px-8 py-3",
-        medium: "px-8 py-[9px]",
-        normal: "px-6 py-[10px] text-[14px] font-semibold",
-        spread: "px-8 py-[10px] text-base",
+        normal: "px-6 py-3 font-semibold",
       },
     },
     defaultVariants: {

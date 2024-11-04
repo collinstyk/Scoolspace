@@ -1,24 +1,26 @@
 function Footer() {
   return (
-    <footer className="font-circular-std w-full min-w-[962px] bg-dark-radial-blue px-[120px] py-[44px] text-white">
-      <div className="desktop:min-w-[1200px] laptop:min-w-[800px] mx-auto flex w-full min-w-[962px] justify-between">
-        <div className="flex flex-col gap-6">
+    <footer className="font-circular-std flex w-full flex-col items-center bg-dark-radial-blue py-[44px] text-white">
+      <div className="desktop:min-w-[1200px] laptop:min-w-[800px] tablet:w-[656px] tablet:flex-row tablet:gap-0 flex w-[90%] flex-col justify-between gap-12">
+        <div className="tablet:flex-col flex items-start gap-6">
           <div className="flex w-[282px] flex-col items-start gap-2">
             <img
               src="images/Scoolspace-logo.svg"
               alt="Scoolspace logo"
-              className="h-12"
+              className="laptop:h-12 tablet:h-6 laptop:w-[244px] w-[137px]"
             />
-            <p className="text-[18px] font-normal text-white">
+            <p className="laptop:text-[18px] tablet:text-xs text-[10px] font-normal text-white">
               A new way to <span className="text-purple-one">teach</span>,{" "}
               <span className="text-blue-one">learn</span> and{" "}
               <span className="text-passion-red">love</span>
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            <p className="text-sm font-semibold">hello@scoolspace.com</p>
+          <div className="tablet:gap-4 flex flex-col gap-2">
+            <p className="laptop:text-sm tablet:text-xs text-[10px] font-semibold">
+              hello@scoolspace.com
+            </p>
 
-            <div className="align-center flex gap-8 pt-4">
+            <div className="align-center flex gap-8">
               <a href="">
                 <img src="images/icon-twitter.svg" alt="" />
               </a>
@@ -28,49 +30,49 @@ function Footer() {
               <a href="">
                 <img src="images/icon-instagram.svg" alt="" />
               </a>
-              <a href="">
+              {/* <a href="">
                 <img src="images/icon-facebook.svg" alt="" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
 
-        <div className="relative flex gap-[88px]">
+        <div className="laptop:gap-[88px] tablet:gap-6 relative flex justify-between">
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold">
+            <li className="laptop:text-base tablet:text-xs font-semibold">
               <a href="">Company</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">About us</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">FAQ forum</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold">
+            <li className="laptop:text-base tablet:text-xs font-semibold">
               <a href="">Product</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">Join the waitlist</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">Features</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold">
+            <li className="laptop:text-base tablet:text-xs font-semibold">
               <a href="">Resources</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">Help center</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">Report a problem</a>
             </li>
-            <li className="text-sm font-medium opacity-60">
+            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
               <a href="">Privacy policy</a>
             </li>
           </ul>

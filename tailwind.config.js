@@ -53,6 +53,8 @@ export default {
         "sm-dark-blue": "0 5px 10px 0 #00223A1A",
         "md-light-blue": "0 18px 18px 0 #02ADE626",
         "md-dark-blue": "0 19px 19px 0 #00223A1A",
+        "custom-shadow":
+          "-2px 2px 6px 0px #0041571A, -8px 7px 10px 0px #00415717, -17px 15px 14px 0px #0041570D, -30px 26px 16px 0px #00415703, -47px 41px 18px 0px #00415700, 0px 1px 3px 0px #BFE7F766 inset",
       },
       borderColor: {
         "dark-blue": "#00223A",
