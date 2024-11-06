@@ -5,7 +5,7 @@ import Navbar from "../ui/Navbar";
 export default function Landing() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <div className="w-full font-plus-jakarta-sans">
+    <div id="home" className="w-full font-plus-jakarta-sans">
       <Navbar
         navItems={navItems}
         btnText="Join our waitlist"

@@ -5,7 +5,7 @@ import Navbar from "../ui/Navbar";
 function JoinTheWaitlist() {
   const navItems = ["Product", "Resources", "About us"];
   return (
-    <div className="w-full bg-grid3 bg-no-repeat pt-[40px]">
+    <div className="w-full bg-grid3 bg-no-repeat">
       <section className="mx-auto w-[992px]">
         <Navbar
           navItems={navItems}
