@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     element: <JoinTheWaitlist />,
-    path: "/waitlist",
+    path: "/join-the-waitlist",
   },
   {
     element: <ContactUs />,

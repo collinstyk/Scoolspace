@@ -79,7 +79,7 @@ function Footer() {
         </div>
       </div>
       <p className="mx-auto mt-12 w-full text-center text-xs font-normal tracking-widest">
-        Copyright © 2024 Xikolo LLC. All rights reserved
+        Copyright © 2024, Scoolspace. All rights reserved.
       </p>
     </footer>
   );

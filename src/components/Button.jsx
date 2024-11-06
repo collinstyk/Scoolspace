@@ -1,8 +1,13 @@
 import { cva } from "class-variance-authority";
+import { useNavigate } from "react-router-dom";
 
 function Button({ className, children, variant, size, to }) {
+  const navigate = useNavigate();
   return (
-    <button className={buttonStyles({ className, variant, size })}>
+    <button
+      className={buttonStyles({ className, variant, size })}
+      onClick={() => navigate(to)}
+    >
       {children}
     </button>
   );
@@ -22,6 +27,7 @@ const buttonStyles = cva(
       size: {
         "full-big": "w-full py-5",
         "full-medium": "w-full py-[10px]",
+        large: "px-8 py-[10px]",
         normal: "px-6 py-3 font-semibold",
       },
     },

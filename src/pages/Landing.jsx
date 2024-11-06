@@ -9,8 +9,10 @@ export default function Landing() {
       <Navbar
         navItems={navItems}
         btnText="Join our waitlist"
+        btnTo="join-the-waitlist"
         type="foggy"
         btnSize="normal"
+        position="sticky"
       />
       <HeroSection />
       <LandingSection2 />
@@ -24,7 +26,7 @@ export default function Landing() {
 
 function HeroSection() {
   return (
-    <div className="relative w-full">
+    <section id="hero" className="relative w-full">
       <div className="bg-hero-pattern1 bg-cover bg-[50%_0%] bg-no-repeat bg-blend-multiply">
         <section className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] z-10 mx-auto max-h-fit min-h-dvh w-[91%] pt-8 text-white">
           <div className="flex w-full justify-center pb-48">
@@ -57,13 +59,16 @@ function HeroSection() {
           </div>
         </section>
       </div>
-    </div>
+    </section>
   );
 }
 
 function LandingSection2() {
   return (
-    <section className="tablet:py-[177px] h-fit bg-white bg-grid1 py-[84px]">
+    <section
+      id="landing-2"
+      className="tablet:py-[177px] h-fit bg-white bg-grid1 py-[84px]"
+    >
       <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[640px] tablet:flex-row tablet:gap-0 tablet:items-center mx-auto flex w-[91%] flex-col items-start justify-between gap-2">
         <h3 className="tablet:text-[32px] desktop:text-[40px] laptop:text-[40px] tablet:w-[400px] w-[264px] text-2xl font-bold text-pitch-black">
           Big text for short section{" "}
@@ -164,7 +169,10 @@ function Features() {
     },
   ];
   return (
-    <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] mx-auto mb-[200px] mt-8 flex w-[91%] flex-col gap-8">
+    <section
+      id="features"
+      className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] mx-auto mb-[200px] mt-8 flex w-[91%] flex-col gap-8"
+    >
       <div className="flex w-full flex-col gap-4">
         {featuresInput.map((input) => (
           <Feature
@@ -187,7 +195,7 @@ function Features() {
       </div>
 
       <div className="flex items-center justify-between font-medium">
-        <h3 className="desktop:text-[32px] laptop:text-[30px] text-lg">
+        <h3 className="desktop:text-[32px] laptop:text-[30px] text-lg text-pitch-black">
           Something for everyone with{" "}
           <span className="text-blue-one">Scoolspace</span>
         </h3>
@@ -198,7 +206,7 @@ function Features() {
           Explore all features
         </Button>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -273,7 +281,10 @@ function Feature({
 
 function LandingSection3() {
   return (
-    <div className="desktop:pb-[242px] laptop:py-[120px] tablet:py-20 tablet:px-6 min-h-dvh w-full bg-pitch-black bg-grid2 py-[72px]">
+    <section
+      id="landing-3"
+      className="desktop:pb-[242px] laptop:py-[120px] tablet:py-20 tablet:px-6 min-h-dvh w-full bg-pitch-black bg-grid2 py-[72px]"
+    >
       <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row mx-auto flex w-[91%] flex-col justify-between gap-6">
         <h1 className="desktop:text-[40px] laptop:text-[32px] tablet:text-[32px] laptop:font-bold w-[368px] text-[22px] font-semibold text-white">
           Anyway, we’re just getting started
@@ -377,13 +388,16 @@ function LandingSection3() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function FinalCTA() {
   return (
-    <div className="desktop:py-[100px] laptop:py-[110px] tablet:py-[98px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-12 py-8">
+    <section
+      id="cta"
+      className="desktop:py-[100px] laptop:py-[110px] tablet:py-[98px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-12 py-8"
+    >
       <section className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 mx-auto flex flex-col items-start justify-between gap-6">
         <h1 className="desktop:text-[48px] laptop:text-[40px] tablet:text-2xl laptop:w-[451px] tablet:w-[408px] text-[22px] font-semibold text-pitch-black">
           Ready to transform your school?
@@ -403,7 +417,7 @@ function FinalCTA() {
           </Button>
         </div>
       </section>
-    </div>
+    </section>
   );
 }
 
