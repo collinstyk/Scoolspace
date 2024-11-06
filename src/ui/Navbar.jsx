@@ -134,10 +134,10 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           </div>
 
           <div className="flex flex-col gap-6">
-            <Button variant="primary" size="full-medium">
+            <Button variant="primary" size="full-medium" to="join-the-waitlist">
               Join our waitlist
             </Button>
-            <Button variant="secondary" size="full-medium">
+            <Button variant="secondary" size="full-medium" to="contact-us">
               Contact us
             </Button>
           </div>
