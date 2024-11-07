@@ -170,7 +170,9 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
           <Button
             variant={`${
-              newType === "light-contrast" ? "primary" : "secondary"
+              newType === "light-contrast" || newType === "foggy"
+                ? "primary"
+                : "secondary"
             }`}
             size={btnSize}
             to={btnTo}

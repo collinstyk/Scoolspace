@@ -9,9 +9,10 @@ function ContactUs() {
       <section className="mx-auto w-[992px]">
         <Navbar
           navItems={navItems}
-          btnText="Contact us"
+          btnText="Join our waitlist"
           type="light"
           btnSize="large"
+          btnTo="/join-the-waitlist"
         />
         <main className="mb-[135.86px] mt-40 flex w-full justify-between">
           <section className="flex w-[394px] flex-col gap-4">
@@ -72,7 +73,7 @@ function ContactUs() {
                 <textarea className="h-60 w-full rounded-lg border-[1px] border-dark-blue/20 p-4 outline-none" />
               </FormElementContainer>
 
-              <Button size="full">Continue</Button>
+              <Button size="full-big">Continue</Button>
             </form>
             <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">
               By submitting, you agree to our Terms of Service and Privacy

@@ -42,14 +42,14 @@ function HeroSection() {
                 <div className="mt-6 flex gap-4">
                   <Button
                     className="tablet:px-6 laptop:px-8 tablet:text-sm laptop:text-base px-4 py-[10px] text-xs font-semibold"
-                    to=""
+                    to="/join-the-waitlist"
                   >
                     Join our waitlist
                   </Button>
                   <Button
                     className="tablet:px-6 laptop:px-8 tablet:text-sm laptop:text-base px-4 py-[10px] text-xs font-semibold"
                     variant="outlined-light"
-                    to=""
+                    to="/contact-us"
                   >
                     Contact us
                   </Button>
@@ -250,7 +250,7 @@ function Feature({
         <section className="flex flex-col gap-6">
           <h6 className="desktop:text-sm text-xs text-white">{subHeading}</h6>
           <div
-            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"}`}
+            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-[57%]" : ""}`}
           >
             <h2 className="desktop:text-[40px] laptop:text-[32px] text-2xl font-bold leading-[50.4px]">
               {heading}
@@ -297,6 +297,7 @@ function LandingSection3() {
           <Button
             variant="outlined-light"
             className="laptop:text-sm laptop:px-6 w-fit px-4 py-[10px] text-xs"
+            to="/contact-us"
           >
             Contact us
           </Button>
@@ -399,19 +400,24 @@ function FinalCTA() {
       className="desktop:py-[100px] laptop:py-[110px] tablet:py-[98px] bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-12 py-8"
     >
       <section className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 mx-auto flex flex-col items-start justify-between gap-6">
-        <h1 className="desktop:text-[48px] laptop:text-[40px] tablet:text-2xl laptop:w-[451px] tablet:w-[408px] text-[22px] font-semibold text-pitch-black">
+        <h1
+          style={{ lineHeight: "3rem" }}
+          className="desktop:text-[48px] laptop:text-[40px] tablet:text-2xl laptop:w-[451px] tablet:w-[408px] text-[22px] font-semibold text-pitch-black"
+        >
           Ready to transform your school?
         </h1>
         <div className="flex gap-4">
           <Button
             variant="secondary"
             className="desktop:text-base laptop:text-sm desktop:px-6 h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-dark-blue"
+            to="/join-the-waitlist"
           >
             Join our waitlist
           </Button>
           <Button
             variant="primary"
             className="desktop:text-base laptop:text-sm desktop:px-6 h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-light-blue"
+            to="/contact-us"
           >
             Contact us
           </Button>

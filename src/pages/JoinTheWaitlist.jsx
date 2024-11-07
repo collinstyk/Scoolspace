@@ -12,6 +12,7 @@ function JoinTheWaitlist() {
           btnText="Contact us"
           type="light"
           btnSize="large"
+          btnTo="/contact-us"
         />
         <main className="mb-[135.86px] mt-40 flex w-full justify-between">
           <section className="flex w-[400px] flex-col gap-4">
@@ -130,7 +131,7 @@ function JoinTheWaitlist() {
                   <Select variant="text" text="Select an option" />
                 </div>
               </div>
-              <Button size="full">Continue</Button>
+              <Button size="full-big">Continue</Button>
             </form>
             <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">
               By continuing, you agree to our Terms of Service and Privacy
