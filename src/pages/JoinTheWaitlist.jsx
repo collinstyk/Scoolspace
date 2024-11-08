@@ -6,12 +6,18 @@ function JoinTheWaitlist() {
   const navItems = ["Product", "Resources", "About us"];
   const formFields = [
     {
-      label: "First name*",
-      required: true,
-    },
-    {
-      label: "Last name*",
-      required: true,
+      hasDualElement: true,
+      type: "input",
+      subFields: [
+        {
+          label: "First name*",
+          required: true,
+        },
+        {
+          label: "Last name*",
+          required: true,
+        },
+      ],
     },
     {
       label: "Email*",
@@ -32,16 +38,6 @@ function JoinTheWaitlist() {
           countryName: "USA",
           countryCode: "+1",
         },
-        // {
-        //   flag: "images/countryFlags/ngn-flag.png",
-        //   countryName: "Nigeria",
-        //   countryCode: "+236",
-        // },
-        // {
-        //   flag: "images/countryFlags/ngn-flag.png",
-        //   countryName: "Nigeria",
-        //   countryCode: "+237",
-        // },
       ],
     },
     {
@@ -51,51 +47,56 @@ function JoinTheWaitlist() {
       label: "School location",
     },
     {
-      label: "Which best describes you*",
-      required: true,
-      type: "select",
-      variant: "text",
-      text: "School",
-      options: [
+      specialSelect: true,
+      subFields: [
         {
-          label: "School (Owner or Admin)",
-          value: "school",
+          label: "Which best describes you*",
+          required: true,
+          type: "select",
+          variant: "text",
+          text: "School",
+          options: [
+            {
+              label: "School (Owner or Admin)",
+              value: "school",
+            },
+            {
+              label: "Teacher",
+              value: "teacher",
+            },
+            {
+              label: "Parent",
+              value: "parent",
+            },
+          ],
         },
         {
-          label: "Teacher",
-          value: "teacher",
-        },
-        {
-          label: "Parent",
-          value: "parent",
-        },
-      ],
-    },
-    {
-      label: "Number of students enrolled",
-      type: "select",
-      variant: "text",
-      text: "Select an option",
-      options: [
-        {
-          label: "50 or less",
-          value: "50 or less",
-        },
-        {
-          label: "51 - 200",
-          value: "51 - 200",
-        },
-        {
-          label: "201 - 500",
-          value: "201 - 500",
-        },
-        {
-          label: "501 - 1000",
-          value: "501 - 1000",
-        },
-        {
-          label: "Greater than 1000",
-          value: ">1000",
+          label: "Number of students enrolled",
+          type: "select",
+          variant: "text",
+          text: "Select an option",
+          options: [
+            {
+              label: "50 or less",
+              value: "50 or less",
+            },
+            {
+              label: "51 - 200",
+              value: "51 - 200",
+            },
+            {
+              label: "201 - 500",
+              value: "201 - 500",
+            },
+            {
+              label: "501 - 1000",
+              value: "501 - 1000",
+            },
+            {
+              label: "Greater than 1000",
+              value: ">1000",
+            },
+          ],
         },
       ],
     },
@@ -103,7 +104,7 @@ function JoinTheWaitlist() {
 
   return (
     <div className="w-dvw bg-grid3 bg-repeat-x">
-      <section className="desktop:w-[992px] laptop:w-[960px] custom:w-[900px] mx-auto">
+      <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
           btnText="Contact us"
@@ -121,6 +122,7 @@ function JoinTheWaitlist() {
             formFields={formFields}
             buttonText="Join the waitlist"
             submitText="By continuing, you agree to our Terms of Service and Privacy Policy."
+            page="join-our-waitlist"
           />
         </FormLayout>
 

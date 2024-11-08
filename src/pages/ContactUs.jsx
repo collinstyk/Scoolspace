@@ -13,11 +13,22 @@ function ContactUs() {
       text: "Sales Inquiry (Contact sales)",
       options: [
         {
-          label: "",
-          value: "",
+          label: "Product Inquiry",
+          value: "product inquiry",
+        },
+        {
+          label: "Report an issue",
+          value: "report an issue",
+        },
+        {
+          label: "Sales Inquiry (Contact sales)",
+          value: "sales inquiry (contact sales)",
+        },
+        {
+          label: "I’m not sure (Other)",
+          value: "other",
         },
       ],
-      defaultOption: "",
     },
     {
       label: "Full name*",
@@ -45,34 +56,75 @@ function ContactUs() {
       ],
     },
     {
-      label: "Which best describes you*",
-      required: true,
-      type: "select",
-      variant: "text",
-      options: [
-        {
-          label: "",
-          value: "",
-        },
-      ],
-      defaultOption: "",
-    },
-    {
       label: "Name of school / institution",
     },
     {
       label: "School location",
     },
     {
+      specialSelect: true,
+      subFields: [
+        {
+          label: "Which best describes you*",
+          required: true,
+          type: "select",
+          variant: "text",
+          text: "School",
+          options: [
+            {
+              label: "School (Owner or Admin)",
+              value: "school",
+            },
+            {
+              label: "Teacher",
+              value: "teacher",
+            },
+            {
+              label: "Parent",
+              value: "parent",
+            },
+          ],
+        },
+        {
+          label: "Number of students enrolled",
+          type: "select",
+          variant: "text",
+          text: "Select an option",
+          options: [
+            {
+              label: "50 or less",
+              value: "50 or less",
+            },
+            {
+              label: "51 - 200",
+              value: "51 - 200",
+            },
+            {
+              label: "201 - 500",
+              value: "201 - 500",
+            },
+            {
+              label: "501 - 1000",
+              value: "501 - 1000",
+            },
+            {
+              label: "Greater than 1000",
+              value: ">1000",
+            },
+          ],
+        },
+      ],
+    },
+    {
       label: "Your message to us*",
       required: true,
-      type: "textarea", // Custom textarea for message input
+      type: "textarea",
     },
   ];
 
   return (
-    <div className="w-dvw bg-grid3 bg-repeat-x">
-      <section className="desktop:w-[992px] laptop:w-[960px] custom:w-[900px] mx-auto">
+    <div className="min-w-vw bg-grid3 bg-repeat-x">
+      <section className="mx-auto w-full px-6 tablet:w-[480px] custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
           btnText="Join our waitlist"
@@ -90,6 +142,7 @@ function ContactUs() {
             formFields={formFields}
             buttonText="Submit"
             submitText="By submitting, you agree to our Terms of Service and Privacy Policy."
+            page="contact-us"
           />
         </FormLayout>
 

@@ -30,7 +30,7 @@ function Select({ name, onChange, variant, text, options }) {
 
   useEffect(() => {
     if (onChange) {
-      onChange(selectedOption.value || selectedOption.countryCode);
+      onChange(selectedOption?.value || selectedOption?.countryCode);
     }
   }, [selectedOption, onChange]);
 
@@ -57,7 +57,7 @@ function Select({ name, onChange, variant, text, options }) {
             />
           </div>
           <div
-            className={`scrollbar-hide absolute z-10 mt-1 overflow-hidden overflow-y-auto rounded-md bg-white shadow-md transition-all duration-300 ${isOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}
+            className={`absolute z-10 mt-1 overflow-hidden overflow-y-auto rounded-md bg-white shadow-md transition-all duration-300 scrollbar-hide ${isOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}
           >
             {options.map((option) => (
               <div
@@ -84,7 +84,9 @@ function Select({ name, onChange, variant, text, options }) {
         >
           <div className="flex h-[60px] items-center justify-between rounded-lg border border-dark-blue/20 bg-white px-6">
             <p className="text-sm font-medium text-pitch-black">
-              {selectedOption?.label || text}
+              {selectedOption?.value === "school"
+                ? "School"
+                : selectedOption?.label || text}
             </p>
             <img
               src="images/icon-chevron.svg"
