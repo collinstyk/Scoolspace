@@ -30,7 +30,7 @@ export const Input = ({
       {isTextarea ? (
         <textarea
           id={id}
-          className={`h-60 w-full resize-none text-wrap rounded-lg border-[1px] border-dark-blue/20 px-6 py-5 align-top leading-normal outline-none`}
+          className={`h-60 w-full resize-none text-wrap rounded-lg border-[1px] border-dark-blue/20 bg-white px-6 py-5 align-top leading-normal outline-none`}
           onChange={onChange}
           onInput={onInput}
           value={value}
@@ -39,7 +39,7 @@ export const Input = ({
         <input
           id={id}
           type={type}
-          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20`}
+          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20 bg-white`}
           onChange={onChange}
           onInput={onInput}
           value={value}
