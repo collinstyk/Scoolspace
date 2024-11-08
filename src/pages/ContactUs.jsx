@@ -1,12 +1,78 @@
-import Button from "../components/Button";
-import Select from "../components/Select";
 import Navbar from "../ui/Navbar";
+import BaseForm from "../components/BaseForm";
+import FormLayout from "../ui/FormLayout";
 
 function ContactUs() {
   const navItems = ["Product", "Resources", "About us"];
+  const formFields = [
+    {
+      label: "What can we help you with?*",
+      required: true,
+      type: "select",
+      variant: "text",
+      text: "Sales Inquiry (Contact sales)",
+      options: [
+        {
+          label: "",
+          value: "",
+        },
+      ],
+      defaultOption: "",
+    },
+    {
+      label: "Full name*",
+      required: true,
+    },
+    {
+      label: "Email address*",
+      required: true,
+      type: "email",
+    },
+    {
+      label: "Phone number",
+      isDual: true, // Phone number input with region select
+      options: [
+        {
+          flag: "images/countryFlags/ngn-flag.png",
+          countryName: "Nigeria",
+          countryCode: "+234",
+        },
+        {
+          flag: "images/countryFlags/united-states.png",
+          countryName: "USA",
+          countryCode: "+1",
+        },
+      ],
+    },
+    {
+      label: "Which best describes you*",
+      required: true,
+      type: "select",
+      variant: "text",
+      options: [
+        {
+          label: "",
+          value: "",
+        },
+      ],
+      defaultOption: "",
+    },
+    {
+      label: "Name of school / institution",
+    },
+    {
+      label: "School location",
+    },
+    {
+      label: "Your message to us*",
+      required: true,
+      type: "textarea", // Custom textarea for message input
+    },
+  ];
+
   return (
-    <div className="w-full bg-grid3 bg-no-repeat">
-      <section className="mx-auto w-[992px]">
+    <div className="w-dvw bg-grid3 bg-repeat-x">
+      <section className="desktop:w-[992px] laptop:w-[960px] custom:w-[900px] mx-auto">
         <Navbar
           navItems={navItems}
           btnText="Join our waitlist"
@@ -14,7 +80,31 @@ function ContactUs() {
           btnSize="large"
           btnTo="/join-the-waitlist"
         />
-        <main className="mb-[135.86px] mt-40 flex w-full justify-between">
+
+        <FormLayout
+          heading="Contact us"
+          description="Need to get in touch with us? Fill out the form to reach out to
+              our team, to learn more about Scoolspace."
+        >
+          <BaseForm
+            formFields={formFields}
+            buttonText="Submit"
+            submitText="By submitting, you agree to our Terms of Service and Privacy Policy."
+          />
+        </FormLayout>
+
+        <p className="mx-auto mb-6 w-fit text-xs font-medium text-pitch-black">
+          Copyright © 2024, Scoolspace. All rights reserved.
+        </p>
+      </section>
+    </div>
+  );
+}
+
+export default ContactUs;
+
+{
+  /* <main className="tablet:flex-row mb-[135.86px] mt-40 flex w-full justify-between">
           <section className="flex w-[394px] flex-col gap-4">
             <h1 className="text-[40px] font-bold leading-[50.4px] text-dark-blue">
               Contact us
@@ -26,201 +116,112 @@ function ContactUs() {
           </section>
 
           <div className="w-[480px]">
-            <form className="flex w-full flex-col gap-6">
-              <FormElementContainer>
-                <Label required>What can we help you with?*</Label>
-                <Select variant="text" text="Sales Inquiry (Contact sales)" />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label htmlFor="fullname" required>
-                  Full name*
-                </Label>
-                <Input id="fullname" />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label required>Email address*</Label>
-                <Input />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label>Phone number</Label>
-                <FormElementContainer variant="dual">
-                  <Select variant="region" />
-                  <Input />
-                </FormElementContainer>
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label>Which best describes you*</Label>
-                <Select variant="text" text="Select an option" />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label>Name of school / institution</Label>
-                <Input />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label>School location</Label>
-                <Input />
-              </FormElementContainer>
-
-              <FormElementContainer>
-                <Label required>Your message to us*</Label>
-                {/*font-style will be changed for the inputs and the textarea*/}
-                <textarea className="h-60 w-full rounded-lg border-[1px] border-dark-blue/20 p-4 outline-none" />
-              </FormElementContainer>
-
-              <Button size="full-big">Continue</Button>
-            </form>
-            <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">
-              By submitting, you agree to our Terms of Service and Privacy
-              Policy.
-            </p>
+            <BaseForm
+              formFields={formFields}
+              buttonText="Submit"
+              submitText="By submitting, you agree to our Terms of Service and Privacy Policy."
+            />
           </div>
-        </main>
-
-        <p className="mx-auto w-fit text-xs font-medium text-pitch-black">
-          Copyright © 2024, Scoolspace. All rights reserved.
-        </p>
-      </section>
-    </div>
-  );
+        </main> */
 }
 
-const FormElementContainer = ({ children, variant = "single" }) => {
-  return (
-    <div
-      className={`flex w-full ${variant === "single" ? "flex-col gap-1" : "gap-2"} `}
-    >
-      {children}
-    </div>
-  );
-};
+// import Button from "../components/Button";
+// import {
+//   FormElementContainer,
+//   Input,
+//   Label,
+// } from "../components/FormComponents";
+// import Select from "../components/Select";
+// import Navbar from "../ui/Navbar";
 
-const Label = ({ children, required, htmlFor }) => {
-  return (
-    <label htmlFor={htmlFor} className="text-xs font-medium text-pitch-black">
-      {children}
-      {required && <span className="opacity-60">{` (Required)`}</span>}
-    </label>
-  );
-};
+// function ContactUs() {
+//   const navItems = ["Product", "Resources", "About us"];
+//   return (
+//     <div className="w-full bg-grid3 bg-no-repeat">
+//       <section className="desktop:w-[992px] laptop:w-[960px] custom:w-[900px] mx-auto">
+//         <Navbar
+//           navItems={navItems}
+//           btnText="Join our waitlist"
+//           type="light"
+//           btnSize="large"
+//           btnTo="/join-the-waitlist"
+//         />
+//         <main className="tablet:flex-row mb-[135.86px] mt-40 flex w-full justify-between">
+//           <section className="flex w-[394px] flex-col gap-4">
+//             <h1 className="text-[40px] font-bold leading-[50.4px] text-dark-blue">
+//               Contact us
+//             </h1>
+//             <p className="text-base font-medium leading-5 text-pitch-black">
+//               Need to get in touch with us? Fill out the form to reach out to
+//               our team, to learn more about Scoolspace.
+//             </p>
+//           </section>
 
-const Input = ({ id = "", type = "text" }) => {
-  return (
-    <input
-      id={id}
-      type={type}
-      className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20`}
-    />
-  );
-};
+//           <div className="w-[480px]">
+//             <form className="flex w-full flex-col gap-6">
+//               <FormElementContainer>
+//                 <Label required>What can we help you with?*</Label>
+//                 <Select variant="text" text="Sales Inquiry (Contact sales)" />
+//               </FormElementContainer>
 
-/*<div className="flex w-full justify-between">
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor=""
-                    className="text-xs font-medium text-pitch-black"
-                  >
-                    First name*
-                  </label>
-                  <input
-                    type="text"
-                    className="h-[60px] w-[224px] rounded-lg border-[1px] border-dark-blue/20"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor=""
-                    className="text-xs font-medium text-pitch-black"
-                  >
-                    Last name*
-                  </label>
-                  <input
-                    type="text"
-                    className="h-[60px] w-[224px] rounded-lg border-[1px] border-dark-blue/20"
-                  />
-                </div>
-              </div>
+//               <FormElementContainer>
+//                 <Label htmlFor="fullname" required>
+//                   Full name*
+//                 </Label>
+//                 <Input id="fullname" />
+//               </FormElementContainer>
 
-              <div className="flex w-full flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-xs font-medium text-pitch-black"
-                >
-                  Email*
-                </label>
-                <input
-                  type="email"
-                  className="h-[60px] rounded-lg border-[1px] border-dark-blue/20"
-                />
-              </div>
+//               <FormElementContainer>
+//                 <Label required>Email address*</Label>
+//                 <Input />
+//               </FormElementContainer>
 
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor=""
-                  className="text-xs font-medium text-pitch-black"
-                >
-                  Phone number
-                </label>
-                <div className="flex gap-2">
-                  <Select variant="region" />
-                  <input
-                    type="text"
-                    className="h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20"
-                  />
-                </div>
-              </div>
+//               <FormElementContainer>
+//                 <Label>Phone number</Label>
+//                 <FormElementContainer variant="dual">
+//                   <Select variant="region" />
+//                   <Input />
+//                 </FormElementContainer>
+//               </FormElementContainer>
 
-              <div className="flex w-full flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-xs font-medium text-pitch-black"
-                >
-                  Name of school / institution
-                </label>
-                <input
-                  type="text"
-                  className="h-[60px] rounded-lg border-[1px] border-dark-blue/20"
-                />
-              </div>
+//               <FormElementContainer>
+//                 <Label>Which best describes you*</Label>
+//                 <Select variant="text" text="Select an option" />
+//               </FormElementContainer>
 
-              <div className="flex w-full flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-xs font-medium text-pitch-black"
-                >
-                  School location
-                </label>
-                <input
-                  type="text"
-                  className="h-[60px] rounded-lg border-[1px] border-dark-blue/20"
-                />
-              </div>
+//               <FormElementContainer>
+//                 <Label>Name of school / institution</Label>
+//                 <Input />
+//               </FormElementContainer>
 
-              <div className="flex w-full justify-between gap-[31px]">
-                <div className="flex w-full flex-col gap-2">
-                  <label
-                    htmlFor=""
-                    className="text-xs font-medium text-pitch-black"
-                  >
-                    Which best describes you*
-                  </label>
-                  <Select variant="text" text="School" />
-                </div>
+//               <FormElementContainer>
+//                 <Label>School location</Label>
+//                 <Input />
+//               </FormElementContainer>
 
-                <div className="flex w-full flex-col gap-2">
-                  <label
-                    htmlFor=""
-                    className="text-xs font-medium text-pitch-black"
-                  >
-                    Number of students enrolled
-                  </label>
-                  <Select variant="text" text="Select an option" />
-                </div>
-              </div>*/
+//               <FormElementContainer>
+//                 <Label required>Your message to us*</Label>
+//                 {/*font-style will be changed for the inputs and the textarea*/}
+//                 <textarea className="h-60 w-full rounded-lg border-[1px] border-dark-blue/20 p-4 outline-none" />
+//               </FormElementContainer>
 
-export default ContactUs;
+//               <Button size="full-big" variant="secondary">
+//                 Submit
+//               </Button>
+//             </form>
+//             <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">
+//               By submitting, you agree to our Terms of Service and Privacy
+//               Policy.
+//             </p>
+//           </div>
+//         </main>
+
+//         <p className="mx-auto w-fit text-xs font-medium text-pitch-black">
+//           Copyright © 2024, Scoolspace. All rights reserved.
+//         </p>
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default ContactUs;

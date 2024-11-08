@@ -94,7 +94,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           >
             <img
               src={
-                newType === "dark-contrast"
+                newType === "dark-contrast" || newType === "light"
                   ? "images/icon-hamburger-dark.svg"
                   : "images/icon-harmburger.svg"
               }
