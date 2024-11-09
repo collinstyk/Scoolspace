@@ -3,8 +3,8 @@ import React from "react";
 
 function FormLayout({ heading, description, children }) {
   return (
-    <main className="custom:flex-row custom:w-full custom:gap-0 mx-auto mb-[135.86px] mt-40 flex w-[480px] flex-col justify-between gap-[94px]">
-      <section className="custom:w-[400px] flex w-[394px] flex-col gap-4">
+    <main className="mx-auto mb-[135.86px] mt-40 flex w-[91%] flex-col justify-between gap-[94px] tablet:w-[480px] custom:w-full custom:flex-row custom:gap-0">
+      <section className="flex w-full flex-col gap-4 tablet:w-[394px] custom:w-[400px]">
         <h1 className="text-[40px] font-bold leading-[50.4px] text-dark-blue">
           {heading}
         </h1>
@@ -13,7 +13,7 @@ function FormLayout({ heading, description, children }) {
         </p>
       </section>
 
-      <div className="w-[480px]">{children}</div>
+      <div className="mx-auto w-[91%] tablet:w-[480px]">{children}</div>
     </main>
   );
 }

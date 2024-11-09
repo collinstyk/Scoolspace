@@ -146,7 +146,7 @@ function ContactUs() {
           />
         </FormLayout>
 
-        <p className="mx-auto mb-6 w-fit text-xs font-medium text-pitch-black">
+        <p className="mx-auto mb-6 w-fit text-center text-xs font-medium text-pitch-black">
           Copyright © 2024, Scoolspace. All rights reserved.
         </p>
       </section>

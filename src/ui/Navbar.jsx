@@ -69,7 +69,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
     >
       <nav
         id="navbar"
-        className={`desktop:w-[1200px] laptop:w-[960px] custom:w-[800px] tablet:w-[704px] z-10 mx-auto flex w-[91%] items-center justify-between`}
+        className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] custom:w-[800px] laptop:w-[960px] desktop:w-[1200px]`}
       >
         {!showMobileNav && (
           <div className="h-[40px] items-center">
@@ -89,7 +89,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
         {!showMobileNav && (
           <div
-            className={`custom:hidden h-[40px] w-[40px] cursor-pointer`}
+            className={`h-[40px] w-[40px] cursor-pointer custom:hidden`}
             onClick={toogleMobileNav}
           >
             <img
@@ -106,7 +106,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-transform duration-300 ${
+          className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-transform duration-500 ease-out ${
             showMobileNav ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -125,7 +125,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             <ul className="mt-16 flex flex-col space-y-8 px-12">
               {navItems.map((el, index) => (
                 <li key={index}>
-                  <a href="#" className="block text-sm font-semibold">
+                  <a href="#" className="block text-lg font-semibold">
                     {el}
                   </a>
                 </li>
@@ -134,16 +134,20 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           </div>
 
           <div className="flex flex-col gap-6">
-            <Button variant="primary" size="full-medium" to="join-the-waitlist">
+            <Button
+              variant="primary"
+              size="full-medium"
+              to="/join-the-waitlist"
+            >
               Join our waitlist
             </Button>
-            <Button variant="secondary" size="full-medium" to="contact-us">
+            <Button variant="secondary" size="full-medium" to="/contact-us">
               Contact us
             </Button>
           </div>
         </div>
 
-        <div className="custom:flex hidden items-center gap-x-6 text-base font-normal">
+        <div className="hidden items-center gap-x-6 text-base font-normal custom:flex">
           <ul
             className={`flex list-none gap-2 overflow-hidden rounded-xl ${
               newType === "light-contrast"
@@ -156,11 +160,11 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             {navItems.map((el, index) => (
               <li
                 key={index}
-                className="h-[40px] justify-center rounded-xl hover:backdrop-blur-xl"
+                className="flex h-[40px] items-center justify-center rounded-xl hover:backdrop-blur-xl"
               >
                 <a
                   href="#"
-                  className="inline-block h-full px-4 py-2 text-center align-middle text-sm font-medium transition hover:text-opacity-80"
+                  className="flex h-full items-center justify-center px-4 py-2 text-center text-sm font-medium transition hover:text-opacity-80"
                 >
                   {el}
                 </a>
@@ -176,7 +180,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             }`}
             size={btnSize}
             to={btnTo}
-            className="text-sm font-semibold"
+            className="h-full text-sm font-semibold"
           >
             {btnText}
           </Button>
