@@ -31,8 +31,8 @@ function HeroSection() {
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[91%] pt-8 text-white tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]">
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
-              <div className="flex w-[460px] flex-col gap-4">
-                <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[5vh]">
+              <div className="flex w-full flex-col gap-4 tablet:w-1/2">
+                <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[6vh]">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
                 <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-base">
@@ -234,9 +234,9 @@ function Feature({
           style={{
             backgroundImage: bgImage,
           }}
-          className={`relative hidden h-[560px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:w-[391px] desktop:w-[481px]`}
+          className={`relative hidden h-[504px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[560px] laptop:w-[391px] desktop:h-[600px] desktop:w-[481px]`}
         >
-          <div className="z-10 flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col gap-2">
             <h3 className="font-semibold text-white tablet:text-base laptop:text-[22px] desktop:text-2xl">
               Designed for {featureName}
             </h3>
@@ -245,7 +245,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`w-auto rounded-2xl px-12 ${variant === "fill" ? "py-8" : "h-[504px] w-full py-12 laptop:h-[560px] laptop:w-[553px] desktop:h-[600px] desktop:w-[687px]"} ${bgColor}`}
+        className={`h-[504px] w-auto rounded-2xl px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "py-8" : "w-full py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
