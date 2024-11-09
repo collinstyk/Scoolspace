@@ -123,7 +123,7 @@ function ContactUs() {
   ];
 
   return (
-    <div className="min-w-vw bg-white bg-grid3 bg-repeat-x">
+    <div className="min-w-vw bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
       <section className="mx-auto w-full px-6 tablet:w-[480px] custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}

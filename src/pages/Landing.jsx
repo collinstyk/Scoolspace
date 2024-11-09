@@ -32,7 +32,7 @@ function HeroSection() {
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="flex w-[460px] flex-col gap-4">
-                <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[48px]">
+                <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[5vh]">
                   Lorem ipsum dolor sit amet consectetur
                 </h1>
                 <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-base">
@@ -250,9 +250,9 @@ function Feature({
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
           <div
-            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-[57%]" : ""}`}
+            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-full tablet:w-[57%]" : ""}`}
           >
-            <h2 className="text-2xl font-bold leading-[50.4px] laptop:text-[32px] desktop:text-[40px]">
+            <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
               {heading}
             </h2>
             <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">

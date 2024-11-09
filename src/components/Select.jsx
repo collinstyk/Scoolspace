@@ -57,7 +57,7 @@ function Select({ name, onChange, variant, text, options }) {
             />
           </div>
           <div
-            className={`absolute z-10 mt-1 overflow-hidden overflow-y-auto rounded-md bg-white shadow-md transition-all duration-300 scrollbar-hide ${isOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}
+            className={`absolute z-10 mt-1 overflow-hidden overflow-y-auto rounded-md bg-white text-pitch-black shadow-md transition-all duration-300 scrollbar-hide ${isOpen ? "max-h-32 opacity-100" : "max-h-0 opacity-0"}`}
           >
             {options.map((option) => (
               <div
@@ -95,7 +95,7 @@ function Select({ name, onChange, variant, text, options }) {
             />
           </div>
           <div
-            className={`absolute z-10 mt-1 flex w-full flex-col gap-2 overflow-hidden overflow-y-auto rounded-lg border border-dark-blue/20 bg-white p-4 text-sm font-semibold transition-all duration-300 ${isOpen ? "max-h-40" : "max-h-0 border-0 py-0 opacity-0"}`}
+            className={`absolute z-10 mt-1 flex w-full flex-col gap-2 overflow-hidden overflow-y-auto rounded-lg border border-dark-blue/20 bg-white p-4 text-sm font-semibold text-pitch-black transition-all duration-300 ${isOpen ? "max-h-40" : "max-h-0 border-0 py-0 opacity-0"}`}
           >
             {options.map((option) => (
               <div

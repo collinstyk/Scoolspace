@@ -1,22 +1,22 @@
 function Footer() {
   return (
     <footer className="font-circular-std flex w-full flex-col items-center bg-dark-radial-blue py-[44px] text-white">
-      <div className="desktop:w-[1200px] laptop:w-[960px] tablet:w-[656px] tablet:flex-row tablet:gap-0 flex w-[90%] flex-col justify-between gap-12">
-        <div className="tablet:flex-col flex items-start gap-6">
+      <div className="flex w-[90%] flex-col justify-between gap-12 tablet:w-[656px] tablet:flex-row tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
+        <div className="flex items-start gap-6 tablet:flex-col">
           <div className="flex w-[282px] flex-col items-start gap-2">
             <img
               src="images/Scoolspace-logo.svg"
               alt="Scoolspace logo"
-              className="laptop:h-12 tablet:h-6 laptop:w-[244px] w-[137px]"
+              className="w-[137px] tablet:h-6 laptop:h-12 laptop:w-[244px]"
             />
-            <p className="laptop:text-[18px] tablet:text-xs text-[10px] font-normal text-white">
+            <p className="text-[10px] font-normal text-white tablet:text-xs laptop:text-[18px]">
               A new way to <span className="text-purple-one">teach</span>,{" "}
               <span className="text-blue-one">learn</span> and{" "}
               <span className="text-passion-red">love</span>
             </p>
           </div>
-          <div className="tablet:gap-4 flex flex-col gap-2">
-            <p className="laptop:text-sm tablet:text-xs text-[10px] font-semibold">
+          <div className="flex flex-col gap-2 tablet:gap-4">
+            <p className="text-[10px] font-semibold tablet:text-xs laptop:text-sm">
               hello@scoolspace.com
             </p>
 
@@ -37,42 +37,42 @@ function Footer() {
           </div>
         </div>
 
-        <div className="laptop:gap-[88px] tablet:gap-6 relative flex justify-between">
+        <div className="relative flex justify-between gap-2 text-center tablet:gap-6 laptop:gap-[88px]">
           <ul className="flex flex-col gap-2">
-            <li className="laptop:text-base tablet:text-xs font-semibold">
+            <li className="font-semibold tablet:text-xs laptop:text-base">
               <a href="">Company</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">About us</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">FAQ forum</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="laptop:text-base tablet:text-xs font-semibold">
+            <li className="font-semibold tablet:text-xs laptop:text-base">
               <a href="">Product</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">Join the waitlist</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">Features</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="laptop:text-base tablet:text-xs font-semibold">
+            <li className="font-semibold tablet:text-xs laptop:text-base">
               <a href="">Resources</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">Help center</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">Report a problem</a>
             </li>
-            <li className="laptop:text-sm tablet:text-[10px] font-medium opacity-60">
+            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
               <a href="">Privacy policy</a>
             </li>
           </ul>
