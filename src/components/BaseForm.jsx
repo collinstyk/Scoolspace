@@ -23,19 +23,23 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
   };
 
   const navigate = useNavigate();
+  const delayNavigation = (sec) =>
+    setTimeout(() => {
+      navigate("/");
+    }, sec * 1000);
 
   const notify = (page) => {
     if (page === "join-our-waitlist") {
-      toast("Thanks for Joining ☺", {
+      toast("Thanks for Joining 👍", {
         style: { backgroundColor: "#00ADE6", color: "white" },
       });
-      navigate("/");
+      delayNavigation(5);
     }
     if (page === "contact-us") {
       toast("Message sent successfully 👍", {
         style: { backgroundColor: "#00ADE6", color: "white" },
       });
-      navigate("/");
+      delayNavigation(5);
     }
   };
 
