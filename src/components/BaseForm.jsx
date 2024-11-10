@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import { FormElementContainer, Input, Label } from "./FormComponents";
 import Select from "./Select";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
   const [selectedRole, setSelectedRole] = useState(null);
@@ -11,6 +12,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
     phone: "+234",
     // Add initial states for other fields based on the formFields structure
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFieldChange = (fieldName, value) => {
     setFormData((prev) => ({
@@ -19,9 +21,21 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
     }));
   };
 
+  const notify = (page) => {
+    if (page === "join-our-waitlist")
+      return toast("Thanks for Joining ☺", {
+        style: { backgroundColor: "#00ADE6", color: "white" },
+      });
+    if (page === "contact-us")
+      return toast("Message sent successfully 👍", {
+        style: { backgroundColor: "#00ADE6", color: "white" },
+      });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = `https://api.scoolspace.com/api/v1/website-api/${route}`;
+    setIsSubmitting(true);
     try {
       // Handle form submission with formData state
       const res = await axios({
@@ -31,14 +45,21 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
       });
       console.log(formData);
       console.log("Form submitted successfully!", res.data);
+      notify(page);
     } catch (err) {
       console.error("Error submitting form:", err);
+      toast("Error submitting form!", {
+        style: { backgroundColor: "#FF3333", color: "white" },
+      });
       console.log(formData);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full flex-col gap-6">
+      <Toaster />
       {formFields.map((field, index) => {
         const {
           label,
@@ -192,8 +213,11 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
       <Button
         variant={page === "contact-us" ? "secondary" : "primary"}
         size="full-big"
+        disabled={isSubmitting}
       >
-        {buttonText}
+        {isSubmitting && page === "join-our-waitlist" && "Joining..."}
+        {isSubmitting && page === "contact-us" && "Submitting..."}
+        {!isSubmitting && buttonText}
       </Button>
 
       {submitText && (

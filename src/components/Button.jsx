@@ -1,12 +1,13 @@
 import { cva } from "class-variance-authority";
 import { useNavigate } from "react-router-dom";
 
-function Button({ className, children, variant, size, to }) {
+function Button({ className, children, variant, size, to, disabled }) {
   const navigate = useNavigate();
   return (
     <button
       className={buttonStyles({ className, variant, size })}
       onClick={() => navigate(to)}
+      disabled={disabled}
     >
       {children}
     </button>
