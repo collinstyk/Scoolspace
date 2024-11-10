@@ -12,10 +12,14 @@ function JoinTheWaitlist() {
         {
           label: "First name*",
           required: true,
+          name: "firstName",
+          type: "text",
         },
         {
           label: "Last name*",
           required: true,
+          name: "lastName",
+          type: "text",
         },
       ],
     },
@@ -23,10 +27,12 @@ function JoinTheWaitlist() {
       label: "Email*",
       required: true,
       type: "email",
+      name: "email",
     },
     {
       label: "Phone number",
       isDual: true, // Phone number input with region select
+      name: "phone",
       options: [
         {
           flag: "images/countryFlags/ngn-flag.png",
@@ -42,9 +48,11 @@ function JoinTheWaitlist() {
     },
     {
       label: "Name of school / institution",
+      name: "institution",
     },
     {
       label: "School location",
+      name: "location",
     },
     {
       specialSelect: true,
@@ -55,6 +63,7 @@ function JoinTheWaitlist() {
           type: "select",
           variant: "text",
           text: "School",
+          name: "whichBestDescribesYou",
           options: [
             {
               label: "School (Owner or Admin)",
@@ -75,6 +84,7 @@ function JoinTheWaitlist() {
           type: "select",
           variant: "text",
           text: "Select an option",
+          name: "numberOfStudentsEnrolled",
           options: [
             {
               label: "50 or less",
@@ -123,6 +133,7 @@ function JoinTheWaitlist() {
             buttonText="Join the waitlist"
             submitText="By continuing, you agree to our Terms of Service and Privacy Policy."
             page="join-our-waitlist"
+            route="waitlists"
           />
         </FormLayout>
 

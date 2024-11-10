@@ -1,7 +1,7 @@
 export const FormElementContainer = ({ children, variant = "single" }) => {
   return (
     <div
-      className={`flex w-full ${variant === "single" ? "flex-col gap-1" : variant === "dual-elements" ? "gap-8" : "gap-2"} `}
+      className={`flex w-full ${variant === "single" ? "flex-col gap-1" : variant === "dual-elements" ? "items-end gap-8" : "gap-2"} `}
     >
       {children}
     </div>

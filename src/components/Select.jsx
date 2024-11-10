@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 
 function Select({ name, onChange, variant, text, options }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +8,7 @@ function Select({ name, onChange, variant, text, options }) {
 
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
-  const dropDownRef = useRef(null);
+  const dropdownref = useRef(null);
 
   const selectOption = (option) => {
     setSelectedOption(option);
@@ -16,9 +16,18 @@ function Select({ name, onChange, variant, text, options }) {
     setIsOpen(false);
   };
 
+  // const handleChange = useCallback(
+  //   (optionValue) => {
+  //     if (onChange) {
+  //       onChange(optionValue);
+  //     }
+  //   },
+  //   [onChange], // Depend on the stable onChange prop
+  // );
+
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+      if (dropdownref.current && !dropdownref.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
@@ -29,17 +38,18 @@ function Select({ name, onChange, variant, text, options }) {
   }, []);
 
   useEffect(() => {
-    if (onChange) {
+    if (onChange && selectedOption) {
+      // console.log("selectedOption changed:", selectedOption); // Debug log
       onChange(selectedOption?.value || selectedOption?.countryCode);
     }
-  }, [selectedOption, onChange]);
+  }, [selectedOption]);
 
   return (
     <>
       {variant === "region" && (
         <div
           className="relative w-fit cursor-pointer"
-          ref={dropDownRef}
+          dropdownref={dropdownref}
           onClick={() => {
             toggleIsOpen();
           }}
@@ -77,7 +87,7 @@ function Select({ name, onChange, variant, text, options }) {
       {variant === "text" && (
         <div
           className="relative w-full"
-          ref={dropDownRef}
+          dropdownref={dropdownref}
           onClick={() => {
             toggleIsOpen();
           }}

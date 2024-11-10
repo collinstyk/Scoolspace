@@ -10,6 +10,7 @@ function ContactUs() {
       required: true,
       type: "select",
       variant: "text",
+      name: "whatCanWeHelpWith",
       text: "Sales Inquiry (Contact sales)",
       options: [
         {
@@ -33,15 +34,18 @@ function ContactUs() {
     {
       label: "Full name*",
       required: true,
+      name: "fullName",
     },
     {
       label: "Email address*",
       required: true,
       type: "email",
+      name: "email",
     },
     {
       label: "Phone number",
-      isDual: true, // Phone number input with region select
+      isDual: true,
+      name: "phone",
       options: [
         {
           flag: "images/countryFlags/ngn-flag.png",
@@ -57,9 +61,11 @@ function ContactUs() {
     },
     {
       label: "Name of school / institution",
+      name: "institution",
     },
     {
       label: "School location",
+      name: "location",
     },
     {
       specialSelect: true,
@@ -70,6 +76,7 @@ function ContactUs() {
           type: "select",
           variant: "text",
           text: "School",
+          name: "whatBestDescribesYou",
           options: [
             {
               label: "School (Owner or Admin)",
@@ -90,6 +97,7 @@ function ContactUs() {
           type: "select",
           variant: "text",
           text: "Select an option",
+          name: "numberOfStudentsEnrolled",
           options: [
             {
               label: "50 or less",
@@ -119,6 +127,7 @@ function ContactUs() {
       label: "Your message to us*",
       required: true,
       type: "textarea",
+      name: "message",
     },
   ];
 
@@ -143,6 +152,7 @@ function ContactUs() {
             buttonText="Submit"
             submitText="By submitting, you agree to our Terms of Service and Privacy Policy."
             page="contact-us"
+            route="contact-us"
           />
         </FormLayout>
 
