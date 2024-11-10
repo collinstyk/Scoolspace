@@ -4,6 +4,7 @@ import { FormElementContainer, Input, Label } from "./FormComponents";
 import Select from "./Select";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
   const [selectedRole, setSelectedRole] = useState(null);
@@ -21,15 +22,21 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
     }));
   };
 
+  const navigate = useNavigate();
+
   const notify = (page) => {
-    if (page === "join-our-waitlist")
-      return toast("Thanks for Joining ☺", {
+    if (page === "join-our-waitlist") {
+      toast("Thanks for Joining ☺", {
         style: { backgroundColor: "#00ADE6", color: "white" },
       });
-    if (page === "contact-us")
-      return toast("Message sent successfully 👍", {
+      navigate("/");
+    }
+    if (page === "contact-us") {
+      toast("Message sent successfully 👍", {
         style: { backgroundColor: "#00ADE6", color: "white" },
       });
+      navigate("/");
+    }
   };
 
   const handleSubmit = async (e) => {
