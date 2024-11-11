@@ -224,6 +224,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
       <Button
         variant={page === "contact-us" ? "secondary" : "primary"}
         size="full-big"
+        className={isSubmitting ? "cursor-not-allowed" : ""}
         disabled={isSubmitting}
       >
         {isSubmitting && page === "join-our-waitlist" && "Joining..."}

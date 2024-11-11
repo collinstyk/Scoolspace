@@ -33,18 +33,19 @@ function HeroSection() {
             <div className="mt-32 flex w-full items-center justify-between">
               <div className="flex w-full flex-col gap-4 tablet:w-1/2">
                 <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[6vh]">
-                  Lorem ipsum dolor sit amet consectetur
+                  A Simpler Way to Teach, Learn, and Love
                 </h1>
                 <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-base">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem.
+                  Unlock a connected, engaging, and efficient education
+                  experience for parents, students, teachers, and school
+                  administrators.
                 </p>
                 <div className="mt-6 flex gap-4">
                   <Button
                     className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
                     to="/join-the-waitlist"
                   >
-                    Join our waitlist
+                    Join the waitlist
                   </Button>
                   <Button
                     className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
@@ -88,9 +89,10 @@ function Features() {
     {
       id: 1,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
-      subHeading: "Feature for Sub-heading",
-      heading: "Some big text for feature header.",
-      body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
+      subHeading: "Why ScoolSpace?",
+      heading:
+        "Transforming Education with Seamless Communication and Real-Time Insights",
+      body: "ScoolSpace is the all-in-one platform that bridges gaps between students, teachers, parents, and administrators. Access real-time progress, communicate effortlessly, and create a community dedicated to learning success—all from one powerful, user-friendly dashboard.",
       variant: "fill",
       btnVariant: "secondary",
       flow: null,
@@ -103,9 +105,9 @@ function Features() {
     {
       id: 2,
       bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
-      subHeading: "Feature for Sub-heading",
-      heading: "Some big text for feature header.",
-      body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
+      subHeading: "For Schools",
+      heading: "Empowering Administrators with Full Control and Insight",
+      body: "From real-time student performance metrics to automated finance, inventory, and curriculum management, ScoolSpace offers administrators the tools they need to elevate school operations. Monitor classrooms, manage school resources, and foster a collaborative environment—all in one place.",
       variant: "dual",
       btnVariant: "light",
       flow: "right",
@@ -120,9 +122,9 @@ function Features() {
     {
       id: 3,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
-      subHeading: "Feature for Sub-heading",
-      heading: "Some big text for feature header.",
-      body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
+      subHeading: "For Teachers",
+      heading: "Engage, Inspire, and Save Time with Interactive Teaching Tools",
+      body: "ScoolSpace makes teaching easier, faster, and more impactful. Plan lessons, assign and auto-grade quizzes, and keep students engaged with interactive activities, badges, and real-time feedback. Communicate seamlessly with parents and track each student’s progress from a centralized digital platform.",
       variant: "dual",
       btnVariant: "secondary",
       flow: "left",
@@ -137,9 +139,10 @@ function Features() {
     {
       id: 4,
       bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
-      subHeading: "Feature for Sub-heading",
-      heading: "Some big text for feature header.",
-      body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
+      subHeading: "For Parents",
+      heading:
+        "Stay Involved and Up-to-Date with Your Child’s Learning Journey",
+      body: "No more trips to school or missed calls from teachers. With ScoolSpace, you can monitor your child’s progress, communicate with teachers, and access assignments and assessments—all at your fingertips. Stay connected and empowered to support your child’s academic growth.",
       variant: "fill",
       btnVariant: "secondary",
       flow: null,
@@ -152,9 +155,9 @@ function Features() {
     {
       id: 5,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
-      subHeading: "Feature for Sub-heading",
-      heading: "Some big text for feature header.",
-      body: "At vero eos et accusamus et iusto tui odio ducimus dignissimos qui blanditiis se latino praesentium potenta voluptatum.",
+      subHeading: "For Students",
+      heading: "Learning Has Never Been This Fun and Accessible",
+      body: "With ScoolSpace, you can access class materials, submit assignments, and take interactive assessments from anywhere. Learning is engaging and dynamic, designed to keep you interested and motivated to succeed.",
       variant: "dual",
       btnVariant: "secondary",
       flow: "right",
@@ -245,7 +248,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`h-[504px] w-auto rounded-2xl px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "py-8" : "w-full py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
+        className={`h-[504px] w-auto rounded-2xl px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "flex flex-col justify-between py-8" : "w-full py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -270,7 +273,7 @@ function Feature({
 
         <Button
           variant={btnVariant}
-          className={`px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "mt-[223px]" : "mt-8"}`}
+          className={`px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit" : "mt-8"}`}
         >
           {btnText}
         </Button>
@@ -287,12 +290,13 @@ function LandingSection3() {
     >
       <div className="mx-auto flex w-[91%] flex-col justify-between gap-6 tablet:w-[704px] tablet:flex-row laptop:w-[960px] desktop:w-[1200px]">
         <h1 className="w-full text-[22px] font-semibold text-white tablet:w-[368px] tablet:text-[32px] laptop:text-[32px] laptop:font-bold desktop:text-[40px]">
-          Anyway, we’re just getting started
+          The Future of Education Starts Here
         </h1>
         <section className="flex h-[120px] w-full flex-col gap-4 tablet:w-[400px] tablet:gap-[18px] laptop:gap-[22px] desktop:gap-8">
           <p className="font-medium leading-[22.68px] text-white laptop:text-base desktop:text-lg">
-            At vero eos et accusamus et iusto tui odio na se tu latino
-            praesentium voluptatum.
+            We’re just getting started. Join a community committed to
+            transforming education and making learning accessible, enjoyable,
+            and effective for everyone involved.
           </p>
           <Button
             variant="outlined-light"
