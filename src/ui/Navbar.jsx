@@ -215,7 +215,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             setNewType("dark-contrast");
           } else if (sectionId === "landing-3" && isMobile) {
             setNewType("light-contrast");
-          } else if (sectionId === "landing-3") {
+          } else if (sectionId === "landing-3" && !isMobile) {
             setNewType("dark-contrast");
           }
         }
@@ -260,7 +260,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] custom:w-[800px] laptop:w-[960px] desktop:w-[1200px]`}
       >
         {!showMobileNav && (
-          <div className="h-[40px] items-center">
+          <div className="h-10 items-center align-middle">
             <Link to="/">
               <img
                 src={`${
@@ -271,7 +271,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
                       : "images/Scoolspace-logo.svg"
                 }`}
                 alt="Scoolspace logo"
-                className="h-full w-full"
+                className={"h-full w-full"}
               />
             </Link>
           </div>
@@ -312,10 +312,10 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             </div>
 
             {/* Mobile Navigation Items */}
-            <ul className="mt-16 flex flex-col space-y-8 px-12">
+            <ul className="mt-8 flex flex-col space-y-4 pl-6 pr-12">
               {navItems.map((el, index) => (
                 <li key={index}>
-                  <a href="#" className="block text-lg font-semibold">
+                  <a href="#" className="block text-xl font-semibold">
                     {el}
                   </a>
                 </li>
