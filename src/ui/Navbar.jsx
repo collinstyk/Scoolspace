@@ -183,6 +183,7 @@ import Button from "../components/Button";
 function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [newType, setNewType] = useState(type);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
 
   const toogleMobileNav = () => {
     setShowMobileNav((value) => !value);
@@ -212,6 +213,8 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             setNewType("dark-contrast");
           } else if (sectionId === "features") {
             setNewType("dark-contrast");
+          } else if (sectionId === "landing-3" && isMobile) {
+            setNewType("light-contrast");
           } else if (sectionId === "landing-3") {
             setNewType("dark-contrast");
           }
@@ -221,14 +224,19 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 430);
+    };
     // Add scroll listener for the home page
     const isHomePage = document.getElementById("home") !== null;
     if (isHomePage) {
       window.addEventListener("scroll", handleScroll);
     }
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll); // Clean up event listener
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -238,11 +246,13 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       className={`flex h-[82px] w-full items-center justify-center ${
         position === "sticky" ? "sticky top-0 z-10 -mt-[82px]" : ""
       } ${
-        newType === "light-contrast"
-          ? "bg-pitch-black transition-colors duration-300"
-          : newType === "dark-contrast"
-            ? "bg-white transition-colors duration-300"
-            : ""
+        isMobile
+          ? ""
+          : newType === "light-contrast"
+            ? "bg-pitch-black transition-colors duration-300"
+            : newType === "dark-contrast"
+              ? "bg-white transition-colors duration-300"
+              : ""
       }`}
     >
       <nav
@@ -254,9 +264,11 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             <Link to="/">
               <img
                 src={`${
-                  newType === "light" || newType === "dark-contrast"
-                    ? "images/Scoolspace-logo-dark.svg"
-                    : "images/Scoolspace-logo.svg"
+                  isMobile
+                    ? "images/Logomark.svg"
+                    : newType === "light" || newType === "dark-contrast"
+                      ? "images/Scoolspace-logo-dark.svg"
+                      : "images/Scoolspace-logo.svg"
                 }`}
                 alt="Scoolspace logo"
                 className="h-full w-full"
