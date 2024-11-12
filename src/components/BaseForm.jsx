@@ -102,6 +102,8 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
               />
               <Input
                 type={type || "text"}
+                min="7"
+                max="13"
                 value={formData.phone}
                 onChange={(e) => {
                   const inputVal = e.target.value;

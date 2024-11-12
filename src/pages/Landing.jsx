@@ -248,7 +248,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`h-[504px] w-auto rounded-2xl px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "flex flex-col justify-between py-8" : "w-full py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
+        className={`py- max-h-fit min-h-[504px] w-auto gap-8 rounded-2xl px-12 sm:gap-0 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "flex flex-col sm:justify-between sm:py-8" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -381,8 +381,10 @@ function LandingSection3() {
           className="col-span-1 flex flex-col justify-between rounded-2xl bg-cover bg-[50%] px-6 py-[31px] bg-blend-multiply tablet:col-span-2 tablet:col-start-1 tablet:bg-[length:100%_125%] tablet:bg-[100%_55%] laptop:col-start-2"
         >
           <div className="relative w-full text-white">
-            <h5 className="text-lg font-bold">Available on every platform</h5>
-            <span className="absolute right-0 top-0 text-xs font-semibold text-white">
+            <h5 className="w-11/12 text-lg font-bold sm:w-auto">
+              Available on every platform
+            </h5>
+            <span className="absolute right-0 top-2 text-xs font-semibold text-white">
               05
             </span>
           </div>
@@ -405,8 +407,8 @@ function FinalCTA() {
     >
       <section className="mx-auto flex flex-col items-start justify-between gap-6 tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
         <h1
-          style={{ lineHeight: "3rem" }}
-          className="text-[22px] font-semibold text-pitch-black tablet:w-[408px] tablet:text-2xl laptop:w-[451px] laptop:text-[40px] desktop:text-[48px]"
+          // style={{ lineHeight: "3rem" }}
+          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[408px] tablet:text-2xl tablet:leading-10 laptop:w-[451px] laptop:text-[40px] desktop:text-[48px]"
         >
           Ready to transform your school?
         </h1>

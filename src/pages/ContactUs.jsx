@@ -45,6 +45,7 @@ function ContactUs() {
     {
       label: "Phone number",
       isDual: true,
+      type: "tel",
       name: "phone",
       options: [
         {

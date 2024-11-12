@@ -34,6 +34,8 @@ export const Input = ({
           onChange={onChange}
           onInput={onInput}
           value={value}
+          min
+          max
         />
       ) : (
         <input
