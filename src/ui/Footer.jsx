@@ -37,48 +37,48 @@ function Footer() {
           </div>
         </div>
 
-        <div className="relative flex justify-between gap-2 text-center tablet:gap-6 laptop:gap-[88px]">
+        <div className="relative flex justify-between gap-2 text-center text-[10px] tracking-wide tablet:gap-6 tablet:text-xs laptop:gap-[88px] laptop:text-base">
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold tablet:text-xs laptop:text-base">
+            <li className="text-xs font-semibold">
               <a href="">Company</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">About us</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">FAQ forum</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold tablet:text-xs laptop:text-base">
+            <li className="text-xs font-semibold">
               <a href="">Product</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">Join the waitlist</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">Features</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="font-semibold tablet:text-xs laptop:text-base">
+            <li className="text-xs font-semibold">
               <a href="">Resources</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">Help center</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">Report a problem</a>
             </li>
-            <li className="font-medium opacity-60 tablet:text-[10px] laptop:text-sm">
+            <li className="font-medium opacity-60">
               <a href="">Privacy policy</a>
             </li>
           </ul>
         </div>
       </div>
-      <p className="mx-auto mt-12 w-full text-center text-xs font-normal tracking-widest">
+      <p className="mx-auto mt-12 w-full text-center text-[10px] font-normal tracking-widest tablet:text-xs">
         Copyright © 2024, Scoolspace. All rights reserved.
       </p>
     </footer>
