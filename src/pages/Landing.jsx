@@ -248,7 +248,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`py- max-h-fit min-h-[504px] w-auto gap-8 rounded-2xl px-12 sm:gap-0 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "flex flex-col sm:justify-between sm:py-8" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
+        className={`max-h-fit min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -273,7 +273,7 @@ function Feature({
 
         <Button
           variant={btnVariant}
-          className={`px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit" : "mt-8"}`}
+          className={`mt-8 px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit tablet:mt-0" : ""}`}
         >
           {btnText}
         </Button>
@@ -312,7 +312,7 @@ function LandingSection3() {
         <div className="bg-dark col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-1 tablet:col-end-2">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="images/managed-access.png" alt="" />
+              <img src="images/managed-access.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
@@ -328,7 +328,7 @@ function LandingSection3() {
         <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-2 tablet:col-end-3">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="images/functionality-access.png" alt="" />
+              <img src="images/functionality-access.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
@@ -344,7 +344,7 @@ function LandingSection3() {
         <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="images/realtime-update.png" alt="" />
+              <img src="images/realtime-update.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
@@ -360,7 +360,7 @@ function LandingSection3() {
         <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2">
           <div>
             <div className="mb-[10px] h-[208px]">
-              <img src="images/analytics.png" alt="" />
+              <img src="images/analytics.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
