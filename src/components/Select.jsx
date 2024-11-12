@@ -92,7 +92,7 @@ function Select({ name, onChange, variant, text, options }) {
             toggleIsOpen();
           }}
         >
-          <div className="flex h-[60px] items-center justify-between rounded-lg border border-dark-blue/20 bg-white px-6">
+          <div className="flex h-[60px] items-center justify-between rounded-lg border border-dark-blue/20 bg-white px-4">
             <p className="text-sm font-medium text-pitch-black">
               {selectedOption?.value === "school"
                 ? "School"

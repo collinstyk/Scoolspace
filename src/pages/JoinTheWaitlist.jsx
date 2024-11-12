@@ -137,7 +137,7 @@ function JoinTheWaitlist() {
           />
         </FormLayout>
 
-        <p className="relative bottom-6 mx-auto w-fit text-xs font-medium text-pitch-black">
+        <p className="mx-auto mb-6 w-fit text-xs font-medium text-pitch-black">
           Copyright © 2024, Scoolspace. All rights reserved.
         </p>
       </section>

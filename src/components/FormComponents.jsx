@@ -41,7 +41,7 @@ export const Input = ({
         <input
           id={id}
           type={type}
-          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20 bg-white text-pitch-black`}
+          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20 bg-white px-4 text-pitch-black`}
           onChange={onChange}
           onInput={onInput}
           value={value}
