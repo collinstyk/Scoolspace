@@ -24,13 +24,14 @@ export const Input = ({
   onInput,
   value,
   isTextarea,
+  required,
 }) => {
   return (
     <>
       {isTextarea ? (
         <textarea
           id={id}
-          className={`h-60 w-full resize-none text-wrap rounded-lg border-[1px] border-dark-blue/20 bg-white px-6 py-5 align-top leading-normal text-pitch-black outline-none`}
+          className={`h-60 w-full resize-none text-wrap rounded-lg border-[1px] border-dark-blue/20 bg-white px-6 py-5 align-top text-xs font-medium leading-normal text-pitch-black outline-none`}
           onChange={onChange}
           onInput={onInput}
           value={value}
@@ -41,10 +42,11 @@ export const Input = ({
         <input
           id={id}
           type={type}
-          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20 bg-white px-4 text-pitch-black`}
+          className={`h-[60px] w-full rounded-lg border-[1px] border-dark-blue/20 bg-white px-4 font-plus-jakarta-sans text-xs font-medium text-pitch-black`}
           onChange={onChange}
           onInput={onInput}
           value={value}
+          required={required}
         />
       )}
     </>

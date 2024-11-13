@@ -92,6 +92,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
               <Select
                 variant="region"
                 options={options}
+                required={required}
                 onChange={(selectedPrefix) => {
                   setPhonePrefix(selectedPrefix);
                   handleFieldChange(
@@ -102,6 +103,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
               />
               <Input
                 type={type || "text"}
+                required={required}
                 min="7"
                 max="13"
                 value={formData.phone}
@@ -136,6 +138,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                   {type === "input" ? (
                     <Input
                       type={el.type || "text"}
+                      required={required}
                       onChange={(e) =>
                         handleFieldChange(el.name, e.target.value)
                       }
@@ -144,6 +147,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                     <Select
                       variant={el.variant}
                       text={el.text || "Select an option"}
+                      required={required}
                       options={el.options}
                       onChange={(selectedOption) =>
                         handleFieldChange(el.name, selectedOption)
@@ -169,6 +173,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                 <Select
                   variant={subFields[0].variant}
                   text={subFields[0].text || "School"}
+                  required={required}
                   options={subFields[0].options}
                   onChange={(selectedOption) => {
                     handleFieldChange(subFields[0].name, selectedOption);
@@ -184,6 +189,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                   <Select
                     variant={subFields[1].variant}
                     text={subFields[1].text || "School"}
+                    required={required}
                     options={subFields[1].options}
                     onChange={(selectedOption) =>
                       handleFieldChange(subFields[1].name, selectedOption)
@@ -202,6 +208,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
               <Select
                 variant={variant}
                 text={text || "Select an option"}
+                required={required}
                 options={options}
                 onChange={(selectedOption) =>
                   handleFieldChange(name, selectedOption)
@@ -210,12 +217,14 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
             ) : type === "textarea" ? (
               <Input
                 type="textarea"
+                required={required}
                 isTextarea
                 onChange={(e) => handleFieldChange(name, e.target.value)}
               />
             ) : (
               <Input
                 type={type || "text"}
+                required={required}
                 onChange={(e) => handleFieldChange(name, e.target.value)}
               />
             )}

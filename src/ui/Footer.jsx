@@ -37,7 +37,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="relative flex justify-between gap-2 text-center text-[10px] tracking-wide tablet:gap-6 tablet:text-xs laptop:gap-[88px] laptop:text-base">
+        <div className="relative flex justify-between gap-2 text-[10px] tracking-wide tablet:gap-6 tablet:text-xs laptop:gap-[88px] laptop:text-base">
           <ul className="flex flex-col gap-2">
             <li className="text-xs font-semibold">
               <a href="">Company</a>

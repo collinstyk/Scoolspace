@@ -1,6 +1,6 @@
 import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 
-function Select({ name, onChange, variant, text, options }) {
+function Select({ onChange, variant, text, options, required }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(
     variant === "region" ? options[0] : null,
