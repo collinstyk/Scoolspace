@@ -296,8 +296,10 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-transform duration-500 ease-out ${
-            showMobileNav ? "translate-x-0" : "translate-x-full"
+          className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-all duration-500 ease-out ${
+            showMobileNav
+              ? "max-h-full max-w-full"
+              : "max-h-0 overflow-hidden py-0 opacity-0"
           }`}
         >
           <div>
@@ -312,7 +314,9 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             </div>
 
             {/* Mobile Navigation Items */}
-            <ul className="mt-8 flex flex-col space-y-4 pl-6 pr-12">
+            <ul
+              className={`mt-8 flex flex-col space-y-4 pl-6 pr-12 ${showMobileNav ? "" : ""}`}
+            >
               {navItems.map((el, index) => (
                 <li key={index}>
                   <a href="#" className="block text-xl font-semibold">

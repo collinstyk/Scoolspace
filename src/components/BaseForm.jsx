@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { FormElementContainer, Input, Label } from "./FormComponents";
 import Select from "./Select";
@@ -7,13 +7,13 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
-  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedRole, setSelectedRole] = useState("");
   const [phonePrefix, setPhonePrefix] = useState("+234");
   const [formData, setFormData] = useState({
     phone: "+234",
-    // Add initial states for other fields based on the formFields structure
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleFieldChange = (fieldName, value) => {
     setFormData((prev) => ({
@@ -21,6 +21,32 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
       [fieldName]: value,
     }));
   };
+
+  // Form validation logic
+  const validateForm = () => {
+    const allRequiredFieldsFilled = formFields.every((field) => {
+      const fieldValue = formData[field.name];
+
+      // Check if the field is required
+      if (field.required) {
+        // // If it's a select element with a default value, ensure it's not the default anymore
+        // if (field.type === "select") {
+        //   return fieldValue !== "Select an option";
+        // }
+        // // For other required fields, ensure they are not empty or only contain whitespace
+        // return fieldValue && fieldValue.trim() !== "";
+      }
+
+      // If the field is not required, skip it
+      return true;
+    });
+
+    setIsFormValid(allRequiredFieldsFilled);
+  };
+
+  useEffect(() => {
+    validateForm(); // Validate form whenever formData changes
+  }, [formData]);
 
   const navigate = useNavigate();
   const delayNavigation = (sec) =>
@@ -45,6 +71,8 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData, isFormValid);
+
     const url = `https://api.scoolspace.com/api/v1/website-api/${route}`;
     setIsSubmitting(true);
     try {
@@ -93,6 +121,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                 variant="region"
                 options={options}
                 required={required}
+                value={formData[name] || ""}
                 onChange={(selectedPrefix) => {
                   setPhonePrefix(selectedPrefix);
                   handleFieldChange(
@@ -139,6 +168,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                     <Input
                       type={el.type || "text"}
                       required={required}
+                      value={formData[el.name] || ""}
                       onChange={(e) =>
                         handleFieldChange(el.name, e.target.value)
                       }
@@ -149,9 +179,13 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                       text={el.text || "Select an option"}
                       required={required}
                       options={el.options}
-                      onChange={(selectedOption) =>
-                        handleFieldChange(el.name, selectedOption)
-                      }
+                      value={formData[el.name] || "Select an option"}
+                      onChange={(selectedOption) => {
+                        handleFieldChange(el.name, selectedOption);
+                        if (required) {
+                          validateForm();
+                        }
+                      }}
                     />
                   )}
                 </FormElementContainer>
@@ -175,9 +209,13 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                   text={subFields[0].text || "School"}
                   required={required}
                   options={subFields[0].options}
+                  value={formData[subFields[0].name] || "Select an option"}
                   onChange={(selectedOption) => {
                     handleFieldChange(subFields[0].name, selectedOption);
                     setSelectedRole(selectedOption);
+                    if (required) {
+                      validateForm();
+                    }
                   }}
                 />
               </FormElementContainer>
@@ -190,10 +228,14 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                     variant={subFields[1].variant}
                     text={subFields[1].text || "School"}
                     required={required}
+                    value={formData[subFields[1].name] || "Select an option"}
                     options={subFields[1].options}
-                    onChange={(selectedOption) =>
-                      handleFieldChange(subFields[1].name, selectedOption)
-                    }
+                    onChange={(selectedOption) => {
+                      handleFieldChange(subFields[1].name, selectedOption);
+                      if (required) {
+                        validateForm();
+                      }
+                    }}
                   />
                 </FormElementContainer>
               )}
@@ -210,14 +252,21 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
                 text={text || "Select an option"}
                 required={required}
                 options={options}
-                onChange={(selectedOption) =>
-                  handleFieldChange(name, selectedOption)
-                }
+                value={formData[name] || "Select an option"}
+                onChange={(selectedOption) => {
+                  handleFieldChange(name, selectedOption);
+                  console.log(name);
+
+                  if (required) {
+                    validateForm();
+                  }
+                }}
               />
             ) : type === "textarea" ? (
               <Input
                 type="textarea"
                 required={required}
+                value={formData[name] || ""}
                 isTextarea
                 onChange={(e) => handleFieldChange(name, e.target.value)}
               />
@@ -225,6 +274,7 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
               <Input
                 type={type || "text"}
                 required={required}
+                value={formData[name] || ""}
                 onChange={(e) => handleFieldChange(name, e.target.value)}
               />
             )}
@@ -235,8 +285,8 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
       <Button
         variant={page === "contact-us" ? "secondary" : "primary"}
         size="full-big"
-        className={isSubmitting ? "cursor-not-allowed" : ""}
-        disabled={isSubmitting}
+        className={isSubmitting || !isFormValid ? "cursor-not-allowed" : ""}
+        disabled={isSubmitting || !isFormValid}
       >
         {isSubmitting && page === "join-our-waitlist" && "Joining..."}
         {isSubmitting && page === "contact-us" && "Submitting..."}
@@ -253,170 +303,3 @@ const BaseForm = ({ formFields, buttonText, submitText, page, route }) => {
 };
 
 export default BaseForm;
-
-// import { useState } from "react";
-// import Button from "../components/Button";
-// import { FormElementContainer, Input, Label } from "./FormComponents";
-// import Select from "./Select";
-
-// const BaseForm = ({ formFields, buttonText, submitText, page }) => {
-//   const [phonePrefix, setPhonePrefix] = useState("+234");
-//   const [phoneNumber, setPhoneNumber] = useState(phonePrefix);
-//   const [selectedRole, setSelectRole] = useState(null);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit} className="flex w-full flex-col gap-6">
-//       {formFields.map((field, index) => {
-//         const {
-//           label,
-//           required,
-//           type,
-//           variant,
-//           isDual,
-//           hasDualElement,
-//           subFields,
-//           options,
-//           text,
-//           specialSelect,
-//         } = field;
-
-//         if (isDual) {
-//           return (
-//             <FormElementContainer key={index} variant="dual">
-//               <Select
-//                 variant="region"
-//                 options={options}
-//                 onChange={(selectedPrefix) => {
-//                   // Update prefix on select change and reflect it in the phone number
-//                   setPhonePrefix(selectedPrefix);
-//                   setPhoneNumber(
-//                     `${selectedPrefix}${phoneNumber.slice(phonePrefix.length)}`,
-//                   );
-//                 }}
-//               />
-//               <Input
-//                 type={type || "text"}
-//                 value={phoneNumber || ""} // This reflects both prefix and number
-//                 onChange={(e) => {
-//                   const inputVal = e.target.value;
-//                   // Strip out the current prefix and append the new number
-//                   if (inputVal.startsWith(phonePrefix)) {
-//                     setPhoneNumber(inputVal);
-//                   } else {
-//                     const newPhoneNumber = inputVal.slice(phonePrefix.length);
-//                     setPhoneNumber(`${phonePrefix}${newPhoneNumber}`);
-//                   }
-//                 }}
-//                 onInput={(e) => {
-//                   // Ensure prefix cannot be deleted
-//                   if (!e.target.value.startsWith(phonePrefix)) {
-//                     setPhoneNumber(phonePrefix);
-//                   }
-//                 }}
-//               />
-//             </FormElementContainer>
-//           );
-//         }
-
-//         // if (isDual) {
-//         //   return (
-//         //     <FormElementContainer key={index} variant="dual">
-//         //       <Select variant="region" options={options} />
-//         //       <Input type={type || "text"} />
-//         //     </FormElementContainer>
-//         //   );
-//         // }
-
-//         if (hasDualElement) {
-//           return (
-//             <FormElementContainer key={index} variant="dual-elements">
-//               {subFields.map((el, index) => (
-//                 <FormElementContainer key={index}>
-//                   <Label required={el.required}>{el.label}</Label>
-//                   {type === "input" ? (
-//                     <Input type={type || "text"} />
-//                   ) : (
-//                     <Select
-//                       variant={variant}
-//                       text={text || "Select an option"}
-//                       options={options}
-//                     />
-//                   )}
-//                 </FormElementContainer>
-//               ))}
-//             </FormElementContainer>
-//           );
-//         }
-
-//         if (specialSelect) {
-//           return (
-//             <FormElementContainer
-//               key={index}
-//               variant={selectedRole === "school" ? "dual-elements" : "single"}
-//             >
-//               <FormElementContainer>
-//                 <Label required={subFields[0].required}>
-//                   {subFields[0].label}
-//                 </Label>
-//                 <Select
-//                   variant={subFields[0].variant}
-//                   text={subFields[0].text || "School"}
-//                   options={subFields[0].options}
-//                   onChange={(selectedOption) => setSelectRole(selectedOption)}
-//                 />
-//               </FormElementContainer>
-//               {selectedRole === "school" && (
-//                 <FormElementContainer>
-//                   <Label required={subFields[0].required}>
-//                     {subFields[1].label}
-//                   </Label>
-//                   <Select
-//                     variant={subFields[1].variant}
-//                     text={subFields[1].text || "School"}
-//                     options={subFields[1].options}
-//                   />
-//                 </FormElementContainer>
-//               )}
-//             </FormElementContainer>
-//           );
-//         }
-
-//         return (
-//           <FormElementContainer key={index}>
-//             <Label required={required}>{label}</Label>
-//             {type === "select" ? (
-//               <Select
-//                 variant={variant}
-//                 text={text || "Select an option"}
-//                 options={options}
-//               />
-//             ) : type === "textarea" ? (
-//               <Input type={type || "text"} isTextarea />
-//             ) : (
-//               <Input type={type || "text"} />
-//             )}
-//           </FormElementContainer>
-//         );
-//       })}
-
-//       <Button
-//         variant={page === "contact-us" ? "secondary" : "primary"}
-//         size="full-big"
-//       >
-//         {buttonText}
-//       </Button>
-
-//       {submitText && (
-//         <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">
-//           {submitText}
-//         </p>
-//       )}
-//     </form>
-//   );
-// };
-
-// export default BaseForm;
