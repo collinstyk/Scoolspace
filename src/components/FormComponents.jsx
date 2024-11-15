@@ -71,7 +71,7 @@ export const FormErrorMessage = ({ message }) => (
   </p>
 );
 
-export function PhoneInput() {
+export function PhoneInput({ register, errors }) {
   const phoneOptions = [
     {
       flag: "images/countryFlags/ngn-flag.png",
@@ -104,26 +104,42 @@ export function PhoneInput() {
     }
   };
   return (
-    <FormElementContainer variant="dual">
-      <Select
-        variant="region"
-        options={phoneOptions}
-        onChange={(selectedPrefix) => {
-          handlePrefixChange(selectedPrefix);
-        }}
-      />
-      <Input
-        type="tel"
-        value={phoneNumber || ""}
-        onChange={handlePhoneNumberChange}
-        onKeyDown={(e) => {
-          // Prevent user from deleting the prefix
-          const cursorPosition = e.target.selectionStart;
-          if (cursorPosition <= phonePrefix.length && e.key === "Backspace") {
-            e.preventDefault(); // Block backspace if cursor is within the prefix
-          }
-        }}
-      />
+    <FormElementContainer>
+      {errors.phone && <FormErrorMessage message={errors.phone.message} />}
+      <FormElementContainer variant="dual">
+        <Select
+          variant="region"
+          options={phoneOptions}
+          onChange={(selectedPrefix) => {
+            handlePrefixChange(selectedPrefix);
+          }}
+        />
+        <Input
+          type="tel"
+          value={phoneNumber || ""}
+          {...register("phone", {
+            validate: (value) => {
+              // Check if the input value is more than just the prefix
+              const trimmedValue = value.replace(phonePrefix, "").trim();
+              if (
+                trimmedValue &&
+                (trimmedValue.length < 7 || trimmedValue.length > 15)
+              ) {
+                return "Phone number must be between 7 and 15 digits";
+              }
+              return true; // Valid if empty or if a valid number is entered
+            },
+            onChange: handlePhoneNumberChange,
+          })}
+          onKeyDown={(e) => {
+            // Prevent user from deleting the prefix
+            const cursorPosition = e.target.selectionStart;
+            if (cursorPosition <= phonePrefix.length && e.key === "Backspace") {
+              e.preventDefault(); // Block backspace if cursor is within the prefix
+            }
+          }}
+        />
+      </FormElementContainer>
     </FormElementContainer>
   );
 }

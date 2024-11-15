@@ -12,6 +12,9 @@ import Button from "../components/Button";
 import Select from "../components/Select";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+// import PhoneInput from "react-phone-input-2";
 
 function ContactUs() {
   const {
@@ -46,17 +49,39 @@ function ContactUs() {
     ],
   ];
 
-  const [selectedInquiry, setSelectedInquiry] = useState(null);
+  const navigate = useNavigate();
+  const delayNavigation = (sec) =>
+    setTimeout(() => {
+      navigate("/");
+    }, sec * 1000);
 
-  useEffect(() => {
-    if (selectedInquiry) {
-      console.log("Selected Inquiry:", selectedInquiry); // Log the new value when it changes
+  const notify = () => {
+    toast("Message sent successfully 👍", {
+      style: { backgroundColor: "#00ADE6", color: "white" },
+    });
+    delayNavigation(5);
+  };
+
+  const uploadData = async (data) => {
+    console.log(data);
+    try {
+      setIsSubmitting(true);
+      const res = await axios({
+        method: "POST",
+        url: "https://api.scoolspace.com/api/v1/website-api/waitlists",
+        data,
+      });
+      console.log("Form submitted successfully!", res.data);
+      notify();
+    } catch (error) {
+      console.error("Error submitting form:", err);
+      toast("Error submitting form!", {
+        style: { backgroundColor: "#FF3333", color: "white" },
+      });
+      console.log(data);
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [selectedInquiry]);
-
-  const handleSelectChange = (option) => {
-    setSelectedInquiry(() => option);
-    console.log(option);
   };
 
   return (
@@ -76,7 +101,9 @@ function ContactUs() {
               our team, to learn more about Scoolspace."
         >
           <form
-            onSubmit={handleSubmit((data) => console.log(data))}
+            onSubmit={handleSubmit((data) => {
+              uploadData(data);
+            })}
             className="flex w-full flex-col gap-6"
           >
             <FormElementContainer>
@@ -122,7 +149,7 @@ function ContactUs() {
               )}
             </FormElementContainer>
 
-            <PhoneInput />
+            <PhoneInput register={register} errors={errors} />
 
             <FormElementContainer>
               <Label>Name of school / institution</Label>
@@ -189,13 +216,11 @@ function ContactUs() {
             <Button
               variant="secondary"
               size="full-big"
-              // className={isSubmitting || !isFormValid ? "cursor-not-allowed" : ""}
-              // disabled={isSubmitting || !isFormValid}
+              className={isSubmitting ? "cursor-not-allowed" : ""}
+              disabled={isSubmitting}
             >
-              {/* {isSubmitting && page === "join-our-waitlist" && "Joining..."}
-              {isSubmitting && page === "contact-us" && "Submitting..."}
-              {!isSubmitting && buttonText} */}
-              Submit
+              {isSubmitting && "Submitting..."}
+              {!isSubmitting && "Submit"}
             </Button>
           </form>
         </FormLayout>

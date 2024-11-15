@@ -12,14 +12,20 @@ import Select from "../components/Select";
 import FormLayout from "../ui/FormLayout";
 import Navbar from "../ui/Navbar";
 import { Controller, useForm } from "react-hook-form";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function JoinTheWaitlist() {
   const {
     register,
     control,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const selectedRole = watch("whichBestDescribesYou");
   const navItems = ["Product", "Resources", "About us"];
   const options = [
     [
@@ -60,6 +66,41 @@ function JoinTheWaitlist() {
     ],
   ];
 
+  const navigate = useNavigate();
+  const delayNavigation = (sec) =>
+    setTimeout(() => {
+      navigate("/");
+    }, sec * 1000);
+
+  const notify = () => {
+    toast("Thanks for Joining 👍", {
+      style: { backgroundColor: "#00ADE6", color: "white" },
+    });
+    delayNavigation(5);
+  };
+
+  const uploadData = async (data) => {
+    console.log(data);
+    try {
+      setIsSubmitting(true);
+      const res = await axios({
+        method: "POST",
+        url: "https://api.scoolspace.com/api/v1/website-api/waitlists",
+        data,
+      });
+      console.log("Form submitted successfully!", res.data);
+      notify();
+    } catch (error) {
+      console.error("Error submitting form:", err);
+      toast("Error submitting form!", {
+        style: { backgroundColor: "#FF3333", color: "white" },
+      });
+      console.log(data);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
       <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
@@ -71,13 +112,15 @@ function JoinTheWaitlist() {
           btnTo="/contact-us"
         />
         <FormLayout
-          heading="Lorem ipsum sit amet iusto a secte consectetur ni."
-          description="Join the waitlist. Be among the first to try a beta of our
+          heading="Join our waitlist."
+          description="Be among the first to try a beta of our
               upcoming app that will be available on all devices as soon as we
               go live."
         >
           <form
-            onSubmit={handleSubmit((data) => console.log(data))}
+            onSubmit={handleSubmit((data) => {
+              uploadData(data);
+            })}
             className="flex w-full flex-col gap-6"
           >
             <FormElementContainer variant="dual-elements">
@@ -111,7 +154,7 @@ function JoinTheWaitlist() {
               )}
             </FormElementContainer>
 
-            <PhoneInput />
+            <PhoneInput register={register} errors={errors} />
 
             <FormElementContainer>
               <Label>Name of school / institution</Label>
@@ -145,34 +188,40 @@ function JoinTheWaitlist() {
                 />
               </FormElementContainer>
 
-              <FormElementContainer>
-                <Label>Number of students enrolled</Label>
-                <Controller
-                  name="numberOfStudentEnrolled"
-                  control={control}
-                  defaultValue=""
-                  render={({ field }) => (
-                    <Select
-                      {...field}
-                      variant="text"
-                      text="Select an Option"
-                      options={options[1]}
-                    />
-                  )}
-                />
-              </FormElementContainer>
+              {selectedRole === "school" && (
+                <FormElementContainer>
+                  <Label>Number of students enrolled</Label>
+                  <Controller
+                    name="numberOfStudentsEnrolled"
+                    control={control}
+                    defaultValue=""
+                    rules={{ required: selectedRole === "school" }}
+                    render={({ field, fieldState: { error } }) => (
+                      <>
+                        {error && (
+                          <FormErrorMessage message="Please choose an option" />
+                        )}
+                        <Select
+                          {...field}
+                          variant="text"
+                          text="Select an Option"
+                          options={options[1]}
+                        />
+                      </>
+                    )}
+                  />
+                </FormElementContainer>
+              )}
             </FormElementContainer>
 
             <Button
               variant="primary"
               size="full-big"
-              // className={isSubmitting || !isFormValid ? "cursor-not-allowed" : ""}
-              // disabled={isSubmitting || !isFormValid}
+              className={isSubmitting ? "cursor-not-allowed" : ""}
+              disabled={isSubmitting}
             >
-              {/* {isSubmitting && page === "join-our-waitlist" && "Joining..."}
-              {isSubmitting && page === "contact-us" && "Submitting..."}
-              {!isSubmitting && buttonText} */}
-              Join our waitlist
+              {isSubmitting && "Joining..."}
+              {!isSubmitting && "Join our waitlist"}
             </Button>
 
             <p className="mt-[26px] text-center text-xs font-medium text-[#1E1E1E]">

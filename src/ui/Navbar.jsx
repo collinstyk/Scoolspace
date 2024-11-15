@@ -183,7 +183,7 @@ import Button from "../components/Button";
 function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [newType, setNewType] = useState(type);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
 
   const toogleMobileNav = () => {
     setShowMobileNav((value) => !value);
@@ -225,7 +225,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 430);
+      setIsMobile(window.innerWidth <= 640);
     };
     // Add scroll listener for the home page
     const isHomePage = document.getElementById("home") !== null;
@@ -243,7 +243,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   return (
     <header
       id="header"
-      className={`flex h-[82px] w-full items-center justify-center ${
+      className={`flex h-[82px] w-full items-center justify-center bg-white transition-opacity ${
         position === "sticky" ? "sticky top-0 z-10 -mt-[82px]" : ""
       } ${
         isMobile
@@ -253,36 +253,49 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             : newType === "dark-contrast"
               ? "bg-white transition-colors duration-300"
               : ""
-      }`}
+      } ${showMobileNav ? "border-b border-pitch-black/20 bg-opacity-100" : "bg-opacity-0"}`}
     >
       <nav
         id="navbar"
         className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] custom:w-[800px] laptop:w-[960px] desktop:w-[1200px]`}
       >
-        {!showMobileNav && (
-          <div className="h-10 items-center align-middle">
-            <Link to="/">
-              <img
-                src={`${
-                  isMobile
-                    ? "images/Logomark.svg"
+        <div className="h-10 items-center align-middle">
+          <Link to="/">
+            <img
+              src={`${
+                isMobile
+                  ? "images/Logomark.svg"
+                  : showMobileNav
+                    ? "images/Scoolspace-logo-dark.svg"
                     : newType === "light" || newType === "dark-contrast"
                       ? "images/Scoolspace-logo-dark.svg"
                       : "images/Scoolspace-logo.svg"
-                }`}
-                alt="Scoolspace logo"
-                className={"h-full w-full"}
-              />
-            </Link>
-          </div>
-        )}
+              }`}
+              alt="Scoolspace logo"
+              className={"h-full w-full"}
+            />
+          </Link>
+        </div>
 
-        {!showMobileNav && (
-          <div
-            className={`h-[40px] w-[40px] cursor-pointer custom:hidden`}
-            onClick={toogleMobileNav}
-          >
-            <img
+        <div
+          className={`h-[40px] w-[40px] cursor-pointer custom:hidden`}
+          onClick={toogleMobileNav}
+        >
+          <div className="group relative flex h-8 w-8 cursor-pointer flex-col items-center justify-center">
+            <span
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "translate-y-2.5 -rotate-45 bg-black" : ""} ${newType === "dark-contrast" || newType === "light" ? "bg-black" : "bg-white"}`}
+            ></span>
+
+            <span
+              className={`mb-1.5 mt-1.5 block h-1 w-8 transition-all duration-300 ease-in-out ${showMobileNav ? "scale-x-0 bg-black" : ""} ${newType === "dark-contrast" || newType === "light" ? "bg-black" : "bg-white"}`}
+            ></span>
+
+            <span
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "-translate-y-2.5 rotate-45 bg-black" : ""} ${newType === "dark-contrast" || newType === "light" ? "bg-black" : "bg-white"}`}
+            ></span>
+          </div>
+
+          {/* <img
               src={
                 newType === "dark-contrast" || newType === "light"
                   ? "images/icon-hamburger-dark.svg"
@@ -290,13 +303,12 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
               }
               alt="hamburger icon"
               className="h-full w-full"
-            />
-          </div>
-        )}
+            /> */}
+        </div>
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed inset-0 z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-all duration-500 ease-out ${
+          className={`fixed inset-0 bottom-0 top-[82px] z-20 flex flex-col justify-between bg-white p-8 text-pitch-black transition-all duration-500 ease-out ${
             showMobileNav
               ? "max-h-full max-w-full"
               : "max-h-0 overflow-hidden py-0 opacity-0"
@@ -304,15 +316,14 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         >
           <div>
             {/* Close Icon */}
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
               <div>
                 <img src="images/Scoolspace-logo-dark.svg" alt="Logo" />
               </div>
               <div className="cursor-pointer" onClick={toogleMobileNav}>
                 <img src="images/icon-close.svg" alt="close icon" />
               </div>
-            </div>
-
+            </div> */}
             {/* Mobile Navigation Items */}
             <ul
               className={`mt-8 flex flex-col space-y-4 pl-6 pr-12 ${showMobileNav ? "" : ""}`}
