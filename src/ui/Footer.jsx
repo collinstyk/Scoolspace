@@ -3,7 +3,7 @@ function Footer() {
     <footer className="font-circular-std flex w-full flex-col items-center bg-dark-radial-blue py-[44px] text-white">
       <div className="flex w-[90%] flex-col justify-between gap-12 tablet:w-[656px] tablet:flex-row tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
         <div className="flex items-start gap-6 tablet:flex-col">
-          <div className="flex w-[282px] flex-col items-start gap-2">
+          <div className="flex w-[295px] flex-col items-start gap-2">
             <img
               src="images/Scoolspace-logo.svg"
               alt="Scoolspace logo"
@@ -39,40 +39,40 @@ function Footer() {
 
         <div className="relative flex justify-between gap-2 text-[10px] tracking-wide tablet:gap-6 tablet:text-xs laptop:gap-[88px] laptop:text-base">
           <ul className="flex flex-col gap-2">
-            <li className="text-xs font-semibold">
+            <li className="text-xs font-semibold tablet:text-sm laptop:text-base">
               <a href="">Company</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">About us</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">FAQ forum</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="text-xs font-semibold">
+            <li className="text-xs font-semibold tablet:text-sm laptop:text-base">
               <a href="">Product</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">Join the waitlist</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">Features</a>
             </li>
           </ul>
 
           <ul className="flex flex-col gap-2">
-            <li className="text-xs font-semibold">
+            <li className="text-xs font-semibold tablet:text-sm laptop:text-base">
               <a href="">Resources</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">Help center</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">Report a problem</a>
             </li>
-            <li className="font-medium opacity-60">
+            <li className="text-[10px] font-medium opacity-60 laptop:text-sm">
               <a href="">Privacy policy</a>
             </li>
           </ul>

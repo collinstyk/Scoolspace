@@ -20,10 +20,12 @@ function ContactUs() {
   const {
     register,
     control,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navItems = ["Product", "Resources", "About us"];
   const options = [
     [
@@ -48,6 +50,8 @@ function ContactUs() {
       { label: "Greater than 1000", value: ">1000" },
     ],
   ];
+  const selectedRole = watch("whichBestDescribesYou");
+  const inquiry = watch("whatCanWeHelpWith");
 
   const navigate = useNavigate();
   const delayNavigation = (sec) =>
@@ -85,8 +89,8 @@ function ContactUs() {
   };
 
   return (
-    <div className="min-w-vw min-h-dvh bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
-      <section className="mx-auto w-full px-6 tablet:w-[480px] custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
+    <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
+      <section className="mx-auto w-full tablet:w-[480px] custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
           btnText="Join our waitlist"
@@ -161,46 +165,53 @@ function ContactUs() {
               <Input type="text" {...register("location")} />
             </FormElementContainer>
 
-            <FormElementContainer variant="dual-elements">
-              <FormElementContainer>
-                <Label required>Which best describes you*</Label>
-                <Controller
-                  name="whatBestDescribesYou"
-                  control={control}
-                  defaultValue=""
-                  rules={{ required: "Please choose an option" }}
-                  render={({ field, fieldState: { error } }) => (
-                    <>
-                      <Select
-                        {...field}
-                        variant="text"
-                        text="Select an Option"
-                        required
-                        options={options[1]}
-                      />
-                      {error && <FormErrorMessage message={error.message} />}
-                    </>
-                  )}
-                />
-              </FormElementContainer>
+            {inquiry === "product inquiry" && (
+              <FormElementContainer variant="dual-elements">
+                <FormElementContainer>
+                  <Label required>Which best describes you*</Label>
+                  <Controller
+                    name="whichBestDescribesYou"
+                    control={control}
+                    defaultValue=""
+                    rules={{ required: inquiry === "product inquiry" }}
+                    render={({ field, fieldState: { error } }) => (
+                      <>
+                        <Select
+                          {...field}
+                          variant="text"
+                          text="Select an Option"
+                          required
+                          options={options[1]}
+                        />
+                        {error && (
+                          <FormErrorMessage message="Please choose an option" />
+                        )}
+                      </>
+                    )}
+                  />
+                </FormElementContainer>
 
-              <FormElementContainer>
-                <Label>Number of students enrolled</Label>
-                <Controller
-                  name="numberOfStudentsEnrolled"
-                  control={control}
-                  defaultValue=""
-                  render={({ field }) => (
-                    <Select
-                      {...field}
-                      variant="text"
-                      text="Select an Option"
-                      options={options[2]}
+                {selectedRole === "school" && (
+                  <FormElementContainer>
+                    <Label>Number of students enrolled</Label>
+                    <Controller
+                      name="numberOfStudentsEnrolled"
+                      control={control}
+                      defaultValue=""
+                      rules={{ required: selectedRole === "school" }}
+                      render={({ field }) => (
+                        <Select
+                          {...field}
+                          variant="text"
+                          text="Select an Option"
+                          options={options[2]}
+                        />
+                      )}
                     />
-                  )}
-                />
+                  </FormElementContainer>
+                )}
               </FormElementContainer>
-            </FormElementContainer>
+            )}
 
             <FormElementContainer>
               <Label required>Your message to us*</Label>

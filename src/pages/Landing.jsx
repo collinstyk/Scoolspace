@@ -35,7 +35,7 @@ function HeroSection() {
                 <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[6vh]">
                   A Simpler Way to Teach, Learn, and Love
                 </h1>
-                <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-base">
+                <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-[2.5vh]">
                   Unlock a connected, engaging, and efficient education
                   experience for parents, students, teachers, and school
                   administrators.
@@ -248,7 +248,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`max-h-fit min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
+        className={`min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -309,64 +309,67 @@ function LandingSection3() {
       </div>
 
       <div className="mx-auto mt-[72px] grid h-[1928px] w-[91%] grid-cols-1 grid-rows-5 flex-col justify-between gap-8 tablet:mt-[96px] tablet:h-[1064px] tablet:w-[704px] tablet:grid-cols-2 tablet:grid-rows-3 tablet:gap-4 laptop:mt-[142px] laptop:h-[633px] laptop:w-[960px] laptop:grid-cols-3 laptop:grid-rows-2 laptop:gap-[21px] desktop:mt-[128px] desktop:h-[790px] desktop:w-[1200px] desktop:gap-[30px]">
-        <div className="bg-dark col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-1 tablet:col-end-2">
-          <div>
-            <div className="mb-[10px] h-[208px]">
-              <img src="images/managed-access.svg" alt="" />
+        <div className="bg-dark col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2">
+          <div className="flex flex-col gap-5">
+            <div className="h-[208px]">
+              <img src="images/managed-access.svg" alt="managed-access" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Properly managed access control
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
                 01
               </span>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-2 tablet:col-end-3">
-          <div>
-            <div className="mb-[10px] h-[208px]">
-              <img src="images/functionality-access.svg" alt="" />
+        <div className="col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3">
+          <div className="flex flex-col gap-5">
+            <div className="h-[208px]">
+              <img
+                src="images/functionality-access.svg"
+                alt="functionality-access"
+              />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Seamless functionality access
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
                 02
               </span>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4">
-          <div>
-            <div className="mb-[10px] h-[208px]">
+        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4">
+          <div className="flex flex-col gap-5">
+            <div className="h-[208px]">
               <img src="images/realtime-update.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Realtime updates via notifications
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
                 03
               </span>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 pt-[31px] tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2">
-          <div>
-            <div className="mb-[10px] h-[208px]">
+        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2">
+          <div className="flex flex-col gap-5">
+            <div className="h-[208px]">
               <img src="images/analytics.svg" alt="" />
             </div>
             <div className="relative flex">
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Realtime dashboard analytics
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white">
+              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
                 04
               </span>
             </div>
@@ -378,13 +381,13 @@ function LandingSection3() {
             backgroundImage:
               "url('images/platforms2.png'), linear-gradient(#00223A00, 70%,#00223A)",
           }}
-          className="col-span-1 flex flex-col justify-between rounded-2xl bg-cover bg-[50%] px-6 py-[31px] bg-blend-multiply tablet:col-span-2 tablet:col-start-1 tablet:bg-[length:100%_125%] tablet:bg-[100%_55%] laptop:col-start-2"
+          className="col-span-1 flex flex-col justify-between rounded-2xl bg-cover bg-[50%] px-6 py-[31px] bg-blend-multiply tablet:col-span-2 tablet:col-start-1 laptop:col-start-2"
         >
           <div className="relative w-full text-white">
             <h5 className="w-11/12 text-lg font-bold sm:w-auto">
               Available on every platform
             </h5>
-            <span className="absolute right-0 top-2 text-xs font-semibold text-white">
+            <span className="absolute right-0 top-2 text-xs font-semibold text-white/60">
               05
             </span>
           </div>
@@ -408,7 +411,7 @@ function FinalCTA() {
       <section className="mx-auto flex flex-col items-start justify-between gap-6 tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
         <h1
           // style={{ lineHeight: "3rem" }}
-          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[408px] tablet:text-2xl tablet:leading-10 laptop:w-[451px] laptop:text-[40px] desktop:text-[48px]"
+          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[350px] tablet:text-2xl tablet:leading-10 laptop:w-[451px] laptop:text-[40px] desktop:text-[48px]"
         >
           Ready to transform your school?
         </h1>
