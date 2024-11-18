@@ -30,25 +30,27 @@ function HeroSection() {
       <div className="bg-hero-pattern1 bg-cover bg-[50%_0%] bg-no-repeat bg-blend-multiply">
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[91%] pt-8 text-white tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]">
           <div className="flex w-full justify-center pb-48">
-            <div className="mt-32 flex w-full items-center justify-between">
+            <div className="mt-32 flex w-full items-center justify-between desktop:mt-[20vh]">
               <div className="flex w-full flex-col gap-4 tablet:w-1/2">
-                <h1 className="text-[32px] font-bold leading-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[6vh]">
-                  A Simpler Way to Teach, Learn, and Love
+                <h1 className="text-[32px] font-bold leading-tight tracking-tight tablet:text-[40px] laptop:text-[48px] desktop:text-6xl">
+                  A Simpler Way
+                  <br /> to Teach, Learn,
+                  <br /> and Love
                 </h1>
-                <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-[2.5vh]">
+                <p className="text-base font-medium tablet:text-sm laptop:text-base desktop:text-xl">
                   Unlock a connected, engaging, and efficient education
                   experience for parents, students, teachers, and school
                   administrators.
                 </p>
                 <div className="mt-6 flex gap-4">
                   <Button
-                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
+                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base desktop:text-xl"
                     to="/join-the-waitlist"
                   >
                     Join the waitlist
                   </Button>
                   <Button
-                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
+                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base desktop:text-xl"
                     variant="outlined-light"
                     to="/contact-us"
                   >
@@ -71,7 +73,7 @@ function LandingSection2() {
       className="h-fit bg-white bg-grid1 py-[84px] tablet:py-[177px]"
     >
       <div className="mx-auto flex w-[91%] flex-col items-start justify-between gap-2 tablet:w-[640px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
-        <h3 className="w-[264px] text-2xl font-bold text-pitch-black tablet:w-[400px] tablet:text-[32px] laptop:text-[40px] desktop:text-[40px]">
+        <h3 className="w-[264px] text-2xl font-bold text-pitch-black tablet:w-[400px] tablet:text-[32px] tablet:leading-10 laptop:text-[40px] laptop:leading-[48px]">
           Big text for short section{" "}
           <span className="text-blue-one">header</span>.
         </h3>
@@ -237,7 +239,7 @@ function Feature({
           style={{
             backgroundImage: bgImage,
           }}
-          className={`relative hidden h-[504px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[560px] laptop:w-[391px] desktop:h-[600px] desktop:w-[481px]`}
+          className={`relative hidden h-[504px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[640px] laptop:w-[391px] desktop:h-[720px] desktop:w-[481px]`}
         >
           <div className="flex w-full flex-col gap-2">
             <h3 className="font-semibold text-white tablet:text-base laptop:text-[22px] desktop:text-2xl">
@@ -248,7 +250,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 laptop:h-[560px] desktop:h-[600px] ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "w-full sm:py-12 laptop:w-[553px] desktop:w-[687px]"} ${bgColor}`}
+        className={`min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -318,7 +320,7 @@ function LandingSection3() {
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Properly managed access control
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
+              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
                 01
               </span>
             </div>
@@ -337,7 +339,7 @@ function LandingSection3() {
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Seamless functionality access
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
+              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
                 02
               </span>
             </div>
@@ -353,7 +355,7 @@ function LandingSection3() {
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Realtime updates via notifications
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
+              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
                 03
               </span>
             </div>
@@ -369,7 +371,7 @@ function LandingSection3() {
               <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
                 Realtime dashboard analytics
               </p>
-              <span className="absolute bottom-0 right-0 text-xs font-semibold text-white/60">
+              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
                 04
               </span>
             </div>
@@ -387,7 +389,7 @@ function LandingSection3() {
             <h5 className="w-11/12 text-lg font-bold sm:w-auto">
               Available on every platform
             </h5>
-            <span className="absolute right-0 top-2 text-xs font-semibold text-white/60">
+            <span className="absolute right-0 top-2 text-base font-semibold text-white/60">
               05
             </span>
           </div>
@@ -411,7 +413,7 @@ function FinalCTA() {
       <section className="mx-auto flex flex-col items-start justify-between gap-6 tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
         <h1
           // style={{ lineHeight: "3rem" }}
-          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[350px] tablet:text-2xl tablet:leading-10 laptop:w-[451px] laptop:text-[40px] desktop:text-[48px]"
+          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[350px] tablet:text-2xl tablet:leading-7 lg:w-[451px] lg:text-[40px] lg:leading-[48px] desktop:text-[48px]"
         >
           Ready to transform your school?
         </h1>

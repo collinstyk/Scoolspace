@@ -34,12 +34,12 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           scrollPosition <= sectionTop + sectionHeight
         ) {
           if (sectionId === "hero") {
-            setNewType("light-contrast");
+            setNewType("blur");
           } else if (sectionId === "landing-2") {
             setNewType("dark-contrast");
           } else if (sectionId === "features") {
             setNewType("dark-contrast");
-          } else if (sectionId === "landing-3" || isMobile) {
+          } else if (sectionId === "landing-3") {
             setNewType("light-contrast");
           }
           // else if (sectionId === "landing-3" && !isMobile) {
@@ -72,17 +72,17 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   return (
     <header
       id="header"
-      className={`flex h-[82px] w-full items-center justify-center bg-white transition-opacity ${
+      className={`flex h-[82px] w-full items-center justify-center transition-opacity ${
         position === "sticky" ? "sticky top-0 z-10 -mt-[82px]" : ""
       } ${
-        !showMobileNav && !isTop
+        newType === "blur"
           ? "backdrop-blur-sm"
           : newType === "light-contrast"
             ? "bg-pitch-black transition-colors duration-300"
             : newType === "dark-contrast"
               ? "bg-white transition-colors duration-300"
               : ""
-      } ${showMobileNav ? "border-b border-pitch-black/20 bg-opacity-100" : "bg-opacity-0"}`}
+      } ${showMobileNav ? "border-b border-pitch-black/20 bg-white bg-opacity-100" : ""}`}
     >
       <nav
         id="navbar"
@@ -106,6 +106,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           </Link>
         </div>
 
+        {/* Hamburger Icon */}
         <div
           className={`flex h-[40px] w-[40px] cursor-pointer items-center justify-center custom:hidden`}
           onClick={toogleMobileNav}
@@ -186,7 +187,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             className={`flex list-none gap-2 overflow-hidden rounded-xl ${
               newType === "light-contrast"
                 ? "bg-gradient-to-r from-white/15 to-white/5 text-white"
-                : newType === "foggy"
+                : newType === "foggy" || newType === "blur"
                   ? "border border-white/20 bg-gradient-to-r from-white/15 to-white/5 text-white"
                   : "bg-[#D0edf8] to-[#b8e6f6] text-[#1E1E1E]"
             }`}
@@ -208,7 +209,9 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
 
           <Button
             variant={`${
-              newType === "light-contrast" || newType === "foggy"
+              newType === "light-contrast" ||
+              newType === "foggy" ||
+              newType === "blur"
                 ? "primary"
                 : "secondary"
             }`}

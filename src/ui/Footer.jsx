@@ -7,7 +7,7 @@ function Footer() {
             <img
               src="images/Scoolspace-logo.svg"
               alt="Scoolspace logo"
-              className="w-[137px] tablet:h-6 laptop:h-12 laptop:w-[244px]"
+              className="w-[137px] tablet:h-6 tablet:w-1/3 laptop:h-14"
             />
             <p className="text-[10px] font-normal text-white tablet:text-xs laptop:text-[18px]">
               A new way to <span className="text-purple-one">teach</span>,{" "}

@@ -90,7 +90,7 @@ function ContactUs() {
 
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
-      <section className="mx-auto w-full tablet:w-[480px] custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
+      <section className="mx-auto w-full custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
           btnText="Join our waitlist"
@@ -165,7 +165,7 @@ function ContactUs() {
               <Input type="text" {...register("location")} />
             </FormElementContainer>
 
-            {inquiry === "product inquiry" && (
+            {inquiry === "sales inquiry (contact sales)" && (
               <FormElementContainer variant="dual-elements">
                 <FormElementContainer>
                   <Label required>Which best describes you*</Label>
@@ -173,7 +173,9 @@ function ContactUs() {
                     name="whichBestDescribesYou"
                     control={control}
                     defaultValue=""
-                    rules={{ required: inquiry === "product inquiry" }}
+                    rules={{
+                      required: inquiry === "sales inquiry (contact sales)",
+                    }}
                     render={({ field, fieldState: { error } }) => (
                       <>
                         <Select
