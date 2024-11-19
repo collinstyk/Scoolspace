@@ -102,7 +102,7 @@ function JoinTheWaitlist() {
   };
 
   return (
-    <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x font-plus-jakarta-sans">
+    <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x pb-6 font-plus-jakarta-sans">
       <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
@@ -231,7 +231,7 @@ function JoinTheWaitlist() {
           </form>
         </FormLayout>
 
-        <p className="mx-auto mb-6 w-fit text-xs font-medium text-pitch-black">
+        <p className="mx-auto w-fit text-xs font-medium text-pitch-black">
           Copyright © 2024, Scoolspace. All rights reserved.
         </p>
       </section>
