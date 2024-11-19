@@ -67,7 +67,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       id="header"
       className={`will-change-bgColor flex h-[82px] w-full items-center justify-center ${
         position === "fixed" ? "fixed top-0 z-10" : ""
-      } ${showMobileNav ? "border-b border-pitch-black/20 bg-white" : ""} ${headerBg}`}
+      } ${showMobileNav ? "border-b border-pitch-black/20 bg-white" : ""} ${headerBg} ${showMobileNav ? "fixed top-0 z-10" : ""}`}
     >
       <div style={{ opacity }} className={bgContainerClass}></div>
       <nav
