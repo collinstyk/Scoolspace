@@ -247,7 +247,7 @@ function Feature({
         </div>
       )}
       <div
-        className={`min-h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
+        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -308,72 +308,37 @@ function LandingSection3() {
       </div>
 
       <div className="mx-auto mt-[72px] grid h-[1928px] w-[91%] grid-cols-1 grid-rows-5 flex-col justify-between gap-8 tablet:mt-[96px] tablet:h-[1064px] tablet:w-[704px] tablet:grid-cols-2 tablet:grid-rows-3 tablet:gap-4 laptop:mt-[142px] laptop:h-[633px] laptop:w-[960px] laptop:grid-cols-3 laptop:grid-rows-2 laptop:gap-[21px] desktop:mt-[128px] desktop:h-[790px] desktop:w-[1200px] desktop:gap-[30px]">
-        <div className="bg-dark col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2">
-          <div className="flex flex-col gap-5 desktop:justify-end">
-            <div className="h-[208px]">
-              <img src="images/managed-access.svg" alt="managed-access" />
-            </div>
-            <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
-                Properly managed access control
-              </p>
-              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
-                01
-              </span>
-            </div>
-          </div>
-        </div>
+        <Section3Cards
+          extraClass="tablet:col-start-1 tablet:col-end-2"
+          imageSrc="images/managed-access.svg"
+          alt="managed-access"
+          message="Properly managed access control"
+          serialNum="01"
+        />
 
-        <div className="col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3">
-          <div className="flex flex-col gap-5 desktop:justify-end">
-            <div className="h-[208px]">
-              <img
-                src="images/functionality-access.svg"
-                alt="functionality-access"
-              />
-            </div>
-            <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
-                Seamless functionality access
-              </p>
-              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
-                02
-              </span>
-            </div>
-          </div>
-        </div>
+        <Section3Cards
+          extraClass="tablet:col-start-2 tablet:col-end-3"
+          imageSrc="images/functionality-access.svg"
+          alt="functionality-access"
+          message="Seamless functionality access"
+          serialNum="02"
+        />
 
-        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4">
-          <div className="flex flex-col gap-5 desktop:justify-end">
-            <div className="h-[208px]">
-              <img src="images/realtime-update.svg" alt="" />
-            </div>
-            <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
-                Realtime updates via notifications
-              </p>
-              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
-                03
-              </span>
-            </div>
-          </div>
-        </div>
+        <Section3Cards
+          extraClass="tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4"
+          imageSrc="images/realtime-update.svg"
+          alt="realtime update"
+          message="Realtime updates via notifications"
+          serialNum="03"
+        />
 
-        <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2">
-          <div className="flex flex-col gap-5 desktop:justify-end">
-            <div className="h-[208px]">
-              <img src="images/analytics.svg" alt="" />
-            </div>
-            <div className="relative flex">
-              <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
-                Realtime dashboard analytics
-              </p>
-              <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
-                04
-              </span>
-            </div>
-          </div>
-        </div>
+        <Section3Cards
+          extraClass="tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2"
+          imageSrc="images/analytics.svg"
+          alt="analytics"
+          message="Realtime dashboard analytics"
+          serialNum="04"
+        />
 
         <div
           style={{
@@ -400,6 +365,28 @@ function LandingSection3() {
     </section>
   );
 }
+
+const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
+  return (
+    <div
+      className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass}`}
+    >
+      <div className="mx-auto flex flex-col gap-5 desktop:gap-10">
+        <div className="h-[208px] laptop:h-[174px] desktop:h-[208px]">
+          <img src={imageSrc} alt={alt} />
+        </div>
+        <div className="relative flex">
+          <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
+            {message}
+          </p>
+          <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
+            {serialNum}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 function FinalCTA() {
   return (

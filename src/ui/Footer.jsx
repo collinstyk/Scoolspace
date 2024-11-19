@@ -5,9 +5,9 @@ function Footer() {
         <div className="flex items-start gap-6 tablet:flex-col">
           <div className="flex w-[295px] flex-col items-start gap-2">
             <img
-              src="images/Scoolspace-logo.svg"
+              src="images/Scoolspace_logow.svg"
               alt="Scoolspace logo"
-              className="w-[137px] tablet:h-6 tablet:w-1/3 laptop:h-14"
+              className="w-[137px] tablet:h-full tablet:w-2/3 laptop:h-full"
             />
             <p className="text-[10px] font-normal text-white tablet:text-xs laptop:text-[18px]">
               A new way to <span className="text-purple-one">teach</span>,{" "}
