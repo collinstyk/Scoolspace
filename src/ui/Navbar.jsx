@@ -6,84 +6,70 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [newType, setNewType] = useState(type);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
-  const [isTablet, setIsTablet] = useState(window.innerWidth <= 780);
   const [isTop, setIsTop] = useState(window.scrollY === 0);
+  const [opacity, setOpacity] = useState(0);
+  const [headerBg, setHeaderBg] = useState("bg-transparent");
+  const isHomePage = document.getElementById("home") !== null;
+  const [bgContainerClass, setbgContainerClass] = useState("");
 
   const toogleMobileNav = () => {
     setShowMobileNav((value) => !value);
   };
 
-  // Handle scroll to change navbar background
-  const handleScroll = () => {
-    const sections = document.querySelectorAll("section");
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition !== 0) setIsTop(false);
-    if (scrollPosition === 0) {
-      // When back at the top, reset to "foggy"
-      setNewType("foggy");
-      setIsTop(window.scrollY === 0);
-    } else {
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100; // Adjust for navbar height
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute("id");
-
-        if (
-          scrollPosition > sectionTop &&
-          scrollPosition <= sectionTop + sectionHeight
-        ) {
-          if (sectionId === "hero") {
-            setNewType("blur");
-          } else if (sectionId === "landing-2") {
-            setNewType("dark-contrast");
-          } else if (sectionId === "features") {
-            setNewType("dark-contrast");
-          } else if (sectionId === "landing-3") {
-            setNewType("light-contrast");
-          }
-          // else if (sectionId === "landing-3" && !isMobile) {
-          //   setNewType("light-contrast");
-          // }
-        }
-      });
-    }
-  };
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 640);
-      setIsTablet(window.innerWidth <= 780);
+    };
+    // Handle scroll to change navbar background
+    const handleScroll = () => {
+      if (window.scrollY === 0) setIsTop(window.scrollY === 0);
+      else setIsTop(window.scrollY === 0);
+      const landingSection3 = document.getElementById("landing-3");
+      if (!landingSection3) return;
+      const landing3Top = Math.max(
+        0 + landingSection3.getBoundingClientRect().top / 82,
+        0,
+      );
+      const scrollRatio = Math.min(0 + window.scrollY / 500, 1);
+
+      if (landing3Top > 1) {
+        setOpacity(scrollRatio);
+        setHeaderBg("bg-transparent");
+      } else {
+        setOpacity(landing3Top);
+        setHeaderBg("bg-pitch-black");
+      }
+
+      if (opacity > 0.99) {
+        setNewType("light");
+      } else {
+        setNewType("foggy");
+      }
     };
     // Add scroll listener for the home page
-    const isHomePage = document.getElementById("home") !== null;
+
     if (isHomePage) {
       window.addEventListener("scroll", handleScroll);
+      setbgContainerClass("absolute h-full w-full bg-white");
+    } else {
+      setbgContainerClass("hidden");
     }
     window.addEventListener("resize", handleResize);
-    console.log(isTop);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Clean up event listener
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [window.scrollY, opacity, setOpacity, isHomePage]);
 
   return (
     <header
       id="header"
-      className={`flex h-[82px] w-full items-center justify-center transition-opacity ${
-        position === "sticky" ? "sticky top-0 z-10 -mt-[82px]" : ""
-      } ${
-        newType === "blur"
-          ? "backdrop-blur-sm"
-          : newType === "light-contrast"
-            ? "bg-pitch-black transition-colors duration-300"
-            : newType === "dark-contrast"
-              ? "bg-white transition-colors duration-300"
-              : ""
-      } ${showMobileNav ? "border-b border-pitch-black/20 bg-white bg-opacity-100" : ""}`}
+      className={`will-change-bgColor flex h-[82px] w-full items-center justify-center ${
+        position === "fixed" ? "fixed top-0 z-10" : ""
+      } ${showMobileNav ? "border-b border-pitch-black/20 bg-white" : ""} ${headerBg}`}
     >
+      <div style={{ opacity }} className={bgContainerClass}></div>
       <nav
         id="navbar"
         className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]`}
@@ -92,13 +78,16 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           <Link to="/">
             <img
               src={`${
-                isMobile
-                  ? "images/Logomark.svg"
-                  : showMobileNav
-                    ? "images/Scoolspace-logo-dark.svg"
-                    : newType === "light" || newType === "dark-contrast"
-                      ? "images/Scoolspace-logo-dark.svg"
-                      : "images/Scoolspace-logo.svg"
+                showMobileNav
+                  ? "images/Scoolspace_logo.svg"
+                  : isMobile
+                    ? "images/Logomark.svg"
+                    : opacity === 1 || !isHomePage
+                      ? "images/Scoolspace_logo.svg"
+                      : "images/Scoolspace_logow.svg"
+                //  newType === "light" || newType === "dark-contrast"
+                //       ? "images/Scoolspace_logo.svg"
+                //       : "images/Scoolspace_logow.svg"
               }`}
               alt="Scoolspace logo"
               className={"h-full w-full"}
@@ -113,15 +102,15 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         >
           <div className="group relative flex h-8 w-8 cursor-pointer flex-col items-center justify-center">
             <span
-              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "translate-y-2.5 -rotate-45 bg-pitch-black" : newType === "dark-contrast" || newType === "light" ? "bg-pitch-black" : "bg-white"}`}
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "translate-y-2.5 -rotate-45 bg-pitch-black" : opacity > 0 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
             ></span>
 
             <span
-              className={`mb-1.5 mt-1.5 block h-1 w-8 transition-all duration-300 ease-in-out ${showMobileNav ? "scale-x-0 bg-pitch-black" : newType === "dark-contrast" || newType === "light" ? "bg-pitch-black" : "bg-white"}`}
+              className={`mb-1.5 mt-1.5 block h-1 w-8 transition-all duration-300 ease-in-out ${showMobileNav ? "scale-x-0 bg-pitch-black" : opacity > 0 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
             ></span>
 
             <span
-              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "-translate-y-2.5 rotate-45 bg-pitch-black" : newType === "dark-contrast" || newType === "light" ? "bg-pitch-black" : "bg-white"}`}
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "-translate-y-2.5 rotate-45 bg-pitch-black" : opacity || !isHomePage > 0 ? "bg-pitch-black" : "bg-white"}`}
             ></span>
           </div>
 
@@ -185,9 +174,9 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         <div className="hidden items-center gap-x-6 text-base font-normal custom:flex">
           <ul
             className={`flex list-none gap-2 overflow-hidden rounded-xl ${
-              newType === "light-contrast"
+              newType === "dark"
                 ? "bg-gradient-to-r from-white/15 to-white/5 text-white"
-                : newType === "foggy" || newType === "blur"
+                : newType === "foggy"
                   ? "border border-white/20 bg-gradient-to-r from-white/15 to-white/5 text-white"
                   : "bg-[#D0edf8] to-[#b8e6f6] text-[#1E1E1E]"
             }`}

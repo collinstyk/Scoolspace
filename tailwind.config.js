@@ -68,6 +68,9 @@ export default {
         custom: "990px",
         tablet: "768px",
       },
+      willChange: {
+        bgColor: "background-color",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

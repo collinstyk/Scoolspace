@@ -12,7 +12,7 @@ export default function Landing() {
         btnTo="join-the-waitlist"
         type="foggy"
         btnSize="normal"
-        position="sticky"
+        position="fixed"
       />
       <HeroSection />
       <LandingSection2 />
@@ -74,12 +74,11 @@ function LandingSection2() {
     >
       <div className="mx-auto flex w-[91%] flex-col items-start justify-between gap-2 tablet:w-[640px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
         <h3 className="w-[264px] text-2xl font-bold text-pitch-black tablet:w-[400px] tablet:text-[32px] tablet:leading-10 laptop:text-[40px] laptop:leading-[48px]">
-          Big text for short section{" "}
-          <span className="text-blue-one">header</span>.
+          The technology for <span className="text-blue-one">Education</span>.
         </h3>
         <p className="w-full text-sm font-normal text-pitch-black tablet:w-[400px] laptop:text-lg">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum
+          Scoolspace is packed with features designed to make learning easy,
+          teaching efficient, and school management seamless:
         </p>
       </div>
     </section>
@@ -92,8 +91,7 @@ function Features() {
       id: 1,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Why ScoolSpace?",
-      heading:
-        "Transforming Education with Seamless Communication and Real-Time Insights",
+      heading: "Seamless, Smart, Connected",
       body: "ScoolSpace is the all-in-one platform that bridges gaps between students, teachers, parents, and administrators. Access real-time progress, communicate effortlessly, and create a community dedicated to learning success—all from one powerful, user-friendly dashboard.",
       variant: "fill",
       btnVariant: "secondary",
@@ -108,7 +106,7 @@ function Features() {
       id: 2,
       bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "For Schools",
-      heading: "Empowering Administrators with Full Control and Insight",
+      heading: "Full control, Real insights",
       body: "From real-time student performance metrics to automated finance, inventory, and curriculum management, ScoolSpace offers administrators the tools they need to elevate school operations. Monitor classrooms, manage school resources, and foster a collaborative environment—all in one place.",
       variant: "dual",
       btnVariant: "light",
@@ -125,7 +123,7 @@ function Features() {
       id: 3,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "For Teachers",
-      heading: "Engage, Inspire, and Save Time with Interactive Teaching Tools",
+      heading: "Teach smarter, Not harder",
       body: "ScoolSpace makes teaching easier, faster, and more impactful. Plan lessons, assign and auto-grade quizzes, and keep students engaged with interactive activities, badges, and real-time feedback. Communicate seamlessly with parents and track each student’s progress from a centralized digital platform.",
       variant: "dual",
       btnVariant: "secondary",
@@ -142,8 +140,7 @@ function Features() {
       id: 4,
       bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "For Parents",
-      heading:
-        "Stay Involved and Up-to-Date with Your Child’s Learning Journey",
+      heading: "Stay connected, Always",
       body: "No more trips to school or missed calls from teachers. With ScoolSpace, you can monitor your child’s progress, communicate with teachers, and access assignments and assessments—all at your fingertips. Stay connected and empowered to support your child’s academic growth.",
       variant: "fill",
       btnVariant: "secondary",
@@ -158,7 +155,7 @@ function Features() {
       id: 5,
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "For Students",
-      heading: "Learning Has Never Been This Fun and Accessible",
+      heading: "Fun, Engaging Learning",
       body: "With ScoolSpace, you can access class materials, submit assignments, and take interactive assessments from anywhere. Learning is engaging and dynamic, designed to keep you interested and motivated to succeed.",
       variant: "dual",
       btnVariant: "secondary",
@@ -312,7 +309,7 @@ function LandingSection3() {
 
       <div className="mx-auto mt-[72px] grid h-[1928px] w-[91%] grid-cols-1 grid-rows-5 flex-col justify-between gap-8 tablet:mt-[96px] tablet:h-[1064px] tablet:w-[704px] tablet:grid-cols-2 tablet:grid-rows-3 tablet:gap-4 laptop:mt-[142px] laptop:h-[633px] laptop:w-[960px] laptop:grid-cols-3 laptop:grid-rows-2 laptop:gap-[21px] desktop:mt-[128px] desktop:h-[790px] desktop:w-[1200px] desktop:gap-[30px]">
         <div className="bg-dark col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 desktop:justify-end">
             <div className="h-[208px]">
               <img src="images/managed-access.svg" alt="managed-access" />
             </div>
@@ -328,7 +325,7 @@ function LandingSection3() {
         </div>
 
         <div className="col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 desktop:justify-end">
             <div className="h-[208px]">
               <img
                 src="images/functionality-access.svg"
@@ -347,7 +344,7 @@ function LandingSection3() {
         </div>
 
         <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-1 tablet:col-end-2 laptop:col-start-3 laptop:col-end-4">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 desktop:justify-end">
             <div className="h-[208px]">
               <img src="images/realtime-update.svg" alt="" />
             </div>
@@ -363,7 +360,7 @@ function LandingSection3() {
         </div>
 
         <div className="col-span-1 flex flex-col items-center rounded-2xl bg-dark-blue px-8 py-[31px] tablet:col-start-2 tablet:col-end-3 laptop:col-start-1 laptop:col-end-2">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 desktop:justify-end">
             <div className="h-[208px]">
               <img src="images/analytics.svg" alt="" />
             </div>
