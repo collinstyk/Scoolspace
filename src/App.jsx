@@ -3,6 +3,7 @@ import Landing from "./pages/Landing";
 import JoinTheWaitlist from "./pages/JoinTheWaitlist";
 import AppLayout from "./ui/AppLayout";
 import ContactUs from "./pages/ContactUs";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
       {
         element: <Landing />,
         path: "/",
+      },
+      {
+        element: <Product />,
+        path: "/product",
       },
     ],
   },

@@ -42,8 +42,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       }
 
       if (opacity > 0.99) {
-        setIconSource("images/Scoolspace_logo.svg");
-        if (!isHomePage) setNewType("light");
+        setNewType("light");
       } else {
         setNewType("foggy");
       }
@@ -90,15 +89,19 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         id="navbar"
         className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]`}
       >
-        <div
-          className={`h-10 items-center ${isMobile && !showMobileNav ? "w-10" : showMobileNav ? "w-[154px]" : "w-[178px]"}`}
-        >
-          <Link to="/" className="h-full w-full">
+        <div>
+          <Link to="/" className="flex items-center space-x-[10px]">
             <img
-              src={iconSource}
+              src="images/Logomark.svg"
               alt="Scoolspace logo"
-              className={"h-full w-full"}
+              className="h-10 w-10"
+              // className={`h-10 ${showMobileNav ? "w-[154px]" : "w-[178px]"}`}
             />
+            <h2
+              className={`text-[22px] font-bold ${opacity === 1 || showMobileNav || !isHomePage ? "text-pitch-black" : "text-white"}`}
+            >
+              Scoolspace
+            </h2>
           </Link>
         </div>
 
@@ -109,15 +112,15 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         >
           <div className="group relative flex h-8 w-8 cursor-pointer flex-col items-center justify-center">
             <span
-              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "translate-y-2.5 -rotate-45 bg-pitch-black" : opacity > 0 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "translate-y-2.5 -rotate-45 bg-pitch-black" : opacity > 0.99 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
             ></span>
 
             <span
-              className={`mb-1.5 mt-1.5 block h-1 w-8 transition-all duration-300 ease-in-out ${showMobileNav ? "scale-x-0 bg-pitch-black" : opacity > 0 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
+              className={`mb-1.5 mt-1.5 block h-1 w-8 transition-all duration-300 ease-in-out ${showMobileNav ? "scale-x-0 bg-pitch-black" : opacity > 0.99 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
             ></span>
 
             <span
-              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "-translate-y-2.5 rotate-45 bg-pitch-black" : opacity || !isHomePage > 0 ? "bg-pitch-black" : "bg-white"}`}
+              className={`block h-1 w-8 transition-transform duration-300 ease-in-out ${showMobileNav ? "-translate-y-2.5 rotate-45 bg-pitch-black" : opacity > 0.99 || !isHomePage ? "bg-pitch-black" : "bg-white"}`}
             ></span>
           </div>
 
@@ -141,23 +144,13 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           }`}
         >
           <div>
-            {/* Close Icon */}
-            {/* <div className="flex justify-between">
-              <div>
-                <img src="images/Scoolspace-logo-dark.svg" alt="Logo" />
-              </div>
-              <div className="cursor-pointer" onClick={toogleMobileNav}>
-                <img src="images/icon-close.svg" alt="close icon" />
-              </div>
-            </div> */}
-            {/* Mobile Navigation Items */}
             <ul
               className={`mt-8 flex flex-col space-y-4 pl-6 pr-12 ${showMobileNav ? "" : ""}`}
             >
               {navItems.map((el, index) => (
                 <li key={index}>
-                  <a href="#" className="block text-xl font-semibold">
-                    {el}
+                  <a href={el.to} className="block text-xl font-semibold">
+                    {el.label}
                   </a>
                 </li>
               ))}
@@ -194,10 +187,10 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
                 className="flex h-[40px] items-center justify-center rounded-xl hover:backdrop-blur-xl"
               >
                 <a
-                  href="#"
+                  href={el.to}
                   className="flex h-full items-center justify-center px-4 py-2 text-center text-sm font-medium transition hover:text-opacity-80"
                 >
-                  {el}
+                  {el.label}
                 </a>
               </li>
             ))}

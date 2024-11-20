@@ -3,9 +3,13 @@ import Footer from "../ui/Footer";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
-  const navItems = ["Product", "Resources", "About us"];
+  const navItems = [
+    { label: "Product", to: "/product" },
+    { label: "Resources", to: "#" },
+    { label: "About us", to: "#" },
+  ];
   return (
-    <div id="home" className="w-full font-plus-jakarta-sans">
+    <div id="home" className="w-full">
       <Navbar
         navItems={navItems}
         btnText="Join our waitlist"
@@ -19,7 +23,6 @@ export default function Landing() {
       <Features />
       <LandingSection3 />
       <FinalCTA />
-      <Footer />
     </div>
   );
 }
