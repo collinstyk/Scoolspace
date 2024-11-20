@@ -11,6 +11,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   const [headerBg, setHeaderBg] = useState("bg-transparent");
   const isHomePage = document.getElementById("home") !== null;
   const [bgContainerClass, setbgContainerClass] = useState("");
+  const [iconSource, setIconSource] = useState("images/Scoolspace_logow.svg");
 
   const toogleMobileNav = () => {
     setShowMobileNav((value) => !value);
@@ -41,11 +42,19 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       }
 
       if (opacity > 0.99) {
-        setNewType("light");
+        setIconSource("images/Scoolspace_logo.svg");
+        if (!isHomePage) setNewType("light");
       } else {
         setNewType("foggy");
       }
     };
+    if (isMobile && !showMobileNav) {
+      setIconSource("images/Logomark.svg");
+    } else if (showMobileNav) {
+      setIconSource("images/Scoolspace_logo.svg");
+    } else {
+      setIconSource("images/Scoolspace_logow.svg");
+    }
     // Add scroll listener for the home page
 
     if (isHomePage) {
@@ -60,7 +69,14 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [window.scrollY, opacity, setOpacity, isHomePage]);
+  }, [
+    window.scrollY,
+    opacity,
+    setOpacity,
+    isHomePage,
+    showMobileNav,
+    isMobile,
+  ]);
 
   return (
     <header
@@ -74,21 +90,12 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         id="navbar"
         className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]`}
       >
-        <div className="h-10 items-center align-middle">
-          <Link to="/">
+        <div
+          className={`h-10 items-center ${isMobile && !showMobileNav ? "w-10" : showMobileNav ? "w-[154px]" : "w-[178px]"}`}
+        >
+          <Link to="/" className="h-full w-full">
             <img
-              src={`${
-                showMobileNav
-                  ? "images/Scoolspace_logo.svg"
-                  : isMobile
-                    ? "images/Logomark.svg"
-                    : opacity === 1 || !isHomePage
-                      ? "images/Scoolspace_logo.svg"
-                      : "images/Scoolspace_logow.svg"
-                //  newType === "light" || newType === "dark-contrast"
-                //       ? "images/Scoolspace_logo.svg"
-                //       : "images/Scoolspace_logow.svg"
-              }`}
+              src={iconSource}
               alt="Scoolspace logo"
               className={"h-full w-full"}
             />
