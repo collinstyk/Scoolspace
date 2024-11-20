@@ -26,7 +26,11 @@ function ContactUs() {
   } = useForm();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navItems = ["Product", "Resources", "About us"];
+  const navItems = [
+    { label: "Product", to: "/product" },
+    { label: "Resources", to: "#" },
+    { label: "About us", to: "#" },
+  ];
   const options = [
     [
       { label: "Product Inquiry", value: "product inquiry" },

@@ -26,7 +26,11 @@ function JoinTheWaitlist() {
   } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const selectedRole = watch("whichBestDescribesYou");
-  const navItems = ["Product", "Resources", "About us"];
+  const navItems = [
+    { label: "Product", to: "/product" },
+    { label: "Resources", to: "#" },
+    { label: "About us", to: "#" },
+  ];
   const options = [
     [
       {
