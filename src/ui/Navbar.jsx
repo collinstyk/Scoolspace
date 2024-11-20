@@ -98,7 +98,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
               // className={`h-10 ${showMobileNav ? "w-[154px]" : "w-[178px]"}`}
             />
             <h2
-              className={`text-[22px] font-bold ${opacity === 1 || showMobileNav || !isHomePage ? "text-pitch-black" : "text-white"} ${showMobileNav ? "" : "hidden sm:block"}`}
+              className={`text-[22px] font-bold ${opacity === 1 || showMobileNav || !isHomePage ? "text-pitch-black" : "text-white"} ${showMobileNav ? "mt-[1px]" : "hidden sm:block"}`}
             >
               Scoolspace
             </h2>
