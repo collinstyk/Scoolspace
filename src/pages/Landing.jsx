@@ -1,5 +1,4 @@
 import Button from "../components/Button";
-import Footer from "../ui/Footer";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
@@ -35,7 +34,7 @@ function HeroSection() {
           <div className="flex w-full justify-center pb-48">
             <div className="mt-32 flex w-full items-center justify-between desktop:mt-[20vh]">
               <div className="flex w-full flex-col gap-4 tablet:w-1/2">
-                <h1 className="text-[32px] font-bold leading-tight tracking-tight tablet:text-[40px] laptop:text-[48px] desktop:text-6xl">
+                <h1 className="text-[32px] font-bold leading-tight tracking-tight tablet:text-[40px] laptop:text-[48px] desktop:text-[64px]">
                   A Simpler Way
                   <br /> to Teach, Learn,
                   <br /> and Love
@@ -47,13 +46,13 @@ function HeroSection() {
                 </p>
                 <div className="mt-6 flex gap-4">
                   <Button
-                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base desktop:text-xl"
+                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
                     to="/join-the-waitlist"
                   >
                     Join the waitlist
                   </Button>
                   <Button
-                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base desktop:text-xl"
+                    className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
                     variant="outlined-light"
                     to="/contact-us"
                   >
