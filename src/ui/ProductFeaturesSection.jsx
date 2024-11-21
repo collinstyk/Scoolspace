@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Accordion from "../../Accordion";
+import Accordion from "../components/Accordion";
 
 export function ProductFeaturesSection() {
   const featuresData = [

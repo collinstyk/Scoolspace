@@ -20,7 +20,7 @@ function Accordion({ inputs }) {
           >
             <h3 className="text-[22px] font-medium">{input.head}</h3>
             <img
-              src="src/assets/images/icon-angle.svg"
+              src="images/icon-angle.svg"
               alt=""
               className={`transition-transform duration-300 ${isCurOpen === input.id ? "" : "rotate-180"}`}
             />

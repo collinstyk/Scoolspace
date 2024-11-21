@@ -73,7 +73,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   return (
     <header
       id="header"
-      className={`will-change-bgColor flex h-[82px] w-full items-center justify-center ${
+      className={`flex h-[82px] w-full items-center justify-center will-change-bgColor ${
         position === "fixed"
           ? "fixed top-0 z-10"
           : position === "absolute"
@@ -146,9 +146,9 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
             >
               {navItems.map((el, index) => (
                 <li key={index}>
-                  <a href={el.to} className="block text-xl font-semibold">
+                  <Link to={el.to} className="block text-xl font-semibold">
                     {el.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

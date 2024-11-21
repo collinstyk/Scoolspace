@@ -17,7 +17,7 @@ function Product() {
     logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
   };
   const navItems = [
-    { label: "Product", to: "product" },
+    { label: "Product", to: "/product" },
     { label: "Resources", to: "#" },
     { label: "About us", to: "#" },
   ];
@@ -92,51 +92,51 @@ function HeroSection() {
 
 function Platforms() {
   return (
-    <main className="mx-auto my-40 flex w-[960px] flex-col gap-16">
+    <main className="smMobile:w-[442px] mx-auto my-40 flex w-[91%] flex-col gap-16 lg:w-[960px]">
       <section className="flex w-full items-center justify-between">
         <article className="flex w-[540px] flex-col gap-4 text-pitch-black">
-          <h2 className="text-2xl font-medium leading-[66px] sm:text-[32px] lg:text-5xl">
+          <h2 className="text-center text-2xl font-bold leading-[30px] sm:text-[32px] lg:text-5xl">
             Never miss another class with{" "}
             <span className="text-blue-one">Scoolspace</span>.
           </h2>
-          <p className="text-lg">
+          {/* <p className="text-lg">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos.
-          </p>
+          </p> */}
         </article>
         <div className="flex gap-7">
-          <Button to="">Join our waitlist</Button>
+          {/* <Button to="">Join our waitlist</Button>
           <Button to="" variant="secondary">
             Contact us
-          </Button>
+          </Button> */}
         </div>
       </section>
-      <div className="flex w-full justify-between text-pitch-black">
-        <div className="justfy-between flex cursor-pointer items-center gap-4 px-6 py-3">
-          <div>
+      <div className="mx-auto flex w-[394px] justify-between text-pitch-black">
+        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+          <div className="h-6 w-6">
             <img src="images/icon-googlePlaystore.svg" alt="google-playstore" />
           </div>
           <div>
-            <p className="text-sm">Get it on</p>
-            <h4 className="text-2xl">Google Play</h4>
+            <p className="text-[10px] sm:text-sm">Get it on</p>
+            <h4 className="text-xs font-semibold sm:text-lg">Google Play</h4>
           </div>
         </div>
-        <div className="justfy-between flex cursor-pointer items-center gap-4 px-6 py-3">
-          <div>
+        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+          <div className="h-6 w-6">
             <img src="images/icon-apple.svg" alt="apple" />
           </div>
           <div>
-            <p className="text-sm">Available on the</p>
-            <h4 className="text-2xl">App Store</h4>
+            <p className="text-[10px] sm:text-sm">Available on the</p>
+            <h4 className="text-sm font-semibold sm:text-xl">App Store</h4>
           </div>
         </div>
-        <div className="flex cursor-pointer items-center justify-between gap-4 px-6 py-3">
-          <div>
+        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+          <div className="h-6 w-6">
             <img src="images/icon-webapp.svg" alt="apple" />
           </div>
           <div>
-            <h4 className="text-2xl">Web app</h4>
-            <p className="text-sm">Available</p>
+            <h4 className="text-xs font-semibold sm:text-lg">Web app</h4>
+            <p className="text-[10px] sm:text-xs">Available</p>
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function Landing() {
 
 function HeroSection() {
   return (
-    <section id="hero" className="relative w-full">
+    <section id="hero" className="relative w-full bg-white">
       <div className="bg-hero-pattern1 bg-cover bg-[50%_0%] bg-no-repeat bg-blend-multiply">
         <section className="z-10 mx-auto max-h-fit min-h-dvh w-[91%] pt-8 text-white tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]">
           <div className="flex w-full justify-center pb-48">
