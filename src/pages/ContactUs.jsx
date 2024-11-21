@@ -35,7 +35,7 @@ function ContactUs() {
 
     url: "https://www.scoolspace.com/contact-us",
 
-    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+    logo: "https://www.scoolspace.com/Scoolspace favicon.svg",
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);

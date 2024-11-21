@@ -35,7 +35,7 @@ function JoinTheWaitlist() {
 
     url: "https://www.scoolspace.com/join-the-waitlist",
 
-    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+    logo: "https://www.scoolspace.com/Scoolspace favicon.svg",
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
