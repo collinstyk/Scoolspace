@@ -21,7 +21,7 @@ export default function Landing() {
     { label: "About us", to: "#" },
   ];
   return (
-    <div id="home" className="w-full">
+    <div id="home" className="w-full bg-white">
       <SEO
         title="Scoolspace | The new School"
         description="Landing page"
