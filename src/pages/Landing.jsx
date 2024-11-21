@@ -1,7 +1,20 @@
 import Button from "../components/Button";
+import FinalCTA from "../components/FinalCta";
+import SEO from "../Seo";
 import Navbar from "../ui/Navbar";
 
 export default function Landing() {
+  const schema = {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    name: "Scoolspace",
+
+    url: "https://www.scoolspace.com",
+
+    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+  };
   const navItems = [
     { label: "Product", to: "/product" },
     { label: "Resources", to: "#" },
@@ -9,6 +22,11 @@ export default function Landing() {
   ];
   return (
     <div id="home" className="w-full">
+      <SEO
+        title="Scoolspace | The new School"
+        description="Landing page"
+        schema={schema}
+      />
       <Navbar
         navItems={navItems}
         btnText="Join our waitlist"
@@ -389,40 +407,6 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
     </div>
   );
 };
-
-function FinalCTA() {
-  return (
-    <section
-      id="cta"
-      className="bg-gradient-to-br from-[#8cc5eb] to-[#9de7ff] px-12 py-8 tablet:py-[98px] laptop:py-[110px] desktop:py-[100px]"
-    >
-      <section className="mx-auto flex flex-col items-start justify-between gap-6 tablet:w-[704px] tablet:flex-row tablet:items-center tablet:gap-0 laptop:w-[960px] desktop:w-[1200px]">
-        <h1
-          // style={{ lineHeight: "3rem" }}
-          className="text-[22px] font-semibold leading-tight text-pitch-black tablet:w-[350px] tablet:text-2xl tablet:leading-7 lg:w-[451px] lg:text-[40px] lg:leading-[48px] desktop:text-[48px]"
-        >
-          Ready to transform your school?
-        </h1>
-        <div className="flex gap-4">
-          <Button
-            variant="secondary"
-            className="h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-dark-blue laptop:text-sm desktop:px-6 desktop:text-base"
-            to="/join-the-waitlist"
-          >
-            Join our waitlist
-          </Button>
-          <Button
-            variant="primary"
-            className="h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-light-blue laptop:text-sm desktop:px-6 desktop:text-base"
-            to="/contact-us"
-          >
-            Contact us
-          </Button>
-        </div>
-      </section>
-    </section>
-  );
-}
 
 /*<section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
           <Navbar

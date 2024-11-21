@@ -1,47 +1,85 @@
 import Button from "../components/Button";
 import Navbar from "../ui/Navbar";
-import { FeaturesSection } from "../ui/FeaturesSection";
+import FinalCTA from "../components/FinalCta";
+import { ProductFeaturesSection } from "../ui/ProductFeaturesSection";
+import SEO from "../Seo";
 
 function Product() {
+  const schema = {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    name: "Scoolspace",
+
+    url: "https://www.scoolspace.com/product",
+
+    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+  };
+  const navItems = [
+    { label: "Product", to: "product" },
+    { label: "Resources", to: "#" },
+    { label: "About us", to: "#" },
+  ];
   return (
-    <>
+    <div className="bg-grid1 bg-repeat-x">
+      <SEO
+        title="Scoolspace | About the Product"
+        schema={schema}
+        description="product"
+      />
+      <Navbar
+        navItems={navItems}
+        type="light"
+        btnText="Join our waitlist"
+        btnTo="/join-the-waitlist"
+        btnSize="normal"
+        position="absolute"
+      />
       <HeroSection />
-      <FeaturesSection />
+      <ProductFeaturesSection />
       <Platforms />
-    </>
+      <FinalCTA />
+    </div>
   );
 }
 
 function HeroSection() {
-  const navItems = ["Product", "Resources", "About us"];
   return (
-    <section className="h-full min-h-dvh min-w-[1280px] bg-light-linear-blue pb-32">
-      <div className="bg-grid pb-[69px] pt-16">
-        <Navbar navItems={navItems} type="light" />
-        <div className="mx-auto mt-[168px] flex w-[960px] justify-between">
-          <div className="flex w-[412px] flex-col gap-6">
+    <section className="h-full min-h-dvh w-screen bg-light-linear-blue pb-32">
+      <div className="pb-[69px] pt-16">
+        <div className="mx-auto mt-[168px] flex w-full justify-center sm:justify-between">
+          <div className="smMobile:w-[412px] flex w-[85%] flex-col gap-6 text-center">
             <div className="flex flex-col gap-2 text-base">
-              <p className="w-fit rounded-xl bg-blue-one/20 p-2 font-normal text-pitch-black/70">
+              <p className="mx-auto w-fit rounded-xl bg-blue-one/20 p-2 font-normal text-pitch-black/70 sm:hidden">
                 The product
               </p>
-              <h1 className="text-[64px] font-bold leading-tight text-pitch-black">
-                Welcome to the future of education
+              <h1 className="text-[32px] font-bold leading-tight text-pitch-black sm:text-[40px] lg:text-5xl">
+                Where teaching and learning come together
               </h1>
-              <p className="font-medium">
+              <p className="text-base font-medium sm:text-sm lg:text-base">
                 Sed ut perspiciatis unde omnis iste natus error sit rem
                 voluptatem accusantius doloremque laudantium, totam.
               </p>
             </div>
-            <div className="flex gap-4">
-              <Button variant="secondary" to="">
+            <div className="flex items-center justify-center gap-4">
+              <Button
+                className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
+                variant="secondary"
+                to="/join-the-waitlist"
+              >
                 Join our waitlist
               </Button>
-              <Button variant="outlined-dark" to="">
+              <Button
+                className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
+                variant="outlined-dark"
+                to="/contact-us"
+              >
                 Contact us
               </Button>
             </div>
           </div>
-          <div className="flex h-full w-[412px] flex-col gap-[69px]">
+          <div className="hidden h-full w-[412px] flex-col gap-[69px] sm:flex">
             {/*PLACEHOLDERS */}
             <div className="mr-auto h-[204px] w-[341px] rounded-xl bg-[#D9D9D9]"></div>
             <div className="ml-auto h-[136px] w-[341px] rounded-xl bg-[#D9D9D9]"></div>
@@ -57,8 +95,9 @@ function Platforms() {
     <main className="mx-auto my-40 flex w-[960px] flex-col gap-16">
       <section className="flex w-full items-center justify-between">
         <article className="flex w-[540px] flex-col gap-4 text-pitch-black">
-          <h2 className="text-[52px] font-medium leading-[66px]">
-            Your school, anytime and anywhere
+          <h2 className="text-2xl font-medium leading-[66px] sm:text-[32px] lg:text-5xl">
+            Never miss another class with{" "}
+            <span className="text-blue-one">Scoolspace</span>.
           </h2>
           <p className="text-lg">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -75,10 +114,7 @@ function Platforms() {
       <div className="flex w-full justify-between text-pitch-black">
         <div className="justfy-between flex cursor-pointer items-center gap-4 px-6 py-3">
           <div>
-            <img
-              src="src/assets/images/icon-googlePlaystore.svg"
-              alt="google-playstore"
-            />
+            <img src="images/icon-googlePlaystore.svg" alt="google-playstore" />
           </div>
           <div>
             <p className="text-sm">Get it on</p>
@@ -87,7 +123,7 @@ function Platforms() {
         </div>
         <div className="justfy-between flex cursor-pointer items-center gap-4 px-6 py-3">
           <div>
-            <img src="src/assets/images/icon-apple.svg" alt="apple" />
+            <img src="images/icon-apple.svg" alt="apple" />
           </div>
           <div>
             <p className="text-sm">Available on the</p>
@@ -96,7 +132,7 @@ function Platforms() {
         </div>
         <div className="flex cursor-pointer items-center justify-between gap-4 px-6 py-3">
           <div>
-            <img src="src/assets/images/icon-apple.svg" alt="apple" />
+            <img src="images/icon-webapp.svg" alt="apple" />
           </div>
           <div>
             <h4 className="text-2xl">Web app</h4>

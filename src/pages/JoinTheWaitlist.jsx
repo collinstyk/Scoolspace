@@ -15,6 +15,7 @@ import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import SEO from "../Seo";
 
 function JoinTheWaitlist() {
   const {
@@ -24,6 +25,19 @@ function JoinTheWaitlist() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const schema = {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    name: "Scoolspace",
+
+    url: "https://www.scoolspace.com/join-the-waitlist",
+
+    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const selectedRole = watch("whichBestDescribesYou");
   const navItems = [
@@ -107,6 +121,11 @@ function JoinTheWaitlist() {
 
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x pb-6 font-plus-jakarta-sans">
+      <SEO
+        title="Scoolspace | Join Our Waitlist"
+        schema={schema}
+        description="join our waitist"
+      />
       <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}

@@ -67,6 +67,7 @@ export default {
         laptop: "1040px",
         custom: "990px",
         tablet: "768px",
+        smMobile: "490px",
       },
       willChange: {
         bgColor: "background-color",

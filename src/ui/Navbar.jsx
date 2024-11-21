@@ -11,7 +11,6 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
   const [headerBg, setHeaderBg] = useState("bg-transparent");
   const isHomePage = document.getElementById("home") !== null;
   const [bgContainerClass, setbgContainerClass] = useState("");
-  const [iconSource, setIconSource] = useState("images/Scoolspace_logow.svg");
 
   const toogleMobileNav = () => {
     setShowMobileNav((value) => !value);
@@ -47,13 +46,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
         setNewType("foggy");
       }
     };
-    if (isMobile && !showMobileNav) {
-      setIconSource("images/Logomark.svg");
-    } else if (showMobileNav) {
-      setIconSource("images/Scoolspace_logo.svg");
-    } else {
-      setIconSource("images/Scoolspace_logow.svg");
-    }
+
     // Add scroll listener for the home page
 
     if (isHomePage) {
@@ -81,7 +74,11 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
     <header
       id="header"
       className={`will-change-bgColor flex h-[82px] w-full items-center justify-center ${
-        position === "fixed" ? "fixed top-0 z-10" : ""
+        position === "fixed"
+          ? "fixed top-0 z-10"
+          : position === "absolute"
+            ? "absolute top-0"
+            : ""
       } ${showMobileNav ? "border-b border-pitch-black/20 bg-white" : ""} ${headerBg} ${showMobileNav ? "fixed top-0 z-10" : ""}`}
     >
       <div style={{ opacity }} className={bgContainerClass}></div>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Accordion from "../../Accordion";
 
-export function FeaturesSection() {
+export function ProductFeaturesSection() {
   const featuresData = [
     {
-      label: false,
+      label: "Stay in the loop with ",
       id: "Realtime updates",
-      highlightColor: "",
+      highlightColor: "text-blue-one",
       info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
       illustrationFlow: "row",
       accordionData: [
@@ -31,7 +31,7 @@ export function FeaturesSection() {
       ],
     },
     {
-      label: true,
+      label: "Scoolspace for ",
       id: "Schools.",
       highlightColor: "text-elegant-purple",
       info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
@@ -58,7 +58,7 @@ export function FeaturesSection() {
       ],
     },
     {
-      label: true,
+      label: "Scoolspace for ",
       id: "Teachers.",
       highlightColor: "text-blue-one",
       info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
@@ -85,7 +85,7 @@ export function FeaturesSection() {
       ],
     },
     {
-      label: true,
+      label: "Scoolspace for ",
       id: "Parents.",
       highlightColor: "text-passion-red",
       info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
@@ -112,7 +112,7 @@ export function FeaturesSection() {
       ],
     },
     {
-      label: true,
+      label: "Scoolspace for ",
       id: "Students.",
       highlightColor: "text-blue-one",
       info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
@@ -140,15 +140,15 @@ export function FeaturesSection() {
     },
   ];
   return (
-    <section className="mx-auto mb-40 flex w-[960px] flex-col gap-[200px]">
+    <section className="mx-auto mb-40 flex w-full flex-col gap-[200px]">
       {featuresData.map((data) => (
-        <Feature featureData={data} key={data.id} />
+        <ProductFeature featureData={data} key={data.id} />
       ))}
     </section>
   );
 }
 
-function Feature({ featureData }) {
+function ProductFeature({ featureData }) {
   // Changing text color implementation
   const [curIndex, setCurIndex] = useState(0);
 
@@ -170,23 +170,24 @@ function Feature({ featureData }) {
             Feature for {featureData.id}
           </span>
         )}
-        <section className="flex items-center justify-between text-pitch-black">
-          <h1 className="w-[400px] text-5xl font-bold leading-[60.72px]">
-            {featureData.label ? "Scoolspace for " : "Stay in the loop with "}
+        <section className="flex flex-col items-center justify-between text-pitch-black lg:flex-row">
+          <h1 className="w-[400px] text-2xl font-bold leading-[60.72px] text-pitch-black sm:text-[32px] lg:text-[40px]">
+            {featureData.label}
             <span
-              className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
+              // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
+              className={featureData.highlightColor}
             >
               {featureData.id}
             </span>
           </h1>
-          <p className="w-[400px] text-[22px] leading-7">
+          <p className="w-[400px] text-base leading-7 text-pitch-black lg:text-lg">
             Sed ut perspiciatis unde omnis iste nat error sit voluptatem
             accusan, tamus remdoloremque laudantium.
           </p>
         </section>
       </div>
       <div
-        className={`flex gap-[83px] ${featureData.illustrationFlow === "row" ? "flex-row" : "flex-row-reverse"}`}
+        className={`flex flex-col gap-[83px] ${featureData.illustrationFlow === "row" ? "laptop:flex-row" : "laptop:flex-row-reverse"}`}
       >
         <div className="flex h-[440px] w-[496px] items-center rounded-2xl bg-[#F4F4F4]">
           <div className="mx-auto h-[336px] w-[400px] rounded-2xl bg-white"></div>

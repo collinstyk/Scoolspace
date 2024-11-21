@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import SEO from "../Seo";
 // import PhoneInput from "react-phone-input-2";
 
 function ContactUs() {
@@ -24,6 +25,18 @@ function ContactUs() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const schema = {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    name: "Scoolspace",
+
+    url: "https://www.scoolspace.com/contact-us",
+
+    logo: "https://www.scoolspace.com/images/Scoolspace favicon.svg",
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navItems = [
@@ -76,7 +89,7 @@ function ContactUs() {
       setIsSubmitting(true);
       const res = await axios({
         method: "POST",
-        url: "https://api.scoolspace.com/api/v1/website-api/waitlists",
+        url: "https://api.scoolspace.com/api/v1/website-api/contact-us",
         data,
       });
       console.log("Form submitted successfully!", res.data);
@@ -94,6 +107,11 @@ function ContactUs() {
 
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x pb-6 font-plus-jakarta-sans">
+      <SEO
+        title="Scoolspace | Contact Us"
+        schema={schema}
+        description="contact us"
+      />
       <section className="mx-auto w-full custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
