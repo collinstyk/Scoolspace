@@ -163,7 +163,7 @@ function ProductFeature({ featureData }) {
   const changingColor = colors[curIndex];
 
   return (
-    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-[104px]">
+    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-20 md:w-[704px]">
       <div className="flex flex-col gap-[10px]">
         {/* {featureData.label && (
           <span className="w-fit rounded-xl bg-blue-one/20 p-2 text-base text-pitch-black/70">
@@ -171,7 +171,7 @@ function ProductFeature({ featureData }) {
           </span>
         )} */}
         <section className="flex flex-col gap-4 text-pitch-black lg:flex-row">
-          <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] lg:text-[40px]">
+          <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:text-[40px]">
             {featureData.label}
             <span
               // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
@@ -180,7 +180,7 @@ function ProductFeature({ featureData }) {
               {featureData.id}
             </span>
           </h1>
-          <p className="w-full text-base leading-5 text-pitch-black lg:text-lg">
+          <p className="w-full text-base leading-5 text-pitch-black sm:w-[400px] lg:text-lg">
             Sed ut perspiciatis unde omnis iste nat error sit voluptatem
             accusan, tamus remdoloremque laudantium.
           </p>
@@ -189,7 +189,7 @@ function ProductFeature({ featureData }) {
       <div
         className={`flex flex-col gap-[83px] ${featureData.illustrationFlow === "row" ? "laptop:flex-row" : "laptop:flex-row-reverse"}`}
       >
-        <div className="smMobile:w-[362px] flex h-[296px] items-center rounded-2xl bg-[#F4F4F4]">
+        <div className="smMobile:w-[362px] flex h-[296px] items-center rounded-2xl bg-[#F4F4F4] sm:mx-auto">
           <div className="smMobile:w-[298px] mx-auto h-[232px] rounded-2xl bg-white"></div>
         </div>
 

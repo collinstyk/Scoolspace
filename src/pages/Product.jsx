@@ -22,7 +22,7 @@ function Product() {
     { label: "About us", to: "#" },
   ];
   return (
-    <div className="bg-white bg-grid1 bg-repeat-x">
+    <div id="product" className="bg-white bg-grid1 bg-repeat-x">
       <SEO
         title="Scoolspace | About the Product"
         schema={schema}
@@ -92,7 +92,7 @@ function HeroSection() {
 
 function Platforms() {
   return (
-    <main className="smMobile:w-[442px] mx-auto my-40 flex w-[91%] flex-col gap-4 lg:w-[960px]">
+    <section className="smMobile:w-[90.2%] mx-auto my-40 flex w-[91%] flex-col gap-4 md:w-[704px] lg:w-[960px]">
       <h2 className="text-center text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] lg:text-5xl">
         Never miss another class with{" "}
         <span className="text-blue-one">Scoolspace</span>.
@@ -111,28 +111,40 @@ function Platforms() {
           </Button>
         </div>
       </section> */}
-      <div className="smMobile:w-[394px] smMobile:justify-between smMobile:gap-0 mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 text-pitch-black">
-        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+      <div className="smMobile:w-[89.1%] smMobile:justify-between smMobile:gap-0 mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 text-pitch-black sm:w-[77.8%]">
+        <div className="flex cursor-pointer items-center gap-4">
           <div className="h-6 w-6">
-            <img src="images/icon-googlePlaystore.svg" alt="google-playstore" />
+            <img
+              src="images/icon-googlePlaystore.svg"
+              alt="google-playstore"
+              className="h-full w-full"
+            />
           </div>
           <div>
             <p className="text-[10px] sm:text-sm">Get it on</p>
             <h4 className="text-xs font-semibold sm:text-lg">Google Play</h4>
           </div>
         </div>
-        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+        <div className="flex cursor-pointer items-center gap-4">
           <div className="h-6 w-6">
-            <img src="images/icon-apple.svg" alt="apple" />
+            <img
+              src="images/icon-apple.svg"
+              alt="apple"
+              className="h-full w-full"
+            />
           </div>
           <div>
             <p className="text-[10px] sm:text-sm">Available on the</p>
             <h4 className="text-sm font-semibold sm:text-xl">App Store</h4>
           </div>
         </div>
-        <div className="flex w-[118px] cursor-pointer items-center gap-4">
+        <div className="flex cursor-pointer items-center gap-4">
           <div className="h-6 w-6">
-            <img src="images/icon-webapp.svg" alt="apple" />
+            <img
+              src="images/icon-webapp.svg"
+              alt="apple"
+              className="h-full w-full"
+            />
           </div>
           <div>
             <h4 className="text-xs font-semibold sm:text-lg">Web app</h4>
@@ -140,7 +152,7 @@ function Platforms() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 
