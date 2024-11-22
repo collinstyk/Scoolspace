@@ -116,7 +116,7 @@ function Platforms() {
           <div className="h-6 w-6">
             <img
               src="images/icon-googlePlaystore.svg"
-              alt="google-playstore"
+              alt="google playstore"
               className="h-full w-full"
             />
           </div>
@@ -129,7 +129,7 @@ function Platforms() {
           <div className="h-6 w-6">
             <img
               src="images/icon-apple.svg"
-              alt="apple"
+              alt="apple store"
               className="h-full w-full"
             />
           </div>
@@ -142,7 +142,7 @@ function Platforms() {
           <div className="h-6 w-6">
             <img
               src="images/icon-webapp.svg"
-              alt="apple"
+              alt="web app"
               className="h-full w-full"
             />
           </div>

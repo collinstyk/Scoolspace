@@ -331,7 +331,7 @@ function LandingSection3() {
         <Section3Cards
           extraClass="tablet:col-start-1 tablet:col-end-2"
           imageSrc="images/managed-access.svg"
-          alt="managed-access"
+          alt="managed access"
           message="Properly managed access control"
           serialNum="01"
         />
@@ -339,7 +339,7 @@ function LandingSection3() {
         <Section3Cards
           extraClass="tablet:col-start-2 tablet:col-end-3"
           imageSrc="images/functionality-access.svg"
-          alt="functionality-access"
+          alt="functionality access"
           message="Seamless functionality access"
           serialNum="02"
         />
