@@ -25,13 +25,13 @@ function ContactUs() {
     formState: { errors },
   } = useForm();
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Scoolspace",
-    url: "https://www.scoolspace.com/contact-us",
-    logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
-  };
+  // const schema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Organization",
+  //   name: "Scoolspace",
+  //   url: "https://www.scoolspace.com/contact-us",
+  //   logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
+  // };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navItems = [
@@ -102,12 +102,13 @@ function ContactUs() {
 
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x pb-6 font-plus-jakarta-sans">
-      <SEO
+      {/* <SEO
         title="Scoolspace | Contact Us"
         schema={schema}
         description="Scoolspace Contact us page"
         route="/contact-us"
-      />
+      /> */}
+      <SEO />
       <section className="mx-auto w-full custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}

@@ -26,13 +26,13 @@ function JoinTheWaitlist() {
     formState: { errors },
   } = useForm();
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Scoolspace",
-    url: "https://www.scoolspace.com/waitlist",
-    logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
-  };
+  // const schema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Organization",
+  //   name: "Scoolspace",
+  //   url: "https://www.scoolspace.com/waitlist",
+  //   logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
+  // };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const selectedRole = watch("whichBestDescribesYou");
@@ -117,12 +117,13 @@ function JoinTheWaitlist() {
 
   return (
     <div className="min-h-dvh w-dvw bg-white bg-grid3 bg-repeat-x pb-6 font-plus-jakarta-sans">
-      <SEO
+      {/* <SEO
         title="Scoolspace | Join Our Waitlist"
         schema={schema}
         description="join our waitist"
         route="/waitlist"
-      />
+      /> */}
+      <SEO />
       <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar
           navItems={navItems}
