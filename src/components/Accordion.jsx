@@ -8,7 +8,7 @@ function Accordion({ inputs }) {
   };
 
   return (
-    <div className="h-fit w-full border-b-[1px] border-b-pitch-black/20">
+    <div className="h-fit w-full border-b-[1px] border-b-pitch-black/20 lg:w-[309px]">
       {inputs.map((input) => (
         <div
           key={input.id}
@@ -18,7 +18,7 @@ function Accordion({ inputs }) {
             className="flex w-full cursor-pointer justify-between"
             onClick={() => toogleIsOpen(input.id)}
           >
-            <h3 className="text-[22px] font-medium">{input.head}</h3>
+            <h3 className="text-lg font-semibold">{input.head}</h3>
             <img
               src="images/icon-angle.svg"
               alt=""
@@ -28,7 +28,9 @@ function Accordion({ inputs }) {
           <div
             className={`overflow-hidden transition-all duration-300 ${isCurOpen === input.id ? "max-h-10" : "max-h-0"}`}
           >
-            <p className="text-base font-normal leading-5">{input.content}</p>
+            <p className="text-base font-medium leading-5 text-pitch-black/70">
+              {input.content}
+            </p>
           </div>
         </div>
       ))}

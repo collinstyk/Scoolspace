@@ -170,7 +170,7 @@ function ProductFeature({ featureData }) {
             Feature for {featureData.id}
           </span>
         )} */}
-        <section className="flex flex-col gap-4 text-pitch-black lg:flex-row">
+        <section className="flex flex-col gap-4 text-pitch-black lg:flex-row lg:justify-between">
           <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:w-[296px] lg:text-[40px]">
             {featureData.label}
             <span
@@ -187,7 +187,7 @@ function ProductFeature({ featureData }) {
         </section>
       </div>
       <div
-        className={`flex flex-col gap-[83px] ${featureData.illustrationFlow === "row" ? "laptop:flex-row" : "laptop:flex-row-reverse"}`}
+        className={`flex flex-col gap-[83px] lg:items-start ${featureData.illustrationFlow === "row" ? "lg:flex-row" : "lg:flex-row-reverse"}`}
       >
         <div className="smMobile:w-[362px] flex h-[296px] items-center rounded-2xl bg-[#F4F4F4] sm:mx-auto">
           <div className="smMobile:w-[298px] mx-auto h-[232px] rounded-2xl bg-white"></div>

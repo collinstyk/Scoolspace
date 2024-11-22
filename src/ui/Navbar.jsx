@@ -155,11 +155,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
           </div>
 
           <div className="flex flex-col gap-6">
-            <Button
-              variant="primary"
-              size="full-medium"
-              to="/join-the-waitlist"
-            >
+            <Button variant="primary" size="full-medium" to="/waitlist">
               Join our waitlist
             </Button>
             <Button variant="secondary" size="full-medium" to="/contact-us">

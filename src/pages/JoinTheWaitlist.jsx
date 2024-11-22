@@ -33,7 +33,7 @@ function JoinTheWaitlist() {
 
     name: "Scoolspace",
 
-    url: "https://www.scoolspace.com/join-the-waitlist",
+    url: "https://www.scoolspace.com/waitlist",
 
     logo: "https://www.scoolspace.com/Scoolspace-favicon.svg",
   };

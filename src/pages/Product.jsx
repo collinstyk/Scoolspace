@@ -32,7 +32,7 @@ function Product() {
         navItems={navItems}
         type="light"
         btnText="Join our waitlist"
-        btnTo="/join-the-waitlist"
+        btnTo="/waitlist"
         btnSize="normal"
         position="absolute"
       />
@@ -66,7 +66,7 @@ function HeroSection() {
               <Button
                 className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
                 variant="secondary"
-                to="/join-the-waitlist"
+                to="/waitlist"
               >
                 Join our waitlist
               </Button>

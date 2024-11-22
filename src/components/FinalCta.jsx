@@ -17,7 +17,7 @@ function FinalCTA() {
           <Button
             variant="secondary"
             className="h-fit text-nowrap px-4 py-[10px] text-xs shadow-md-dark-blue laptop:text-sm desktop:px-6 desktop:text-base"
-            to="/join-the-waitlist"
+            to="/waitlist"
           >
             Join our waitlist
           </Button>

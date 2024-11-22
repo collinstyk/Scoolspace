@@ -30,7 +30,7 @@ export default function Landing() {
       <Navbar
         navItems={navItems}
         btnText="Join our waitlist"
-        btnTo="join-the-waitlist"
+        btnTo="waitlist"
         type="foggy"
         btnSize="normal"
         position="fixed"
@@ -65,7 +65,7 @@ function HeroSection() {
                 <div className="mt-6 flex gap-4">
                   <Button
                     className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
-                    to="/join-the-waitlist"
+                    to="/waitlist"
                   >
                     Join the waitlist
                   </Button>

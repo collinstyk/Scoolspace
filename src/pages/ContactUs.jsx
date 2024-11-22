@@ -118,7 +118,7 @@ function ContactUs() {
           btnText="Join our waitlist"
           type="light"
           btnSize="large"
-          btnTo="/join-the-waitlist"
+          btnTo="/waitlist"
         />
 
         <FormLayout

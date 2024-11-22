@@ -21,14 +21,14 @@ function Footer() {
             </p>
 
             <div className="align-center flex gap-8">
-              <a href="">
-                <img src="images/icon-twitter.svg" alt="" />
+              <a href="https://x.com/scoolspace">
+                <img src="images/icon-twitter.svg" alt="x" />
               </a>
               <a href="">
-                <img src="images/icon-linkedIn.svg" alt="" />
+                <img src="images/icon-linkedIn.svg" alt="linkedIn" />
               </a>
-              <a href="">
-                <img src="images/icon-instagram.svg" alt="" />
+              <a href="https://www.instagram.com/scoolspace/">
+                <img src="images/icon-instagram.svg" alt="instagram" />
               </a>
               {/* <a href="">
                 <img src="images/icon-facebook.svg" alt="" />
