@@ -1,11 +1,13 @@
 import React from "react";
 
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
-const SEO = ({ title, description, schema }) => {
+const SEO = ({ title, description, schema, route }) => {
   return (
     <Helmet>
+      <meta charSet="utf-8" />
       <title>{title}</title>
+      <link rel="canonical" href={route} />
       {description && <meta name="description" content={description} />}
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
@@ -13,6 +15,3 @@ const SEO = ({ title, description, schema }) => {
 };
 
 export default SEO;
-// Schema.org - Schema.org
-// Schema.org is a set of extensible schemas that enables webmasters to embed
-//     structured data on their web pages for use by search engines and other applications.
