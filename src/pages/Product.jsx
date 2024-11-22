@@ -14,7 +14,7 @@ function Product() {
 
     url: "https://www.scoolspace.com/product",
 
-    logo: "https://www.scoolspace.com/Scoolspace-favicon.svg",
+    logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-WL9EM6_b.svg",
   };
   const navItems = [
     { label: "Product", to: "/product" },
