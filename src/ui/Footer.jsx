@@ -6,7 +6,7 @@ function Footer() {
           <div className="flex w-[295px] flex-col items-start gap-2">
             <img
               src="images/Scoolspace_logow.svg"
-              alt="Scoolspace logo"
+              alt="Scoolspace"
               className="w-[137px] tablet:h-full tablet:w-2/3 laptop:h-full"
             />
             <p className="text-[10px] font-normal text-white tablet:text-xs laptop:text-[18px]">

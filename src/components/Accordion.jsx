@@ -8,11 +8,11 @@ function Accordion({ inputs }) {
   };
 
   return (
-    <div className="h-fit w-full border-b-[1px] border-b-pitch-black/20 lg:w-[309px]">
+    <div className="h-fit w-full lg:w-[309px]">
       {inputs.map((input) => (
         <div
           key={input.id}
-          className="flex w-full flex-col gap-2 border-t-[1px] border-t-pitch-black/20 px-2 py-[26px] text-pitch-black"
+          className="flex w-full flex-col gap-2 px-2 py-6 text-pitch-black"
         >
           <div
             className="flex w-full cursor-pointer justify-between"
