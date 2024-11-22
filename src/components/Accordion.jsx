@@ -8,7 +8,7 @@ function Accordion({ inputs }) {
   };
 
   return (
-    <div className="h-fit w-[381px] border-b-[1px] border-b-pitch-black/20">
+    <div className="h-fit w-full border-b-[1px] border-b-pitch-black/20">
       {inputs.map((input) => (
         <div
           key={input.id}

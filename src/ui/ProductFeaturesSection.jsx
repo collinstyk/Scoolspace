@@ -140,7 +140,7 @@ export function ProductFeaturesSection() {
     },
   ];
   return (
-    <section className="mx-auto mb-40 flex w-full flex-col gap-[200px]">
+    <section className="mx-auto mb-40 mt-[140px] flex w-full flex-col gap-[200px]">
       {featuresData.map((data) => (
         <ProductFeature featureData={data} key={data.id} />
       ))}
@@ -163,15 +163,15 @@ function ProductFeature({ featureData }) {
   const changingColor = colors[curIndex];
 
   return (
-    <div className="flex w-full flex-col gap-[104px]">
+    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-[104px]">
       <div className="flex flex-col gap-[10px]">
-        {featureData.label && (
+        {/* {featureData.label && (
           <span className="w-fit rounded-xl bg-blue-one/20 p-2 text-base text-pitch-black/70">
             Feature for {featureData.id}
           </span>
-        )}
-        <section className="flex flex-col items-center justify-between text-pitch-black lg:flex-row">
-          <h1 className="w-[400px] text-2xl font-bold leading-[60.72px] text-pitch-black sm:text-[32px] lg:text-[40px]">
+        )} */}
+        <section className="flex flex-col gap-4 text-pitch-black lg:flex-row">
+          <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] lg:text-[40px]">
             {featureData.label}
             <span
               // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
@@ -180,7 +180,7 @@ function ProductFeature({ featureData }) {
               {featureData.id}
             </span>
           </h1>
-          <p className="w-[400px] text-base leading-7 text-pitch-black lg:text-lg">
+          <p className="w-full text-base leading-5 text-pitch-black lg:text-lg">
             Sed ut perspiciatis unde omnis iste nat error sit voluptatem
             accusan, tamus remdoloremque laudantium.
           </p>
@@ -189,8 +189,8 @@ function ProductFeature({ featureData }) {
       <div
         className={`flex flex-col gap-[83px] ${featureData.illustrationFlow === "row" ? "laptop:flex-row" : "laptop:flex-row-reverse"}`}
       >
-        <div className="flex h-[440px] w-[496px] items-center rounded-2xl bg-[#F4F4F4]">
-          <div className="mx-auto h-[336px] w-[400px] rounded-2xl bg-white"></div>
+        <div className="smMobile:w-[362px] flex h-[296px] items-center rounded-2xl bg-[#F4F4F4]">
+          <div className="smMobile:w-[298px] mx-auto h-[232px] rounded-2xl bg-white"></div>
         </div>
 
         <Accordion inputs={featureData.accordionData} />
