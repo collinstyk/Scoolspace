@@ -1,5 +1,4 @@
 import Navbar from "../ui/Navbar";
-import BaseForm from "../components/BaseForm";
 import FormLayout from "../ui/FormLayout";
 import {
   FormErrorMessage,
@@ -10,7 +9,7 @@ import {
 } from "../components/FormComponents";
 import Button from "../components/Button";
 import Select from "../components/Select";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -28,13 +27,9 @@ function ContactUs() {
 
   const schema = {
     "@context": "https://schema.org",
-
     "@type": "Organization",
-
     name: "Scoolspace",
-
     url: "https://www.scoolspace.com/contact-us",
-
     logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
   };
 
@@ -110,7 +105,7 @@ function ContactUs() {
       <SEO
         title="Scoolspace | Contact Us"
         schema={schema}
-        description="contact us"
+        description="Scoolspace Contact us page"
       />
       <section className="mx-auto w-full custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar

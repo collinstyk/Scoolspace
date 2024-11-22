@@ -28,13 +28,9 @@ function JoinTheWaitlist() {
 
   const schema = {
     "@context": "https://schema.org",
-
     "@type": "Organization",
-
     name: "Scoolspace",
-
     url: "https://www.scoolspace.com/waitlist",
-
     logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
   };
 

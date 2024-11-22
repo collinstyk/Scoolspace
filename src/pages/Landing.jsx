@@ -6,13 +6,9 @@ import Navbar from "../ui/Navbar";
 export default function Landing() {
   const schema = {
     "@context": "https://schema.org",
-
     "@type": "Organization",
-
     name: "Scoolspace",
-
     url: "https://www.scoolspace.com",
-
     logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
   };
   const navItems = [
@@ -24,7 +20,7 @@ export default function Landing() {
     <div id="home" className="w-full bg-white">
       <SEO
         title="Scoolspace | The new School"
-        description="Landing page"
+        description="A new way to teach, learn, and love. Unlock a connected, engaging, and efficient education experience for parents, students, teachers, and school administrators."
         schema={schema}
       />
       <Navbar

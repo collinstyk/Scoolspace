@@ -7,13 +7,9 @@ import SEO from "../Seo";
 function Product() {
   const schema = {
     "@context": "https://schema.org",
-
     "@type": "Organization",
-
     name: "Scoolspace",
-
     url: "https://www.scoolspace.com/product",
-
     logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
   };
   const navItems = [
@@ -26,7 +22,7 @@ function Product() {
       <SEO
         title="Scoolspace | About the Product"
         schema={schema}
-        description="product"
+        description="Scoolspcae Product Page"
       />
       <Navbar
         navItems={navItems}
