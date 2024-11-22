@@ -23,6 +23,7 @@ function Product() {
         title="Scoolspace | About the Product"
         schema={schema}
         description="Scoolspcae Product Page"
+        route="/product"
       />
       <Navbar
         navItems={navItems}
@@ -45,7 +46,7 @@ function HeroSection() {
     <section className="h-fit w-screen bg-grid1 bg-repeat-x pb-8">
       <div className="mx-auto pt-16">
         <div className="mx-auto mt-[132px] flex w-full justify-center gap-y-10 sm:w-[91.7%] sm:flex-col sm:items-center sm:justify-between lg:w-[960px] lg:flex-row lg:px-4 xl:mb-[296px] xl:w-[1200px] xl:px-[52px] xl:py-8">
-          <div className="smMobile:w-[412px] flex w-[85%] flex-col gap-6 text-center lg:text-left">
+          <div className="flex w-[85%] flex-col gap-6 text-center smMobile:w-[412px] lg:text-left">
             <div className="flex flex-col gap-2 text-base">
               <p className="mx-auto w-fit rounded-xl bg-blue-one/20 p-2 font-normal text-pitch-black/70 sm:hidden">
                 The product
@@ -88,7 +89,7 @@ function HeroSection() {
 
 function Platforms() {
   return (
-    <section className="smMobile:w-[90.2%] mx-auto my-40 flex w-[91%] flex-col gap-4 md:w-[704px] lg:w-[960px]">
+    <section className="mx-auto my-40 flex w-[91%] flex-col gap-4 smMobile:w-[90.2%] md:w-[704px] lg:w-[960px]">
       <h2 className="text-center text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] lg:text-5xl">
         Never miss another class with{" "}
         <span className="text-blue-one">Scoolspace</span>.
@@ -107,7 +108,7 @@ function Platforms() {
           </Button>
         </div>
       </section> */}
-      <div className="smMobile:w-[89.1%] smMobile:justify-between smMobile:gap-0 mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 text-pitch-black sm:w-[77.8%]">
+      <div className="mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 text-pitch-black smMobile:w-[89.1%] smMobile:justify-between smMobile:gap-0 sm:w-[77.8%]">
         <div className="flex cursor-pointer items-center gap-4">
           <div className="h-6 w-6">
             <img

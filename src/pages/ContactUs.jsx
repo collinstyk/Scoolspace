@@ -106,6 +106,7 @@ function ContactUs() {
         title="Scoolspace | Contact Us"
         schema={schema}
         description="Scoolspace Contact us page"
+        route="/contact-us"
       />
       <section className="mx-auto w-full custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar

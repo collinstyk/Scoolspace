@@ -121,6 +121,7 @@ function JoinTheWaitlist() {
         title="Scoolspace | Join Our Waitlist"
         schema={schema}
         description="join our waitist"
+        route="/waitlist"
       />
       <section className="mx-auto custom:w-[900px] laptop:w-[960px] desktop:w-[992px]">
         <Navbar

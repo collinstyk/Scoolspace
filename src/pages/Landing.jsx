@@ -22,6 +22,7 @@ export default function Landing() {
         title="Scoolspace | The new School"
         description="A new way to teach, learn, and love. Unlock a connected, engaging, and efficient education experience for parents, students, teachers, and school administrators."
         schema={schema}
+        route="/"
       />
       <Navbar
         navItems={navItems}
