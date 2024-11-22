@@ -84,7 +84,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
       <div style={{ opacity }} className={bgContainerClass}></div>
       <nav
         id="navbar"
-        className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]`}
+        className={`z-10 mx-auto flex w-[91%] items-center justify-between tablet:w-[704px] lg:w-[960px] desktop:w-[1200px]`}
       >
         <div>
           <Link to="/" className="flex items-center space-x-[10px]">

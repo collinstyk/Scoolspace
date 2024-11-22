@@ -14,7 +14,7 @@ function Product() {
 
     url: "https://www.scoolspace.com/product",
 
-    logo: "https://www.scoolspace.com/Scoolspace favicon.svg",
+    logo: "https://www.scoolspace.com/Scoolspace-favicon.svg",
   };
   const navItems = [
     { label: "Product", to: "/product" },
@@ -22,7 +22,7 @@ function Product() {
     { label: "About us", to: "#" },
   ];
   return (
-    <div id="product" className="bg-white bg-grid1 bg-repeat-x">
+    <div id="product" className="bg-white">
       <SEO
         title="Scoolspace | About the Product"
         schema={schema}
@@ -46,10 +46,10 @@ function Product() {
 
 function HeroSection() {
   return (
-    <section className="h-fit w-screen bg-light-linear-blue pb-8">
-      <div className="pt-16">
-        <div className="mx-auto mt-[132px] flex w-full justify-center gap-y-10 sm:w-[91.7%] sm:flex-col sm:items-center sm:justify-between lg:flex-row">
-          <div className="smMobile:w-[412px] flex w-[85%] flex-col gap-6 text-center">
+    <section className="h-fit w-screen bg-grid1 bg-repeat-x pb-8">
+      <div className="mx-auto pt-16">
+        <div className="mx-auto mt-[132px] flex w-full justify-center gap-y-10 sm:w-[91.7%] sm:flex-col sm:items-center sm:justify-between lg:w-[960px] lg:flex-row lg:px-4 xl:mb-[296px] xl:w-[1200px] xl:px-[52px] xl:py-8">
+          <div className="smMobile:w-[412px] flex w-[85%] flex-col gap-6 text-center lg:text-left">
             <div className="flex flex-col gap-2 text-base">
               <p className="mx-auto w-fit rounded-xl bg-blue-one/20 p-2 font-normal text-pitch-black/70 sm:hidden">
                 The product
@@ -62,7 +62,7 @@ function HeroSection() {
                 voluptatem accusantius doloremque laudantium, totam.
               </p>
             </div>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
               <Button
                 className="px-4 py-[10px] text-xs font-semibold tablet:px-6 tablet:text-sm laptop:px-8 laptop:text-base"
                 variant="secondary"
@@ -81,8 +81,8 @@ function HeroSection() {
           </div>
           <div className="hidden h-full w-[412px] flex-col gap-[69px] sm:flex">
             {/*PLACEHOLDERS */}
-            <div className="mx-auto h-[176px] w-[348px] rounded-xl bg-[#D9D9D9]"></div>
-            <div className="mx-auto h-[80px] w-[348px] rounded-xl bg-[#D9D9D9]"></div>
+            <div className="mx-auto h-[176px] w-[348px] rounded-xl bg-[#D9D9D9] lg:ml-auto lg:mr-0"></div>
+            <div className="mx-auto h-[80px] w-[348px] rounded-xl bg-[#D9D9D9] lg:ml-auto lg:mr-0"></div>
           </div>
         </div>
       </div>

@@ -140,7 +140,7 @@ export function ProductFeaturesSection() {
     },
   ];
   return (
-    <section className="mx-auto mb-40 mt-[140px] flex w-full flex-col gap-[200px]">
+    <section className="mx-auto mb-40 mt-[160px] flex w-full flex-col gap-[200px]">
       {featuresData.map((data) => (
         <ProductFeature featureData={data} key={data.id} />
       ))}
@@ -163,7 +163,7 @@ function ProductFeature({ featureData }) {
   const changingColor = colors[curIndex];
 
   return (
-    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-20 md:w-[704px]">
+    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-20 md:w-[704px] xl:w-[1120px]">
       <div className="flex flex-col gap-[10px]">
         {/* {featureData.label && (
           <span className="w-fit rounded-xl bg-blue-one/20 p-2 text-base text-pitch-black/70">
@@ -171,7 +171,7 @@ function ProductFeature({ featureData }) {
           </span>
         )} */}
         <section className="flex flex-col gap-4 text-pitch-black lg:flex-row">
-          <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:text-[40px]">
+          <h1 className="w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:w-[296px] lg:text-[40px]">
             {featureData.label}
             <span
               // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
