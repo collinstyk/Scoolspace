@@ -13,7 +13,7 @@ export default function Landing() {
 
     url: "https://www.scoolspace.com",
 
-    logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-WL9EM6_b.svg",
+    logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
   };
   const navItems = [
     { label: "Product", to: "product" },
