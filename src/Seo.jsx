@@ -19,7 +19,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const SEO = () => (
+const SEO = ({ path }) => (
   <>
     <Helmet>
       <title>The New School</title>
@@ -33,17 +33,20 @@ const SEO = () => (
         property="og:description"
         content="A new way to teach, learn, and love. Unlock a connected, engaging, and efficient education experience for parents, students, teachers, and school administrators."
       />
-      <meta property="og:image" content="/Scoolspace-favicon.png" />
+      <meta property="og:image" content="/logo.png" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.scoolspace.com/" />
-      <link rel="icon" href="/favicon.ico" sizes="32x32" />
-      <link
-        rel="icon"
-        type="image/png"
-        href="/Scoolspace-favicon.png"
-        sizes="192x192"
+      <link rel="icon" href="/favicon.ico" sizes="16x16" />
+      <link rel="icon" type="image/png" href="/logo.png" sizes="192x192" />
+      <link rel="apple-touch-icon" href="/favicon.ico" />
+      <meta
+        name="google-site-verification"
+        content="iGb7AZZVBphAYk6wcWVi9sVHj-JX0nqcfsxR1l7y6es"
       />
-      <link rel="apple-touch-icon" href="/Scoolspace-favicon.png" />
+      <link rel="manifest" href="/manifest.json" />
+      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <link rel="canonical" href={path} />
     </Helmet>
   </>
 );
