@@ -5,13 +5,6 @@ import { ProductFeaturesSection } from "../ui/ProductFeaturesSection";
 import SEO from "../Seo";
 
 function Product() {
-  // const schema = {
-  //   "@context": "https://schema.org",
-  //   "@type": "Organization",
-  //   name: "Scoolspace",
-  //   url: "https://www.scoolspace.com/product",
-  //   logo: "https://www.scoolspace.com/assets/Scoolspace-favicon-B16jv-6R.png",
-  // };
   const navItems = [
     { label: "Product", to: "/product" },
     { label: "Resources", to: "#" },
@@ -19,13 +12,7 @@ function Product() {
   ];
   return (
     <div id="product" className="bg-white">
-      {/* <SEO
-        title="Scoolspace | About the Product"
-        schema={schema}
-        description="Scoolspcae Product Page"
-        route="/product"
-      /> */}
-      <SEO />
+      <SEO path={window.location.pathname} />
       <Navbar
         navItems={navItems}
         type="light"
