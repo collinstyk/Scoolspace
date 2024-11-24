@@ -42,7 +42,7 @@ function HeroSection() {
               <h1 className="text-[32px] font-bold leading-tight text-pitch-black sm:text-[40px] lg:text-5xl">
                 Where teaching and learning come together
               </h1>
-              <p className="text-base font-medium sm:text-sm lg:text-base">
+              <p className="text-base font-medium text-pitch-black sm:text-sm lg:text-base">
                 At Scoolspace, we simplify education by connecting parents,
                 teachers, students, and administrators through a platform that
                 streamlines tasks, enhances communication, by delivering
