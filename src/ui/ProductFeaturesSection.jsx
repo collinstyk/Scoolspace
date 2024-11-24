@@ -5,28 +5,28 @@ export function ProductFeaturesSection() {
   const featuresData = [
     {
       label: "Stay in the loop with ",
-      id: "Realtime updates",
+      id: "Real-Time updates",
       highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde accusan,laudantium.",
+      info: "Scoolspace keeps everyone connected and informed. Our platform delivers instant updates to make education easier and more accessible for all stakeholders.",
       illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
-          head: "Realtime Feature",
+          head: " Real-Time Feature",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Get instant updates on academic progress, announcements, and activities across the platform. Never miss an important moment again.",
         },
         {
           id: 1,
           head: "Efficient realtime grading",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Teachers can grade assignments and tests instantly, saving hours of work while providing students and parents with immediate feedback.",
         },
         {
           id: 2,
           head: "Dark mode support",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Enjoy a seamless, comfortable experience on any device, day or night, with dark mode functionality.",
         },
       ],
     },
@@ -34,53 +34,26 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Schools.",
       highlightColor: "text-elegant-purple",
-      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
+      info: "Empowering administrators to manage smarter, not harder.\n\n Scoolspace simplifies school operations, making it easy to oversee performance, manage data, and improve outcomes.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Realtime feature",
+          head: "Real-Time Feature",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Administrators can monitor classroom activity, teacher performance, and student progress with up-to-the-minute updates.",
         },
         {
           id: 1,
-          head: "Online school management system",
+          head: " Online School Management System",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "A single platform to handle school finances, inventory, and fee collection, ensuring everything runs smoothly",
         },
         {
           id: 2,
           head: "Organisational analytics",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
-        },
-      ],
-    },
-    {
-      label: "Scoolspace for ",
-      id: "Teachers.",
-      highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
-      illustrationFlow: "row",
-      accordionData: [
-        {
-          id: 0,
-          head: "Realtime feature",
-          content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
-        },
-        {
-          id: 1,
-          head: "Easy fee management",
-          content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
-        },
-        {
-          id: 2,
-          head: "Communication channels",
-          content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "A single platform to handle school finances, inventory, and fee collection, ensuring everything runs smoothly.",
         },
       ],
     },
@@ -88,32 +61,59 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Parents.",
       highlightColor: "text-passion-red",
-      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
+      info: "Stay connected, save time, and support your child like never before.\n\nWith Scoolspace, parents have the tools they need to stay involved in their children’s education without disrupting their busy schedules.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Realtime feature",
+          head: " Real-Time Feature",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Get immediate updates on your child’s progress, grades, and school announcements—all in one place.",
         },
         {
           id: 1,
-          head: "Introducing: Lesson notes",
+          head: "Easy Fee Management",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Pay school fees online with just a few clicks. No more bank runs or paperwork.",
         },
         {
           id: 2,
-          head: "Class management",
+          head: " Communication Channels",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Connect directly with teachers and school staff for updates, emergencies, or to discuss your child’s progress.",
+        },
+      ],
+    },
+    {
+      label: "Scoolspace for ",
+      id: "Teachers.",
+      highlightColor: "text-blue-one",
+      info: "Simplify your workload and focus on what matters most: teaching. Scoolspace provides innovative tools to help teachers save time, reduce stress, and engage students in more meaningful ways.",
+      illustrationFlow: "row",
+      accordionData: [
+        {
+          id: 0,
+          head: "Real-Time Feature",
+          content:
+            "Keep track of student performance, attendance, and assignments in real-time, all from one dashboard.",
+        },
+        {
+          id: 1,
+          head: " Introducing: Lesson Notes",
+          content:
+            "Prepare, share, and update lesson notes effortlessly, ensuring all students have access to class materials.",
+        },
+        {
+          id: 2,
+          head: "Class Management",
+          content:
+            "Organize classroom activities and student records seamlessly to improve productivity and focus on teaching.",
         },
         {
           id: 3,
-          head: "Auto graded CAs and assignments",
+          head: "Auto-Graded CAs and Assignments",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Say goodbye to hours of grading. Scoolspace automates it, so you can spend more time inspiring your students.",
         },
       ],
     },
@@ -121,32 +121,32 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Students.",
       highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
+      info: "Learning has never been this engaging, accessible, and fun. Scoolspace empowers students with tools to stay organized, engaged, and on track with their academic goals.",
       illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
-          head: "Realtime feature",
+          head: "Real-Time Feature",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Access assignments, test results, and class updates in real-time, ensuring you never miss an important task.",
         },
         {
           id: 1,
           head: "Introducing: Lesson notes",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "View, download, and study class notes at your convenience—no more rushing to copy down every word.",
         },
         {
           id: 2,
-          head: "AI recommendations",
+          head: "AI Recommendations",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Receive personalized recommendations for studying, improving performance, and mastering key concepts.",
         },
         {
           id: 3,
           head: "Calendars",
           content:
-            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+            "Keep track of assignments, tests, and school events with an intuitive calendar feature that helps students stay organized",
         },
       ],
     },
