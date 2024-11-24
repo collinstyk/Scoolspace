@@ -7,7 +7,7 @@ export function ProductFeaturesSection() {
       label: "Stay in the loop with ",
       id: "Realtime updates",
       highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
+      info: "Sed ut perspiciatis unde accusan,laudantium.",
       illustrationFlow: "row",
       accordionData: [
         {
@@ -18,13 +18,13 @@ export function ProductFeaturesSection() {
         },
         {
           id: 1,
-          head: "Realtime Feature",
+          head: "Efficient realtime grading",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 2,
-          head: "Realtime Feature",
+          head: "Dark mode support",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
@@ -34,24 +34,24 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Schools.",
       highlightColor: "text-elegant-purple",
-      info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
+      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "School Feature",
+          head: "Realtime feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 1,
-          head: "School Feature",
+          head: "Online school management system",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 2,
-          head: "School Feature",
+          head: "Organisational analytics",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
@@ -61,24 +61,24 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Teachers.",
       highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
+      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
       illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
-          head: "Teacher Feature",
+          head: "Realtime feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 1,
-          head: "Teacher Feature",
+          head: "Easy fee management",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 2,
-          head: "Teacher Feature",
+          head: "Communication channels",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
@@ -88,24 +88,30 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Parents.",
       highlightColor: "text-passion-red",
-      info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
+      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Parent Feature",
+          head: "Realtime feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 1,
-          head: "Parent Feature",
+          head: "Introducing: Lesson notes",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 2,
-          head: "Parent Feature",
+          head: "Class management",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 3,
+          head: "Auto graded CAs and assignments",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
@@ -115,24 +121,30 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Students.",
       highlightColor: "text-blue-one",
-      info: "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan, tamus remdoloremque laudantium.",
+      info: "Sed ut perspiciatis unde accusan, laudan perspiciatis unde omnis iste nat error sitatium voluptatem accusan.",
       illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
-          head: "Student Feature",
+          head: "Realtime feature",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 1,
-          head: "Student Feature",
+          head: "Introducing: Lesson notes",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
         {
           id: 2,
-          head: "Student Feature",
+          head: "AI recommendations",
+          content:
+            "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
+        },
+        {
+          id: 3,
+          head: "Calendars",
           content:
             "Sed ut perspiciatis unde omnis iste nat error sit voluptatem accusan.",
         },
@@ -163,7 +175,7 @@ function ProductFeature({ featureData }) {
   const changingColor = colors[curIndex];
 
   return (
-    <div className="smMobile:px-8 mx-auto flex w-[87%] flex-col gap-20 md:w-[704px] lg:w-[960px] xl:w-[1120px]">
+    <div className="mx-auto flex w-[87%] flex-col gap-20 smMobile:px-8 md:w-[704px] lg:w-[960px] xl:w-[1120px]">
       <div className="flex flex-col gap-[10px]">
         {/* {featureData.label && (
           <span className="w-fit rounded-xl bg-blue-one/20 p-2 text-base text-pitch-black/70">
@@ -185,15 +197,15 @@ function ProductFeature({ featureData }) {
             </span>
           </h1>
           <p className="w-full text-base leading-5 text-pitch-black/60 sm:w-[400px] lg:text-lg">
-            Sed ut perspiciatis unde accusan,laudantium.
+            {featureData.info}
           </p>
         </section>
       </div>
       <div
         className={`flex flex-col gap-[83px] lg:items-start lg:justify-between ${featureData.illustrationFlow === "row" ? "lg:flex-row" : "lg:flex-row-reverse"}`}
       >
-        <div className="smMobile:w-[362px] flex h-[296px] items-center rounded-2xl bg-[#F4F4F4] sm:mx-auto lg:mx-0">
-          <div className="smMobile:w-[298px] mx-auto h-[232px] rounded-2xl bg-white"></div>
+        <div className="flex h-[296px] items-center rounded-2xl bg-[#F4F4F4] smMobile:w-[362px] sm:mx-auto sm:h-[480px] sm:w-[520px] lg:mx-0 lg:h-[520px]">
+          <div className="mx-auto h-[232px] rounded-2xl bg-white smMobile:w-[298px] sm:h-[336px] sm:w-[400px]"></div>
         </div>
 
         <Accordion inputs={featureData.accordionData} />
