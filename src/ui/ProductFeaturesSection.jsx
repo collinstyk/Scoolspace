@@ -8,7 +8,7 @@ export function ProductFeaturesSection() {
       id: "Real-Time updates",
       highlightColor: "text-blue-one",
       info: "Scoolspace keeps everyone connected and informed. Our platform delivers instant updates to make education easier and more accessible for all stakeholders.",
-      illustrationFlow: "row",
+      illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
@@ -62,7 +62,7 @@ export function ProductFeaturesSection() {
       id: "Parents.",
       highlightColor: "text-passion-red",
       info: "Stay connected, save time, and support your child like never before.\n\nWith Scoolspace, parents have the tools they need to stay involved in their children’s education without disrupting their busy schedules.",
-      illustrationFlow: "row-reverse",
+      illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
@@ -89,7 +89,7 @@ export function ProductFeaturesSection() {
       id: "Teachers.",
       highlightColor: "text-blue-one",
       info: "Simplify your workload and focus on what matters most: teaching. Scoolspace provides innovative tools to help teachers save time, reduce stress, and engage students in more meaningful ways.",
-      illustrationFlow: "row",
+      illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
@@ -122,7 +122,7 @@ export function ProductFeaturesSection() {
       id: "Students.",
       highlightColor: "text-blue-one",
       info: "Learning has never been this engaging, accessible, and fun. Scoolspace empowers students with tools to stay organized, engaged, and on track with their academic goals.",
-      illustrationFlow: "row",
+      illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
@@ -196,7 +196,7 @@ function ProductFeature({ featureData }) {
               {featureData.id}
             </span>
           </h1>
-          <p className="w-full text-base leading-5 text-pitch-black/60 sm:w-[400px] lg:text-lg">
+          <p className="w-full text-base font-medium leading-5 text-pitch-black/60 sm:w-[400px] lg:text-lg">
             {featureData.info}
           </p>
         </section>

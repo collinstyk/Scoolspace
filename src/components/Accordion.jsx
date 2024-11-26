@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 function Accordion({ inputs }) {
-  const [isCurOpen, setIsCurOpen] = useState(null);
+  const [isCurOpen, setIsCurOpen] = useState(0);
 
   const toogleIsOpen = (id) => {
     setIsCurOpen(isCurOpen === id ? null : id);
   };
 
   return (
-    <div className="h-fit w-full lg:w-[309px]">
+    <div className="h-fit w-full lg:w-[390px] xl:w-[470px]">
       {inputs.map((input) => (
         <div
           key={input.id}
@@ -26,7 +26,7 @@ function Accordion({ inputs }) {
             />
           </div>
           <div
-            className={`overflow-hidden transition-all duration-300 ${isCurOpen === input.id ? "max-h-10" : "max-h-0"}`}
+            className={`overflow-hidden transition-all duration-300 ease-in ${isCurOpen === input.id ? "max-h-96" : "max-h-0"}`}
           >
             <p className="text-base font-medium leading-5 text-pitch-black/70">
               {input.content}

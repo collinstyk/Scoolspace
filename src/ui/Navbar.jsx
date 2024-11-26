@@ -74,7 +74,7 @@ function Navbar({ navItems, btnText, btnTo, type, btnSize, position }) {
     <header
       id="header"
       className={`flex h-[82px] w-full items-center justify-center will-change-bgColor ${
-        position === "fixed"
+        position === "fixed" || showMobileNav
           ? "fixed top-0 z-10"
           : position === "absolute"
             ? "absolute top-0"

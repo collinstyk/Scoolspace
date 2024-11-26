@@ -36,7 +36,7 @@ function HeroSection() {
         <div className="mx-auto mt-[132px] flex w-full justify-center gap-y-10 sm:w-[91.7%] sm:flex-col sm:items-center sm:justify-between lg:w-[960px] lg:flex-row lg:px-4 xl:mb-[296px] xl:w-[1200px] xl:px-[52px] xl:py-8">
           <div className="flex w-[85%] flex-col gap-6 text-center smMobile:w-[412px] lg:text-left">
             <div className="flex flex-col gap-2 text-base">
-              <p className="mx-auto w-fit rounded-xl bg-blue-one/20 p-2 font-normal text-pitch-black/70 sm:hidden">
+              <p className="mx-auto w-fit rounded-xl bg-blue-one/20 p-2 text-xs font-medium text-pitch-black/70 sm:hidden">
                 The product
               </p>
               <h1 className="text-[32px] font-bold leading-tight text-pitch-black sm:text-[40px] lg:text-5xl">
