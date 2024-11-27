@@ -24,7 +24,7 @@ function Footer() {
               <a href="https://x.com/scoolspace">
                 <img src="images/icon-twitter.svg" alt="x" />
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/company/scoolspace">
                 <img src="images/icon-linkedIn.svg" alt="linkedIn" />
               </a>
               <a href="https://www.instagram.com/scoolspace/">

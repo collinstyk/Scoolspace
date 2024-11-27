@@ -4,29 +4,29 @@ import Accordion from "../components/Accordion";
 export function ProductFeaturesSection() {
   const featuresData = [
     {
-      label: "Stay in the loop with ",
-      id: "Real-Time updates",
+      label: "Stay connected with ",
+      id: "Real time Updates",
       highlightColor: "text-blue-one",
-      info: "Scoolspace keeps everyone connected and informed. Our platform delivers instant updates to make education easier and more accessible for all stakeholders.",
+      info: "Keep everyone connected and informed. By delivering instant updates to make education easier and more accessible for all stakeholders.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: " Real-Time Feature",
+          head: "Instant update notifications",
           content:
             "Get instant updates on academic progress, announcements, and activities across the platform. Never miss an important moment again.",
         },
         {
           id: 1,
-          head: "Efficient realtime grading",
+          head: " Efficient Real time grading",
           content:
             "Teachers can grade assignments and tests instantly, saving hours of work while providing students and parents with immediate feedback.",
         },
         {
           id: 2,
-          head: "Dark mode support",
+          head: "Concrete analysis for everyone",
           content:
-            "Enjoy a seamless, comfortable experience on any device, day or night, with dark mode functionality.",
+            "Equip your school with the right information across all levels in the establishment to help manage and make faster decisions when it comes to it.",
         },
       ],
     },
@@ -34,12 +34,12 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Schools.",
       highlightColor: "text-elegant-purple",
-      info: "Empowering administrators to manage smarter, not harder.\n\n Scoolspace simplifies school operations, making it easy to oversee performance, manage data, and improve outcomes.",
+      info: "Empowering administrators to manage smarter, not harder. Simplify and ease school operations to improve overall outcomes.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Real-Time Feature",
+          head: " Real time classroom analytics",
           content:
             "Administrators can monitor classroom activity, teacher performance, and student progress with up-to-the-minute updates.",
         },
@@ -53,7 +53,7 @@ export function ProductFeaturesSection() {
           id: 2,
           head: "Organisational analytics",
           content:
-            "A single platform to handle school finances, inventory, and fee collection, ensuring everything runs smoothly.",
+            "Dive deep into performance metrics with comprehensive analytics to make informed decisions about your school’s future.",
         },
       ],
     },
@@ -61,18 +61,18 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Parents.",
       highlightColor: "text-passion-red",
-      info: "Stay connected, save time, and support your child like never before.\n\nWith Scoolspace, parents have the tools they need to stay involved in their children’s education without disrupting their busy schedules.",
+      info: "Stay connected and effortlessly support, monitor and manage your child’s education while balancing your busy schedule.",
       illustrationFlow: "row",
       accordionData: [
         {
           id: 0,
-          head: " Real-Time Feature",
+          head: "Real time ward analytics",
           content:
             "Get immediate updates on your child’s progress, grades, and school announcements—all in one place.",
         },
         {
           id: 1,
-          head: "Easy Fee Management",
+          head: "Simple fee payments",
           content:
             "Pay school fees online with just a few clicks. No more bank runs or paperwork.",
         },
@@ -88,12 +88,12 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Teachers.",
       highlightColor: "text-blue-one",
-      info: "Simplify your workload and focus on what matters most: teaching. Scoolspace provides innovative tools to help teachers save time, reduce stress, and engage students in more meaningful ways.",
+      info: "Simplify your workload and focus on what matters most: impacting knowledge.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Real-Time Feature",
+          head: "Real time student tracking",
           content:
             "Keep track of student performance, attendance, and assignments in real-time, all from one dashboard.",
         },
@@ -101,7 +101,7 @@ export function ProductFeaturesSection() {
           id: 1,
           head: " Introducing: Lesson Notes",
           content:
-            "Prepare, share, and update lesson notes effortlessly, ensuring all students have access to class materials.",
+            "Our LMS allows you to prepare, share, and update lesson notes effortlessly, ensuring all students have access to class materials.",
         },
         {
           id: 2,
@@ -113,7 +113,7 @@ export function ProductFeaturesSection() {
           id: 3,
           head: "Auto-Graded CAs and Assignments",
           content:
-            "Say goodbye to hours of grading. Scoolspace automates it, so you can spend more time inspiring your students.",
+            "Say goodbye to hours of grading. With Scoolspace, you can spend more time inspiring your students through impactful learning.",
         },
       ],
     },
@@ -121,12 +121,12 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Students.",
       highlightColor: "text-blue-one",
-      info: "Learning has never been this engaging, accessible, and fun. Scoolspace empowers students with tools to stay organized, engaged, and on track with their academic goals.",
+      info: "Learning has never been this engaging, accessible, and fun.\n\nScoolspace empowers students with tools to stay organized, engaged, and on track with their academic goals.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
           id: 0,
-          head: "Real-Time Feature",
+          head: "Class monitoring",
           content:
             "Access assignments, test results, and class updates in real-time, ensuring you never miss an important task.",
         },

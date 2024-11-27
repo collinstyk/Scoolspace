@@ -40,13 +40,12 @@ function HeroSection() {
                 The product
               </p>
               <h1 className="text-[32px] font-bold leading-tight text-pitch-black sm:text-[40px] lg:text-5xl">
-                Where teaching and learning come together
+                Where Teaching and Learning Come Together | A new environment to
+                foster impactful learning
               </h1>
               <p className="text-base font-medium text-pitch-black sm:text-sm lg:text-base">
-                At Scoolspace, we simplify education by connecting parents,
-                teachers, students, and administrators through a platform that
-                streamlines tasks, enhances communication, by delivering
-                real-time updates.
+                Simplifying education systems and connecting school stakeholders
+                through real time updates.
               </p>
             </div>
             <div className="flex items-center justify-center gap-4 lg:justify-start">
