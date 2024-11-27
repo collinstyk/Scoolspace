@@ -183,19 +183,37 @@ function ProductFeature({ featureData }) {
           </span>
         )} */}
         <section
-          className={`flex flex-col gap-4 text-pitch-black ${featureData.id === "Realtime updates" ? "sm:items-center sm:text-center" : "lg:flex-row lg:justify-between"}`}
+          className={`flex flex-col gap-4 text-pitch-black ${featureData.id === "Real time Updates" ? "sm:items-center sm:text-center" : "lg:flex-row lg:justify-between"}`}
         >
-          <h1
-            className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:text-[40px] ${featureData.id === "Realtime updates" ? "sm:w-[313px] lg:w-[396px]" : "lg:w-[296px]"}`}
-          >
-            {featureData.label}
-            <span
-              // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
-              className={featureData.highlightColor}
+          {featureData.id === "Real time Updates" && (
+            <h1
+              className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:w-[391px] sm:text-[32px] sm:leading-10 lg:w-[396px] lg:text-[40px]`}
             >
-              {featureData.id}
-            </span>
-          </h1>
+              {featureData.label}
+              <br />
+              <span
+                // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
+                className={featureData.highlightColor}
+              >
+                {featureData.id}
+              </span>
+            </h1>
+          )}
+
+          {featureData.id !== "Real time Updates" && (
+            <h1
+              className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:w-[296px] lg:text-[40px]`}
+            >
+              {featureData.label}
+              <span
+                // className={`transition-colors duration-1000 ${featureData.label ? featureData.highlightColor : changingColor}`}
+                className={featureData.highlightColor}
+              >
+                {featureData.id}
+              </span>
+            </h1>
+          )}
+
           <p className="w-full text-base font-medium leading-5 text-pitch-black/60 sm:w-[400px] lg:text-lg">
             {featureData.info}
           </p>
