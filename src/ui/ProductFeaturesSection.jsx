@@ -187,7 +187,7 @@ function ProductFeature({ featureData }) {
         >
           {featureData.id === "Real time Updates" && (
             <h1
-              className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:w-[391px] sm:text-[32px] sm:leading-10 lg:w-[396px] lg:text-[40px]`}
+              className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:w-[391px] sm:text-[32px] sm:leading-10 lg:w-[500px] lg:text-[40px] lg:leading-[50px]`}
             >
               {featureData.label}
               <br />
