@@ -121,7 +121,7 @@ export function ProductFeaturesSection() {
       label: "Scoolspace for ",
       id: "Students.",
       highlightColor: "text-blue-one",
-      info: "Learning has never been this engaging, accessible, and fun.\n\nScoolspace empowers students with tools to stay organized, engaged, and on track with their academic goals.",
+      info: "Learning has never been this engaging, accessible, and fun with tools to stay organized, engaged, and on track with academic goals.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
