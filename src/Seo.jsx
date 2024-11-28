@@ -47,6 +47,7 @@ const SEO = ({ path }) => (
         name="google-site-verification"
         content="iGb7AZZVBphAYk6wcWVi9sVHj-JX0nqcfsxR1l7y6es"
       />
+      <meta name="msvalidate.01" content="54491FCCB75A77445DA3433EE7140D14" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="msapplication-TileColor" content="#ffffff" />
