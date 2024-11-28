@@ -105,6 +105,7 @@ export function PhoneInput({ register, errors }) {
   };
   return (
     <FormElementContainer>
+      <Label>Phone number</Label>
       {errors.phone && <FormErrorMessage message={errors.phone.message} />}
       <FormElementContainer variant="dual">
         <Select

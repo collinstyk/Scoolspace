@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Button from "../components/Button";
 import FinalCTA from "../components/FinalCta";
 import SEO from "../Seo";
@@ -232,6 +233,32 @@ function Feature({
   featureName,
   iconSrc,
 }) {
+  const interactiveDivRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const rect = interactiveDivRef.current.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const offsetX = (x - centerX) / centerX;
+    const offsetY = (y - centerY) / centerY;
+
+    interactiveDivRef.current.style.transform = `
+    scale(1.01)
+    translate(${offsetX * 10}px, ${offsetY * 10}px)
+    `;
+  };
+
+  const handleMouseLeave = () => {
+    interactiveDivRef.current.style.transform = `
+    scale(1)
+    `;
+  };
+
   return (
     <div
       className={`w-full justify-between gap-4 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
@@ -252,7 +279,10 @@ function Feature({
         </div>
       )}
       <div
-        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
+        ref={interactiveDivRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
