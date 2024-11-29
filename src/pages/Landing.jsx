@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Button from "../components/Button";
 import FinalCTA from "../components/FinalCta";
 import SEO from "../Seo";
@@ -84,7 +84,7 @@ function LandingSection2() {
         </h3>
         <p className="w-full text-sm font-normal text-pitch-black tablet:w-[400px] laptop:text-lg">
           Scoolspace is packed with features designed to make learning easy,
-          teaching efficient, and school management seamless:
+          teaching efficient, and school management seamless.
         </p>
       </div>
     </section>
@@ -98,7 +98,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Why Scoolspace?",
       heading: "Seamless, Smart, Connected",
-      body: "Scoolspace is the all-in-one platform that bridges gaps between students, teachers, parents, and administrators. Access real-time progress, communicate effortlessly, and create a community dedicated to learning success—all from one powerful, user-friendly dashboard.",
+      body: "Scoolspace is the all-in-one platform that bridges gaps between students, teachers, parents, and administrators. Access real time progress, communicate effortlessly, and create a community dedicated to learning success—all from one powerful, user-friendly dashboard.",
       variant: "fill",
       btnVariant: "secondary",
       flow: null,
@@ -113,7 +113,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
       subHeading: "For Schools",
       heading: "Full control, Real insights",
-      body: "From real-time student performance metrics to automated finance, inventory, and curriculum management, Scoolspace offers administrators the tools they need to elevate school operations. Monitor classrooms, manage school resources, and foster a collaborative environment—all in one place.",
+      body: "Monitor performances, manage school operations, resources, curriculum and more in a collaborative environment with ease.",
       variant: "dual",
       btnVariant: "light",
       flow: "right",
@@ -130,7 +130,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "For Teachers",
       heading: "Teach smarter, Not harder",
-      body: "Scoolspace makes teaching easier, faster, and more impactful. Plan lessons, assign and auto-grade quizzes, and keep students engaged with interactive activities, badges, and real-time feedback. Communicate seamlessly with parents and track each student’s progress from a centralized digital platform.",
+      body: "Focus on more impactful teaching activities. Prepare lessons, assign and grade quizzes, and keep students engaged with interactive classes with Scoolspace.",
       variant: "dual",
       btnVariant: "secondary",
       flow: "left",
@@ -147,7 +147,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
       subHeading: "For Parents",
       heading: "Stay connected, Always",
-      body: "No more trips to school or missed calls from teachers. With Scoolspace, you can monitor your child’s progress, communicate with teachers, and access assignments and assessments—all at your fingertips. Stay connected and empowered to support your child’s academic growth.",
+      body: "Stay up to date with your child’s school activities. Be connected and empowered to support your child’s academic growth.",
       variant: "fill",
       btnVariant: "secondary",
       flow: null,
@@ -162,7 +162,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "For Students",
       heading: "Fun, Engaging Learning",
-      body: "With Scoolspace, you can access class materials, submit assignments, and take interactive assessments from anywhere. Learning is engaging and dynamic, designed to keep you interested and motivated to succeed.",
+      body: "With access to class materials, interactive classes and assignments, and the option to take assessments from anywhere, become the best student you can be.",
       variant: "dual",
       btnVariant: "secondary",
       flow: "right",
@@ -234,6 +234,7 @@ function Feature({
   iconSrc,
 }) {
   const interactiveDivRef = useRef(null);
+  // const [isMobile, setIsMobile] = useState();
 
   const handleMouseMove = (e) => {
     const rect = interactiveDivRef.current.getBoundingClientRect();
@@ -247,10 +248,12 @@ function Feature({
     const offsetX = (x - centerX) / centerX;
     const offsetY = (y - centerY) / centerY;
 
-    interactiveDivRef.current.style.transform = `
-    scale(1.01)
-    translate(${offsetX * 10}px, ${offsetY * 10}px)
-    `;
+    if (window.innerWidth >= 640) {
+      interactiveDivRef.current.style.transform = `
+      scale(1.01)
+      translate(${offsetX * 10}px, ${offsetY * 10}px)
+      `;
+    }
   };
 
   const handleMouseLeave = () => {
@@ -282,7 +285,7 @@ function Feature({
         ref={interactiveDivRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
+        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform duration-500 ease-linear sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>

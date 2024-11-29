@@ -5,9 +5,9 @@ export function ProductFeaturesSection() {
   const featuresData = [
     {
       label: "Stay connected with ",
-      id: "Real time Updates",
+      id: "Real time updates",
       highlightColor: "text-blue-one",
-      info: "Keep everyone connected and informed. By delivering instant updates to make education easier and more accessible for all stakeholders.",
+      info: "Keep everyone connected and informed. By delivering instant updates to all stakeholders.",
       illustrationFlow: "row-reverse",
       accordionData: [
         {
@@ -183,9 +183,9 @@ function ProductFeature({ featureData }) {
           </span>
         )} */}
         <section
-          className={`flex flex-col gap-4 text-pitch-black ${featureData.id === "Real time Updates" ? "sm:items-center sm:text-center" : "lg:flex-row lg:justify-between"}`}
+          className={`flex flex-col gap-4 text-pitch-black ${featureData.id === "Real time updates" ? "sm:items-center sm:text-center" : "lg:flex-row lg:justify-between"}`}
         >
-          {featureData.id === "Real time Updates" && (
+          {featureData.id === "Real time updates" && (
             <h1
               className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:w-[391px] sm:text-[32px] sm:leading-10 lg:w-[500px] lg:text-[40px] lg:leading-[50px]`}
             >
@@ -200,7 +200,7 @@ function ProductFeature({ featureData }) {
             </h1>
           )}
 
-          {featureData.id !== "Real time Updates" && (
+          {featureData.id !== "Real time updates" && (
             <h1
               className={`w-[253px] text-2xl font-bold leading-[30px] text-pitch-black sm:text-[32px] sm:leading-10 lg:w-[296px] lg:text-[40px]`}
             >
