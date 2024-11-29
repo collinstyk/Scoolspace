@@ -104,6 +104,7 @@ function Features() {
       flow: null,
       contrast: "dark",
       btnText: "Learn more",
+      btnTo: "/product",
       userTypeImg: null,
       bgImage: null,
       iconSrc: null,
@@ -119,6 +120,7 @@ function Features() {
       flow: "right",
       contrast: "light",
       btnText: "Join our waitlist",
+      btnTo: "/waitlist",
       userTypeImg: null,
       bgImage:
         "url('images/management-1.png'), linear-gradient(#662D914D, #D9D9D900)",
@@ -136,6 +138,7 @@ function Features() {
       flow: "left",
       contrast: "dark",
       btnText: "Join our waitlist",
+      btnTo: "/waitlist",
       userTypeImg: null,
       bgImage:
         "url('images/teacher-1.png'), radial-gradient(circle, #D9D9D900, #662D914D)",
@@ -153,6 +156,7 @@ function Features() {
       flow: null,
       contrast: "light",
       btnText: "Learn more",
+      btnTo: "/product",
       userTypeImg: null,
       featureName: null,
       iconSrc: null,
@@ -168,6 +172,7 @@ function Features() {
       flow: "right",
       contrast: "dark",
       btnText: "Learn more",
+      btnTo: "/product",
       userTypeImg: null,
       bgImage:
         "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
@@ -194,6 +199,7 @@ function Features() {
             flow={input.flow}
             contrast={input.contrast}
             btnText={input.btnText}
+            btnTo={input.btnTo}
             userTypeImg={input.userTypeImg}
             bgImage={input.bgImage}
             featureName={input.featureName}
@@ -228,6 +234,7 @@ function Feature({
   flow,
   contrast,
   btnText,
+  btnTo,
   userTypeImg,
   bgImage,
   featureName,
@@ -310,6 +317,7 @@ function Feature({
 
         <Button
           variant={btnVariant}
+          to={btnTo}
           className={`mt-8 px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit tablet:mt-0" : ""}`}
         >
           {btnText}
