@@ -27,6 +27,10 @@ const SEO = ({ path }) => (
         name="description"
         content="A new way to teach, learn, and love. Unlock a connected, engaging, and efficient education experience for parents, students, teachers, and school administrators."
       />
+      <meta
+        name="keywords"
+        content="education, school, learning, teaching, schoolspace, online, new school, new schools, new school teachers, online school, online schools, online learning, online teaching, online education, online teachers, online students, online parents, online administrators, online school administrators, online school teachers, online school students, virtual learning, remote learning, remote teaching, remote education, remote teachers, remote students, remote parents, remote administrators, remote school administrators, remote school teachers, remote school students, virtual school, virtual schools, virtual learning, virtual teaching, virtual education, virtual teachers, virtual students, virtual parents, virtual administrators, virtual school administrators, virtual school teachers, virtual school students, online learning platform, online teaching platform, online education platform, online school platform, remote learning platform, remote teaching platform, remote education platform, remote school platform, virtual learning platform, virtual teaching platform, virtual education platform, virtual school platform"
+      />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="The New School" />
       <meta
@@ -43,6 +47,7 @@ const SEO = ({ path }) => (
         name="google-site-verification"
         content="iGb7AZZVBphAYk6wcWVi9sVHj-JX0nqcfsxR1l7y6es"
       />
+      <meta name="msvalidate.01" content="54491FCCB75A77445DA3433EE7140D14" />
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="msapplication-TileColor" content="#ffffff" />
