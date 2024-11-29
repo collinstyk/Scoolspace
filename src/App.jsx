@@ -4,10 +4,16 @@ import JoinTheWaitlist from "./pages/JoinTheWaitlist";
 import AppLayout from "./ui/AppLayout";
 import ContactUs from "./pages/ContactUs";
 import Product from "./pages/Product";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <>
+        <ScrollToTop />
+        <AppLayout />
+      </>
+    ),
     children: [
       {
         element: <Landing />,
@@ -20,11 +26,21 @@ const router = createBrowserRouter([
     ],
   },
   {
-    element: <JoinTheWaitlist />,
+    element: (
+      <>
+        <ScrollToTop />
+        <JoinTheWaitlist />
+      </>
+    ),
     path: "/waitlist",
   },
   {
-    element: <ContactUs />,
+    element: (
+      <>
+        <ScrollToTop />
+        <ContactUs />
+      </>
+    ),
     path: "/contact-us",
   },
 ]);
