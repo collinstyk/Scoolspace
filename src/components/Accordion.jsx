@@ -4,7 +4,7 @@ function Accordion({ inputs }) {
   const [isCurOpen, setIsCurOpen] = useState(0);
 
   const toogleIsOpen = (id) => {
-    setIsCurOpen(isCurOpen === id ? null : id);
+    setIsCurOpen(id);
   };
 
   return (
