@@ -433,7 +433,7 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
       
       scale3d(1.1,1.1,1.1)
       
-      rotateX(${-offsetY * 30}deg)
+      rotateX(${offsetY * 30}deg)
       rotateY(${offsetX * 30}deg)
       `;
     }
@@ -448,14 +448,14 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
   // perspective(1000px)
   return (
     <div
-      className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass}`}
+      className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
       ref={interactiveContainerRef}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
     >
       <div className="mx-auto flex flex-col gap-5 desktop:gap-10">
         <div
-          className="h-[208px] laptop:h-[174px] desktop:h-[208px]"
+          className="h-[208px] transition-transform duration-300 ease-linear laptop:h-[174px] desktop:h-[208px]"
           ref={interactiveChildRef}
         >
           <img src={imageSrc} alt={alt} className="h-full w-full" />
