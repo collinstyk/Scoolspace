@@ -366,7 +366,7 @@ function LandingSection3() {
           extraClass="tablet:col-start-2 tablet:col-end-3"
           imageSrc="images/functionality-access.svg"
           alt="functionality access"
-          message="Seamless functionality access"
+          message="Seamless, Smart, Connected"
           serialNum="02"
         />
 
@@ -437,8 +437,8 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
       
       scale3d(1.1,1.1,1.1)
       
-      rotateX(${offsetY * 30}deg)
-      rotateY(${offsetX * 30}deg)
+      rotateX(${offsetY * 20}deg)
+      rotateY(${offsetX * 20}deg)
       `;
     }
   };
