@@ -466,10 +466,10 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
         ref={strokeFollowRef}
       ></div>
       <div
-        className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
+        className={`relative col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
         ref={firstChildRef}
       >
-        <div className="mx-auto flex flex-col gap-5 desktop:gap-10">
+        <div className="mx-auto flex flex-col gap-5 bg-dark-blue desktop:gap-10">
           <div
             className="h-[208px] transition-transform duration-300 ease-linear laptop:h-[174px] desktop:h-[208px]"
             ref={imageContainerRef}
