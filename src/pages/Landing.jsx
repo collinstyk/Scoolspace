@@ -414,10 +414,13 @@ function LandingSection3() {
 
 const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
   const interactiveContainerRef = useRef(null);
-  const interactiveChildRef = useRef(null);
+  const firstChildRef = useRef(null);
+  const strokeFollowRef = useRef(null);
+  const imageContainerRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    const rect = interactiveContainerRef.current.getBoundingClientRect();
+    // const rect = interactiveContainerRef.current.getBoundingClientRect();
+    const rect = firstChildRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
@@ -429,7 +432,8 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
 
     if (window.innerWidth >= 640) {
       interactiveContainerRef.current.style.transform = "scale(1.01)";
-      interactiveChildRef.current.style.transform = `
+      strokeFollowRef.current.style.transform = `translate(${offsetX * 100}%, ${offsetY * 100}%)`;
+      imageContainerRef.current.style.transform = `
       
       scale3d(1.1,1.1,1.1)
       
@@ -441,32 +445,45 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
 
   const handleMouseLeave = () => {
     interactiveContainerRef.current.style.transform = "scale(1)";
-
-    interactiveChildRef.current.style.transform =
+    firstChildRef.current.style.transform = "scale(1)";
+    strokeFollowRef.current.style.transform = "translate(0,0)";
+    imageContainerRef.current.style.transform =
       "scale3d(1,1,1) rotateX(0deg) rotateY(0deg)";
   };
   // perspective(1000px)
   return (
     <div
-      className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
+      className="relative h-fit overflow-hidden rounded-2xl p-[1px]"
       ref={interactiveContainerRef}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
     >
-      <div className="mx-auto flex flex-col gap-5 desktop:gap-10">
-        <div
-          className="h-[208px] transition-transform duration-300 ease-linear laptop:h-[174px] desktop:h-[208px]"
-          ref={interactiveChildRef}
-        >
-          <img src={imageSrc} alt={alt} className="h-full w-full" />
-        </div>
-        <div className="relative flex">
-          <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
-            {message}
-          </p>
-          <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
-            {serialNum}
-          </span>
+      <div
+        style={{
+          filter: "blur(40px)",
+        }}
+        className="absolute inset-0 left-1/4 top-1/4 h-1/2 w-1/2 bg-[#7385b2] transition-transform duration-150 ease-linear"
+        ref={strokeFollowRef}
+      ></div>
+      <div
+        className={`col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
+        ref={firstChildRef}
+      >
+        <div className="mx-auto flex flex-col gap-5 desktop:gap-10">
+          <div
+            className="h-[208px] transition-transform duration-300 ease-linear laptop:h-[174px] desktop:h-[208px]"
+            ref={imageContainerRef}
+          >
+            <img src={imageSrc} alt={alt} className="h-full w-full" />
+          </div>
+          <div className="relative flex">
+            <p className="w-[90%] text-lg font-bold leading-[22.68px] text-white desktop:text-[22px]">
+              {message}
+            </p>
+            <span className="absolute bottom-0 right-0 text-base font-semibold text-white/60">
+              {serialNum}
+            </span>
+          </div>
         </div>
       </div>
     </div>
