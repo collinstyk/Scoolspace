@@ -462,7 +462,7 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
         style={{
           filter: "blur(40px)",
         }}
-        className="absolute inset-0 left-1/4 top-1/4 h-1/2 w-1/2 bg-[#7385b2] transition-transform duration-150 ease-linear"
+        className="absolute inset-0 left-1/4 top-1/4 h-1/2 w-1/2 bg-[#9DE7FF99] transition-transform duration-150 ease-linear"
         ref={strokeFollowRef}
       ></div>
       <div
