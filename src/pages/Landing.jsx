@@ -98,7 +98,7 @@ function Features() {
       bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
       subHeading: "Why Scoolspace?",
       heading: "Seamless, Smart, Connected",
-      body: "Scoolspace is the all-in-one platform that bridges gaps between students, teachers, parents, and administrators. Access real time progress, communicate effortlessly, and create a community dedicated to learning success—all from one powerful, user-friendly dashboard.",
+      body: "Access real time updates, communicate effortlessly, and create a community dedicated to impacting knowledge all from a single platform.",
       variant: "fill",
       btnVariant: "secondary",
       flow: null,
@@ -292,7 +292,7 @@ function Feature({
         ref={interactiveDivRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform duration-500 ease-linear sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
+        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform duration-200 ease-linear sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
       >
         <section className="flex flex-col gap-6">
           <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -366,7 +366,7 @@ function LandingSection3() {
           extraClass="tablet:col-start-2 tablet:col-end-3"
           imageSrc="images/functionality-access.svg"
           alt="functionality access"
-          message="Seamless, Smart, Connected"
+          message="Seamless functionality access"
           serialNum="02"
         />
 
@@ -433,12 +433,11 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
     if (window.innerWidth >= 640) {
       interactiveContainerRef.current.style.transform = "scale(1.01)";
       strokeFollowRef.current.style.transform = `translate(${offsetX * 100}%, ${offsetY * 100}%)`;
+      // imageRef should zoom faster (not snappy) and follow mouse subtly
       imageContainerRef.current.style.transform = `
       
       scale3d(1.1,1.1,1.1)
-      
-      rotateX(${offsetY * 20}deg)
-      rotateY(${offsetX * 20}deg)
+      translate(${offsetX * 5}px, ${offsetY * 5}px)
       `;
     }
   };
@@ -471,7 +470,7 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
       >
         <div className="mx-auto flex flex-col gap-5 bg-dark-blue desktop:gap-10">
           <div
-            className="h-[208px] transition-transform duration-300 ease-linear laptop:h-[174px] desktop:h-[208px]"
+            className="h-[208px] transition-transform duration-150 ease-linear laptop:h-[174px] desktop:h-[208px]"
             ref={imageContainerRef}
           >
             <img src={imageSrc} alt={alt} className="h-full w-full" />
