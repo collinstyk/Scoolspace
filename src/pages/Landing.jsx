@@ -105,6 +105,7 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       btnTo: "/product",
+      bgImage2: null,
       userTypeImg: null,
       bgImage: null,
       iconSrc: null,
@@ -122,6 +123,7 @@ function Features() {
       btnText: "Join our waitlist",
       btnTo: "/waitlist",
       userTypeImg: null,
+      bgImage2: null,
       bgImage:
         "url('images/management-1.png'), linear-gradient(#662D914D, #D9D9D900)",
       featureName: "management",
@@ -142,6 +144,7 @@ function Features() {
       userTypeImg: null,
       bgImage:
         "url('images/teacher-1.png'), radial-gradient(circle, #D9D9D900, #662D914D)",
+      bgImage2: null,
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
     },
@@ -157,6 +160,7 @@ function Features() {
       contrast: "light",
       btnText: "Learn more",
       btnTo: "/product",
+      bgImage2: "url('images/parent-image1.svg')",
       userTypeImg: null,
       featureName: null,
       iconSrc: null,
@@ -174,6 +178,7 @@ function Features() {
       btnText: "Learn more",
       btnTo: "/product",
       userTypeImg: null,
+      bgImage2: null,
       bgImage:
         "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
       //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
@@ -200,6 +205,7 @@ function Features() {
             contrast={input.contrast}
             btnText={input.btnText}
             btnTo={input.btnTo}
+            bgImage2={input.bgImage2}
             userTypeImg={input.userTypeImg}
             bgImage={input.bgImage}
             featureName={input.featureName}
@@ -236,6 +242,7 @@ function Feature({
   btnText,
   btnTo,
   userTypeImg,
+  bgImage2,
   bgImage,
   featureName,
   iconSrc,
@@ -292,36 +299,49 @@ function Feature({
         ref={interactiveDivRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`h-[504px] w-auto gap-8 rounded-2xl px-8 py-8 transition-transform duration-200 ease-linear sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between laptop:h-[560px] desktop:h-[600px]" : "w-full sm:py-12 laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${bgColor}`}
+        className={`relative h-[504px] w-auto rounded-2xl transition-transform duration-200 ease-linear tablet:min-h-max ${bgColor} ${variant === "fill" ? "laptop:h-[560px] desktop:h-[600px]" : "w-full laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"}`}
       >
-        <section className="flex flex-col gap-6">
-          <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
-          <div
-            className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-full tablet:w-[57%]" : ""}`}
-          >
-            <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
-              {heading}
-            </h2>
-            <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
-              {body}
-            </p>
-          </div>
-          {userTypeImg && (
-            <img
-              src={`images/${userTypeImg}.png`}
-              alt=""
-              className="w-[87px]"
-            />
-          )}
-        </section>
-
-        <Button
-          variant={btnVariant}
-          to={btnTo}
-          className={`mt-8 px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit tablet:mt-0" : ""}`}
+        <div
+          className={`h-full gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "sm:py-12"}`}
         >
-          {btnText}
-        </Button>
+          <section className="flex flex-col gap-6">
+            <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
+            <div
+              className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-full tablet:w-[57%]" : ""}`}
+            >
+              <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
+                {heading}
+              </h2>
+              <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
+                {body}
+              </p>
+            </div>
+            {userTypeImg && (
+              <img
+                src={`images/${userTypeImg}.png`}
+                alt=""
+                className="w-[87px]"
+              />
+            )}
+          </section>
+
+          <Button
+            variant={btnVariant}
+            to={btnTo}
+            className={`mt-8 px-4 py-[10px] text-xs font-semibold shadow-custom-shadow laptop:text-sm desktop:px-6 ${variant === "fill" ? "w-fit tablet:mt-0" : ""}`}
+          >
+            {btnText}
+          </Button>
+        </div>
+
+        {variant !== "dual" && (
+          <div
+            className={`absolute bottom-0 right-[83px] -z-10 hidden h-[90%] w-[41.41%] bg-no-repeat custom:bg-[length:100%_130%] lg:bg-[length:100%_115%] desktop:bg-[length:100%_100%] ${bgImage2 ? "custom:block" : ""}`}
+            style={{
+              backgroundImage: bgImage2,
+            }}
+          ></div>
+        )}
       </div>
     </div>
   );
