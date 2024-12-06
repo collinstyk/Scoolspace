@@ -105,7 +105,7 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       btnTo: "/product",
-      bgImage2: null,
+      imageSrc: "images/phone-illustration.png",
       userTypeImg: null,
       bgImage: null,
       iconSrc: null,
@@ -123,9 +123,9 @@ function Features() {
       btnText: "Join our waitlist",
       btnTo: "/waitlist",
       userTypeImg: null,
-      bgImage2: null,
+      imageSrc: null,
       bgImage:
-        "url('images/management-1.png'), linear-gradient(#662D914D, #D9D9D900)",
+        "url('images/management-2.jpg'), linear-gradient(#662D914D, #D9D9D900)",
       featureName: "management",
       iconSrc: "images/icon-schools.png",
     },
@@ -143,8 +143,8 @@ function Features() {
       btnTo: "/waitlist",
       userTypeImg: null,
       bgImage:
-        "url('images/teacher-1.png'), radial-gradient(circle, #D9D9D900, #662D914D)",
-      bgImage2: null,
+        "url('images/teacher-2.jpg'), radial-gradient(circle, #D9D9D900, #662D914D)",
+      imageSrc: null,
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
     },
@@ -160,7 +160,7 @@ function Features() {
       contrast: "light",
       btnText: "Learn more",
       btnTo: "/product",
-      bgImage2: "url('images/parent-image1.svg')",
+      imageSrc: "images/Parent 3.png",
       userTypeImg: null,
       featureName: null,
       iconSrc: null,
@@ -178,7 +178,7 @@ function Features() {
       btnText: "Learn more",
       btnTo: "/product",
       userTypeImg: null,
-      bgImage2: null,
+      imageSrc: "images/student-notification.svg",
       bgImage:
         "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
       //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
@@ -205,7 +205,7 @@ function Features() {
             contrast={input.contrast}
             btnText={input.btnText}
             btnTo={input.btnTo}
-            bgImage2={input.bgImage2}
+            imageSrc={input.imageSrc}
             userTypeImg={input.userTypeImg}
             bgImage={input.bgImage}
             featureName={input.featureName}
@@ -242,7 +242,7 @@ function Feature({
   btnText,
   btnTo,
   userTypeImg,
-  bgImage2,
+  imageSrc,
   bgImage,
   featureName,
   iconSrc,
@@ -299,15 +299,15 @@ function Feature({
         ref={interactiveDivRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`relative h-[504px] w-auto rounded-2xl transition-transform duration-200 ease-linear tablet:min-h-max ${bgColor} ${variant === "fill" ? "laptop:h-[560px] desktop:h-[600px]" : "w-full laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"}`}
+        className={`relative flex h-[504px] w-auto items-end rounded-2xl transition-transform duration-200 ease-linear tablet:min-h-max ${bgColor} ${variant === "fill" ? "laptop:h-[560px] desktop:h-[600px]" : "w-full laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${variant === "dual" ? "flex-col" : ""}`}
       >
         <div
-          className={`h-full gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between" : "sm:py-12"}`}
+          className={`${variant === "dual" ? "" : "h-full"} gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "w-2/3 sm:flex sm:flex-col sm:justify-between" : "sm:py-12"}`}
         >
           <section className="flex flex-col gap-6">
             <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
             <div
-              className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "w-full tablet:w-[57%]" : ""}`}
+              className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "#tablet:w-[70%] w-full" : ""}`}
             >
               <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
                 {heading}
@@ -334,13 +334,12 @@ function Feature({
           </Button>
         </div>
 
-        {variant !== "dual" && (
+        {imageSrc && (
           <div
-            className={`absolute bottom-0 right-[83px] -z-10 hidden h-[90%] w-[41.41%] bg-no-repeat custom:bg-[length:100%_130%] lg:bg-[length:100%_115%] desktop:bg-[length:100%_100%] ${bgImage2 ? "custom:block" : ""}`}
-            style={{
-              backgroundImage: bgImage2,
-            }}
-          ></div>
+            className={`hidden custom:block ${variant === "fill" ? "mr-4 h-fit w-fit" : "h-[46%] w-[97%]"}`}
+          >
+            <img src={imageSrc} alt="" className="h-full w-full" />
+          </div>
         )}
       </div>
     </div>
@@ -472,7 +471,7 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
   // perspective(1000px)
   return (
     <div
-      className="relative h-fit overflow-hidden rounded-2xl p-[1px]"
+      className={`relative overflow-hidden rounded-2xl p-[1px] ${extraClass}`}
       ref={interactiveContainerRef}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
@@ -485,7 +484,7 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
         ref={strokeFollowRef}
       ></div>
       <div
-        className={`relative col-span-1 flex items-center rounded-2xl bg-dark-blue px-8 py-[31px] ${extraClass} transition-transform duration-500 ease-linear`}
+        className={`relative col-span-1 flex h-full w-full items-center rounded-2xl bg-dark-blue px-8 py-[31px] transition-transform duration-500 ease-linear`}
         ref={firstChildRef}
       >
         <div className="mx-auto flex flex-col gap-5 bg-dark-blue desktop:gap-10">
@@ -508,45 +507,3 @@ const Section3Cards = ({ extraClass, imageSrc, alt, message, serialNum }) => {
     </div>
   );
 };
-
-/*<section className="z-10 mx-auto max-h-fit min-h-dvh w-[992px] pt-8 text-white">
-          <Navbar
-            navItems={navItems}
-            btnText="Join our waitlist"
-            type="oceanic"
-            btnSize="medium"
-          />
-          <div className="flex w-full justify-center pb-48">
-            <div className="mt-32 flex w-full items-center justify-between">
-              <div className="w-[460px]">
-                <h1 className="text-[48px] font-bold leading-tight">
-                  Lorem ipsum dolor sit amet consectetur
-                </h1>
-                <p className="text-base font-medium">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem.
-                </p>
-                <div className="mt-6 flex gap-4">
-                  <Button to="">Join our waitlist</Button>
-                  <Button variant="outlined-light" to="">
-                    Contact us
-                  </Button>
-                </div>
-              </div>
-              <div className="relative h-[400px] w-[400px]">
-                <img
-                  src="images/bg-hero-1.png"
-                  alt=""
-                  className="h-full w-full"
-                />
-                <img
-                  src="images/Hero-image.png"
-                  alt="hero-image"
-                  className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
-                />
-              </div>
-            </div>
-          </div>
-        </section> */
-
-/*desktop:px-[120px] laptop:px-[40px] px-[120px]*/
