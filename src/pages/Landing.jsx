@@ -174,7 +174,7 @@ function Features() {
       bgColor: "bg-gradient-to-r from-[#6FCFF7] to-[#9DE7FF]",
       subHeading: "For Students",
       heading: "Fun, Engaging Learning",
-      isHeadingDoubleLine: false,
+      isHeadingDoubleLine: true,
       body: "With access to class materials, interactive classes and assignments, and the option to take assessments from anywhere, become the best student you can be.",
       variant: "dual",
       btnVariant: "secondary",
@@ -316,15 +316,10 @@ function Feature({
             <div
               className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "#tablet:w-[70%] w-full" : ""}`}
             >
-              <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
-                {isHeadingDoubleLine &&
-                  heading.split(",").map((el) => (
-                    <>
-                      {el}
-                      <br />
-                    </>
-                  ))}
-                {!isHeadingDoubleLine && heading}
+              <h2
+                className={`${isHeadingDoubleLine ? "sm:w-[50%]" : ""} text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]`}
+              >
+                {heading}
               </h2>
               <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
                 {body}
