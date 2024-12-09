@@ -95,9 +95,10 @@ function Features() {
   const featuresInput = [
     {
       id: 1,
-      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
+      bgColor: "bg-gradient-to-r from-[#6FCFF7] to-[#9DE7FF]",
       subHeading: "Why Scoolspace?",
       heading: "Seamless, Smart, Connected",
+      isHeadingDoubleLine: false,
       body: "Access real time updates, communicate effortlessly, and create a community dedicated to impacting knowledge all from a single platform.",
       variant: "fill",
       btnVariant: "secondary",
@@ -112,9 +113,10 @@ function Features() {
     },
     {
       id: 2,
-      bgColor: "bg-gradient-to-br from-[#AA79d3] to-[#cb9bef]",
+      bgColor: "bg-gradient-to-r from-[#9F77CB] to-[#C49EEA]",
       subHeading: "For Schools",
       heading: "Full control, Real insights",
+      isHeadingDoubleLine: true,
       body: "Monitor performances, manage school operations, resources, curriculum and more in a collaborative environment with ease.",
       variant: "dual",
       btnVariant: "light",
@@ -131,9 +133,10 @@ function Features() {
     },
     {
       id: 3,
-      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]",
+      bgColor: "bg-gradient-to-r from-[#6FCFF7] to-[#9DE7FF]",
       subHeading: "For Teachers",
       heading: "Teach smarter, Not harder",
+      isHeadingDoubleLine: true,
       body: "Focus on more impactful teaching activities. Prepare lessons, assign and grade quizzes, and keep students engaged with interactive classes with Scoolspace.",
       variant: "dual",
       btnVariant: "secondary",
@@ -150,9 +153,10 @@ function Features() {
     },
     {
       id: 4,
-      bgColor: "bg-gradient-to-br from-[#F44552] to-[#F55967]/70",
+      bgColor: "bg-gradient-to-r from-[#E25356] to-[#E3646B]",
       subHeading: "For Parents",
       heading: "Stay connected, Always",
+      isHeadingDoubleLine: false,
       body: "Stay up to date with your child’s school activities. Be connected and empowered to support your child’s academic growth.",
       variant: "fill",
       btnVariant: "secondary",
@@ -167,9 +171,10 @@ function Features() {
     },
     {
       id: 5,
-      bgColor: "bg-gradient-to-br from-[#6fd1f8] to-[#9ce6fe]/30",
+      bgColor: "bg-gradient-to-r from-[#6fd1f8] to-[#9ce6fe]/30",
       subHeading: "For Students",
       heading: "Fun, Engaging Learning",
+      isHeadingDoubleLine: false,
       body: "With access to class materials, interactive classes and assignments, and the option to take assessments from anywhere, become the best student you can be.",
       variant: "dual",
       btnVariant: "secondary",
@@ -198,6 +203,7 @@ function Features() {
             bgColor={input.bgColor}
             subHeading={input.subHeading}
             heading={input.heading}
+            isHeadingDoubleLine={input.isHeadingDoubleLine}
             body={input.body}
             variant={input.variant}
             btnVariant={input.btnVariant}
@@ -234,6 +240,7 @@ function Feature({
   bgColor,
   subHeading,
   heading,
+  isHeadingDoubleLine,
   body,
   variant,
   btnVariant,
@@ -285,7 +292,7 @@ function Feature({
           style={{
             backgroundImage: bgImage,
           }}
-          className={`relative hidden h-[504px] items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[640px] laptop:w-[391px] desktop:h-[720px] desktop:w-[481px]`}
+          className={`#h-[504px] relative hidden items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[640px] laptop:w-[391px] desktop:h-[720px] desktop:w-[481px]`}
         >
           <div className="flex w-full flex-col gap-2">
             <h3 className="font-semibold text-white tablet:text-base laptop:text-[22px] desktop:text-2xl">
@@ -302,7 +309,7 @@ function Feature({
         className={`relative flex h-[504px] w-auto items-end rounded-2xl transition-transform duration-200 ease-linear tablet:min-h-max ${bgColor} ${variant === "fill" ? "laptop:h-[560px] desktop:h-[600px]" : "w-full laptop:h-[640px] laptop:w-[553px] desktop:h-[720px] desktop:w-[687px]"} ${variant === "dual" ? "flex-col" : ""}`}
       >
         <div
-          className={`${variant === "dual" ? "" : "h-full"} gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "w-2/3 sm:flex sm:flex-col sm:justify-between" : "sm:py-12"}`}
+          className={`${variant === "dual" ? "" : "h-full"} gap-8 rounded-2xl px-8 py-8 sm:gap-0 sm:px-12 tablet:min-h-max ${variant === "fill" ? "sm:flex sm:flex-col sm:justify-between md:w-2/3" : "sm:py-12"}`}
         >
           <section className="flex flex-col gap-6">
             <h6 className="text-xs text-white desktop:text-sm">{subHeading}</h6>
@@ -310,7 +317,14 @@ function Feature({
               className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "#tablet:w-[70%] w-full" : ""}`}
             >
               <h2 className="text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]">
-                {heading}
+                {isHeadingDoubleLine &&
+                  heading.split(",").map((el) => (
+                    <>
+                      {el}
+                      <br />
+                    </>
+                  ))}
+                {!isHeadingDoubleLine && heading}
               </h2>
               <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
                 {body}
