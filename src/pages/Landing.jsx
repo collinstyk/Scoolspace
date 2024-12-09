@@ -171,7 +171,7 @@ function Features() {
     },
     {
       id: 5,
-      bgColor: "bg-gradient-to-r from-[#6fd1f8] to-[#9ce6fe]/30",
+      bgColor: "bg-gradient-to-r from-[#6FCFF7] to-[#9DE7FF]",
       subHeading: "For Students",
       heading: "Fun, Engaging Learning",
       isHeadingDoubleLine: false,
