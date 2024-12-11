@@ -157,7 +157,7 @@ function Features() {
       bgColor: "bg-gradient-to-r from-[#E25356] to-[#E3646B]",
       subHeading: "For Parents",
       heading: "Stay connected, Always",
-      isHeadingDoubleLine: false,
+      isHeadingDoubleLine: true,
       body: "Stay up to date with your child’s school activities. Be connected and empowered to support your child’s academic growth.",
       variant: "fill",
       btnVariant: "secondary",
@@ -286,14 +286,14 @@ function Feature({
 
   return (
     <div
-      className={`#justify-between w-full gap-8 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
+      className={`#justify-between h-fit w-full gap-8 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
     >
       {variant === "dual" && (
         <div
           style={{
             backgroundImage: bgImage,
           }}
-          className={`#h-[504px] relative hidden items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:h-[640px] laptop:w-[391px] desktop:h-[720px] desktop:w-[481px]`}
+          className={`#h-[504px] #laptop:h-[640px] #desktop:h-[741px] relative hidden items-end rounded-2xl bg-cover bg-[55%] p-8 bg-blend-multiply tablet:flex tablet:w-[270px] laptop:w-[391px] desktop:w-[481px]`}
         >
           <div className="flex w-full flex-col gap-2">
             <h3 className="font-semibold text-white tablet:text-base laptop:text-[22px] desktop:text-2xl">
@@ -318,11 +318,11 @@ function Feature({
               className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "#tablet:w-[70%] w-full" : ""}`}
             >
               <h2
-                className={`${isHeadingDoubleLine ? "sm:w-[50%]" : ""} text-2xl font-bold leading-snug laptop:text-[32px] desktop:text-[40px]`}
+                className={`${isHeadingDoubleLine ? "sm:w-[70%]" : ""} text-2xl font-bold leading-snug laptop:text-[32px] desktop:text-[40px]`}
               >
                 {heading}
               </h2>
-              <p className="text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
+              <p className="w-[90%] text-sm font-medium tablet:text-xs laptop:text-sm desktop:text-base">
                 {body}
               </p>
             </div>
