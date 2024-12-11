@@ -146,8 +146,8 @@ function Features() {
       btnTo: "/waitlist",
       userTypeImg: null,
       bgImage:
-        "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, rgba(102, 45, 145, 0.397))",
-      // "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, #662D914D)",
+        "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, 80%, #00223a78)",
+      // "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, #662d914d)",
       imageSrc: null,
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
@@ -186,8 +186,8 @@ function Features() {
       userTypeImg: null,
       imageSrc: "images/student-notification.svg",
       bgImage:
-        "url('images/student-2.png'), linear-gradient( #D9D9D900, #5BA7B3)",
-      //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
+        "url('images/student-2.png'), linear-gradient( #D9D9D900,  #9DE7FF99)",
+      //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')#5BA7B3"
       featureName: "Learning",
       iconSrc: "images/icon-students.svg",
     },
