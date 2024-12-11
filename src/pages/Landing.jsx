@@ -106,7 +106,7 @@ function Features() {
       contrast: "dark",
       btnText: "Learn more",
       btnTo: "/product",
-      imageSrc: "images/phone-illustration.png",
+      imageSrc: "images/phone-illustration.svg",
       userTypeImg: null,
       bgImage: null,
       iconSrc: null,
@@ -127,7 +127,7 @@ function Features() {
       userTypeImg: null,
       imageSrc: null,
       bgImage:
-        "url('images/management-2.jpg'), linear-gradient(#662D914D, #D9D9D900)",
+        "url('images/management-2.jpg'), linear-gradient(#D9D9D900, #662D914D)",
       featureName: "management",
       iconSrc: "images/icon-schools.png",
     },
@@ -146,7 +146,8 @@ function Features() {
       btnTo: "/waitlist",
       userTypeImg: null,
       bgImage:
-        "url('images/teacher-2.jpg'), radial-gradient(circle, #D9D9D900, #662D914D)",
+        "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, rgba(102, 45, 145, 0.397))",
+      // "url('images/teacher-2.jpg'), linear-gradient(#D9D9D900, #662D914D)",
       imageSrc: null,
       featureName: "Teaching",
       iconSrc: "images/icon-teachers.png",
@@ -185,10 +186,10 @@ function Features() {
       userTypeImg: null,
       imageSrc: "images/student-notification.svg",
       bgImage:
-        "url('images/student-2.png'), radial-gradient(circle, #D9D9D900, #9DE7FF99)",
+        "url('images/student-2.png'), linear-gradient( #D9D9D900, #5BA7B3)",
       //"radial-gradient(circle, #D9D9D900, #9DE7FF99), url('images/student-1.png')"
       featureName: "Learning",
-      iconSrc: "images/icon-students.png",
+      iconSrc: "images/icon-students.svg",
     },
   ];
   return (
@@ -196,7 +197,7 @@ function Features() {
       id="features"
       className="mx-auto mb-[200px] mt-8 flex w-[91%] flex-col gap-8 tablet:w-[704px] laptop:w-[960px] desktop:w-[1200px]"
     >
-      <div className="flex w-full flex-col gap-4">
+      <div className="flex w-full flex-col gap-8">
         {featuresInput.map((input) => (
           <Feature
             key={input.id}
@@ -285,7 +286,7 @@ function Feature({
 
   return (
     <div
-      className={`w-full justify-between gap-4 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
+      className={`#justify-between w-full gap-8 rounded-lg ${variant === "fill" ? "" : flow === "right" ? "flex" : "flex flex-row-reverse"}`}
     >
       {variant === "dual" && (
         <div
@@ -317,7 +318,7 @@ function Feature({
               className={`flex flex-col gap-4 ${contrast === "dark" ? "text-pitch-black" : "text-white"} ${variant === "fill" ? "#tablet:w-[70%] w-full" : ""}`}
             >
               <h2
-                className={`${isHeadingDoubleLine ? "sm:w-[50%]" : ""} text-2xl font-bold leading-normal laptop:text-[32px] desktop:text-[40px]`}
+                className={`${isHeadingDoubleLine ? "sm:w-[50%]" : ""} text-2xl font-bold leading-snug laptop:text-[32px] desktop:text-[40px]`}
               >
                 {heading}
               </h2>
